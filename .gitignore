@@ -1,0 +1,9 @@
+/tmp
+/coverage
+/log/*
+!/log/.keep
+/.bundle
+/spec/cassettes
+
+# Ignore application configuration
+/config/application.yml
