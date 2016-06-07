@@ -27,12 +27,13 @@ group :development, :test do
   gem 'pry-rails'
   gem 'launchy'
   gem 'shoulda'
+  gem 'shoulda-callback-matchers'
   gem 'database_cleaner'
 end
 
 group :production do
   gem 'rails_12factor'
-end 
+end
 
 group :development do
   gem 'web-console', '~> 2.0'
