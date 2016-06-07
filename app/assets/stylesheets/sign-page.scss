@@ -1,0 +1,11 @@
+@mixin form {
+  border: solid 2px #000;
+}
+
+.sign-up {
+  @include form
+}
+
+.sign-in {
+  @include form
+}

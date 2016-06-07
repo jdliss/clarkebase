@@ -1,0 +1,30 @@
+// grid
+
+html, body, .container-table {
+   height: 100%;
+}
+
+.container-table {
+  display: table;
+  height: 80%;
+}
+
+.vertical-center-row {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+
+  h1 {
+    font-size: 48px;
+    padding-bottom: 5%;
+  }
+
+  h2 {
+    font-size: 36px;
+    padding-bottom: 5%;
+  }
+
+  p {
+    padding-bottom: 5%;
+  }
+}
