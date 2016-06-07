@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User can create account" do
+RSpec.feature "User can create accountg" do
   scenario "when a user fills in username, password and password-confirmation" do
 
     visit root_path
