@@ -1,4 +1,4 @@
-require "openssl"
+require 'openssl'
 
 class PKeyService
 

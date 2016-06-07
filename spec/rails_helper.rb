@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'database_cleaner'
+require 'openssl'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 

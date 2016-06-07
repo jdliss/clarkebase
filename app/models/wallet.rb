@@ -1,3 +1,5 @@
+require 'pkey_service'
+
 class Wallet < ActiveRecord::Base
   belongs_to :user
   before_save :generate_private_key

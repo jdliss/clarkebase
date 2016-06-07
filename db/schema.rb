@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160607203003) do
 
   create_table "wallets", force: :cascade do |t|
     t.integer  "user_id"
-    t.text     "private_key"
+    t.binary   "private_key"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
