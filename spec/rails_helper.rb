@@ -14,6 +14,8 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+  config.include Devise::TestHelpers, type: :controller
+  config.include Warden::Test::Helpers
 
   config.before(:suite) do
     config.use_transactional_fixtures = false

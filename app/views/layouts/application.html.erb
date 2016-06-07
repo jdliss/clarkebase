@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= render partial: 'layouts/nav' %>
   <div class="container flash">
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>">
