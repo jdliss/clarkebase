@@ -1,7 +1,7 @@
 <div class="container container-table">
   <div class="row vertical-center-row">
-    <h2 class="lead">Log in</h2>
-    <div class="sign-in text-center col-md-12">
+    <div class="sign-in-page text-center col-md-12">
+      <h2 class="lead">Log in</h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <%= f.label :email %><br />
@@ -24,7 +24,7 @@
           <%= f.submit "Log in", class: "btn btn-md btn-secondary"%>
         </div>
       <% end %>
+      <%= render "users/shared/links" %>
     </div>
-    <%= render "users/shared/links" %>
   </div>
 </div>

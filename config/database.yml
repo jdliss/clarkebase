@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: clarkebase_production
-  username: clarkebase
-  password: <%= ENV['CLARKEBASE_DATABASE_PASSWORD'] %>
