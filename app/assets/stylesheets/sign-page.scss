@@ -1,5 +1,7 @@
 @mixin form {
-  border: solid 2px #fff;
+  border: solid 2px #000;
+  background-color: #fff;
+  color: #000;
 }
 
 .sign-up {
