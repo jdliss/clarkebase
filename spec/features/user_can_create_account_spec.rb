@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User can sign-up" do
+RSpec.feature "User can create account" do
   scenario "when a user fills in username, password and password-confirmation" do
 
     visit root_path
@@ -9,11 +9,11 @@ RSpec.feature "User can sign-up" do
 
     expect(current_path).to eq new_user_registration_path
 
-    save_and_open_page
     within(".sign-up") do
-      fill_in :email, with: "pindell@example.com"
-      fill_in :password, with: "password"
-      fill_in :password_confirmation, with: "password"
+      fill_in "Email",                 with: "pindell@example.com"
+      fill_in "Password",              with: "password"
+      fill_in "Password confirmation", with: "password"
+      click_button "Sign up"
     end
 
     expect(current_path).to eq root_path
