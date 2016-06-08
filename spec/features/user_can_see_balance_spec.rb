@@ -12,6 +12,5 @@ RSpec.feature "User can see their balance" do
     within(".user-keys") do
       expect(page).to have_content "Balance: #{wallet.balance}"
     end
-    save_and_open_page
   end
 end

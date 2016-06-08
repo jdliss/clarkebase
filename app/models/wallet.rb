@@ -14,16 +14,7 @@ class Wallet < ActiveRecord::Base
   end
 
   def balance
-    # need to refactorlactor
-    conn = Faraday.new(url: 'http://159.203.206.61:3000')
-
-    post_result = conn.post do |req|
-      req.url '/balance'
-      req.headers['Content-Type'] = 'application/json'
-      req.body = "{ \"address\": \"#{address}\" }"
-    end
-
-    result_body = JSON.parse(post_result.body)
-    result_body.dig("payload", "balance")
+    clarkeservice = ClarkeService.new
+    clarkeservice.parsed_balance(address)
   end
 end
