@@ -10,7 +10,3 @@ en:
       destroy:
         notice: '%{resource_name} was successfully destroyed.'
         alert: '%{resource_name} could not be destroyed.'
-    # wallet:
-    #   create:
-    #     notice: 'Your new wallet is ready to go!'
-    #     alert: 'Wallet could not be created, try again!'
