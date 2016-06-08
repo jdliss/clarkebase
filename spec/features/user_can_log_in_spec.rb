@@ -16,7 +16,7 @@ RSpec.feature "User can login" do
       click_button "Log in"
     end
 
-    expect(current_path).to eq dashboard_path
+    expect(current_path).to eq "/wallets/new"
 
     within(".flash") do
       expect(page).to have_content "Signed in successfully."

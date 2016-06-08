@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   get '/dashboard', to: 'dashboard#show'
+  get '/wallets/new', to: 'wallets#new'
 
   namespace :api, default: { format: :json } do
     namespace :v1 do
