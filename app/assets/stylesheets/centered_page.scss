@@ -1,22 +1,5 @@
 // grid
 
-@mixin background-image-spec {
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.landing-image {
-  @include background-image-spec;
-  background-image: url("https://images.unsplash.com/photo-1422157245273-e08b638b4b00?crop=entropy&dpr=2&fit=crop&fm=jpg&h=725&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1300");
-  min-height: 100vh;
-}
-
-.opacity {
-  @include background-image-spec;
-  background-color: rgba(#000, .7);
-  min-height: 100vh;
-}
 
 html, body, .container-table {
    height: 100%;
@@ -29,12 +12,12 @@ html, body, .container-table {
   text-align: center;
 
   .content {
-    margin-top: 15%;
+    margin-top: 12%;
   }
 
   h1 {
     font-size: 48px;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
   }
 
   a {
@@ -43,10 +26,10 @@ html, body, .container-table {
 
   h2 {
     font-size: 36px;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
   }
 
   p {
-    padding-bottom: 5%;
+    padding-bottom: 3%;
   }
 }
