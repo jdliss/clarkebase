@@ -14,7 +14,8 @@ class Wallet < ActiveRecord::Base
   end
 
   def balance
-    clarke_service.parsed_balance(address)
+    stripped_address = address.gsub("\n", "")
+    clarke_service.parsed_balance(stripped_address)
   end
 
   private

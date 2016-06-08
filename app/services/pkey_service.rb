@@ -8,7 +8,9 @@ class PKeyService
   end
 
   def self.public_key(pkey)
-    key = OpenSSL::PKey::RSA.new(pkey)
+    pkey = Base64.encode64(pkey)#.chars.each_slice(64).map(&:join).join("\n")
+    pkey_with_headers = "-----BEGIN RSA PRIVATE KEY-----\n" + pkey + "-----END RSA PRIVATE KEY-----\n"
+    key = OpenSSL::PKey::RSA.new(pkey_with_headers)
     key.public_key.to_der
   end
 end
