@@ -1,8 +1,12 @@
 class Api::V1::WalletsController < ApiController
-  respond_to :json
 
   def create
-    @wallet = Wallet.create(user_id: current_user.id)
-    respond_with :api, :v1, :wallets, { wallet: @wallet }
+    @wallet = Wallet.new(user_id: current_user.id)
+    if @wallet.save
+      render json: { message: 'success' }, status: 200
+    else
+      render json: { message: 'error' }, status: 500
+    end
   end
+
 end
