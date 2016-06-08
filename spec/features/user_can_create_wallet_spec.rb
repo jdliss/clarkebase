@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User can create a wallet" do
-  scenario "a registered user with no wallet is offered to create a wallet" do
+  xscenario "a registered user with no wallet is offered to create a wallet", js: true do
     user = create(:user)
     login_as user, scope: :user
 
@@ -14,8 +14,10 @@ RSpec.feature "User can create a wallet" do
       click_button "Create Wallet"
     end
 
+    wait_for_ajax
+
     within(".flash") do
-      expect(page).to have_content "Wallet Created!"
+      expect(page).to have_content "Your Wallet has been created!"
     end
 
     expect(user.wallet).to exist
