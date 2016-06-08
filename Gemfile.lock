@@ -55,6 +55,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.11.1)
+      capybara (>= 2.3.0, < 2.8.0)
+      json
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -195,6 +198,8 @@ GEM
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
       shoulda-matchers (>= 1.4.1, < 3.0)
+    shoulda-callback-matchers (1.1.4)
+      activesupport (>= 3)
     shoulda-context (1.2.1)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
@@ -242,6 +247,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap (~> 4.0.0.alpha3)
   capybara
+  capybara-webkit
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
@@ -257,11 +263,13 @@ DEPENDENCIES
   rails (= 4.2.6)
   rails-assets-tether (>= 1.1.0)!
   rails_12factor
+  responders
   rspec
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda
+  shoulda-callback-matchers
   simplecov
   uglifier (>= 1.3.0)
   unicorn

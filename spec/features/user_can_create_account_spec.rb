@@ -16,7 +16,7 @@ RSpec.feature "User can create account" do
       click_button "Sign up"
     end
 
-    expect(current_path).to eq root_path
+    expect(current_path).to eq dashboard_path
     expect(User.first.email).to eq "pindell@example.com"
 
     within(".flash") do

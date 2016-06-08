@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faraday'
 gem 'figaro'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'responders'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
@@ -23,16 +24,18 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'pry'
   gem 'pry-rails'
   gem 'launchy'
   gem 'shoulda'
+  gem 'shoulda-callback-matchers'
   gem 'database_cleaner'
 end
 
 group :production do
   gem 'rails_12factor'
-end 
+end
 
 group :development do
   gem 'web-console', '~> 2.0'
