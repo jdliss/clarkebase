@@ -16,13 +16,13 @@ RSpec.feature "User can login" do
       click_button "Log in"
     end
 
-    expect(current_path).to eq root_path
+    expect(current_path).to eq dashboard_path
 
     within(".flash") do
       expect(page).to have_content "Signed in successfully."
     end
   end
-  
+
   scenario "user can log out" do
     login_as create(:user), scope: :user
 
