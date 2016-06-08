@@ -11,6 +11,6 @@ class PKeyService
     pkey = Base64.encode64(pkey)
     pkey_with_headers = "-----BEGIN RSA PRIVATE KEY-----\n" + pkey + "-----END RSA PRIVATE KEY-----\n"
     key = OpenSSL::PKey::RSA.new(pkey_with_headers)
-    key.public_key.to_der
+    key.public_key
   end
 end
