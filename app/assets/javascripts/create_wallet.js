@@ -6,13 +6,13 @@ $(document).ready(function(){
       url:      '/api/v1/wallets',
       dataType: 'JSON',
       success: function(data){
-        $(self).parent().hide();
         $('.flash').empty();
-        $('.flash').append('<div class="alert alert-success">Your Wallet has been created!</div>');
+        $('.flash').append('<div class="alert text-center alert-success">Your Wallet has been created!</div>');
+        $(".new-wallet").html('<a href="/dashboard" class="btn btn-success btn-lg btn-block dash-button">Take Me to My Dashboard</button>');
       },
       error: function(data){
         $('.flash').empty();
-        $('.flash').append('<div class="alert alert-danger">Wallet not created, try again.</div>');
+        $('.flash').append('<div class="alert text-center alert-danger">Wallet not created, try again.</div>');
       }
     });
   })

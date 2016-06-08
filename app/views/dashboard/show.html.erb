@@ -1,14 +1,6 @@
-<div class="container">
+<div class="container dashboard">
   <div class="row">
     <h1>Dashboard</h1>
-
-    <% if current_user.wallet.nil? %>
-      <div class="welcome-message">
-        <p>Get started by creating your first wallet</p>
-        <button id="create-wallet" class="btn btn-success">Create Wallet</button>
-      </div>
-    <% end %>
-
     <% if current_user.wallet %>
       <div class="user-keys">
         <p>Address: <%= current_user.wallet.address %></p>
