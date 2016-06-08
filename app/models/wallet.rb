@@ -10,7 +10,7 @@ class Wallet < ActiveRecord::Base
   end
 
   def generate_public_key
-    self.public_key ||= PKeyService.public_key(self.private_key)
+    self.public_key ||= PKeyService.public_key(self.private_key).gsub("\n", "")
   end
 
   def address
@@ -18,8 +18,7 @@ class Wallet < ActiveRecord::Base
   end
 
   def balance
-    stripped_address = address.gsub("\n", "")
-    clarke_service.parsed_balance(stripped_address)
+    clarke_service.parsed_balance(address)
   end
 
   private
