@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <h1>Dashboard</h1>
+
+    <% if current_user.wallet.nil? %>
+      <div class="welcome-message">
+        <p>Get started by creating your first wallet</p>
+        <!-- <a href="#" id="create-wallet" class="btn btn-success">Create Wallet</a> -->
+        <button href="#" id="create-wallet" class="btn btn-success">Create Wallet</button>
+      </div>
+    <% end %>
+
+  </div>
+</div>

@@ -22,6 +22,7 @@ RSpec.feature "User can login" do
       expect(page).to have_content "Signed in successfully."
     end
   end
+  
   scenario "user can log out" do
     login_as create(:user), scope: :user
 
