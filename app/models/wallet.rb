@@ -14,7 +14,11 @@ class Wallet < ActiveRecord::Base
   end
 
   def balance
-    clarkeservice = ClarkeService.new
-    clarkeservice.parsed_balance(address)
+    clarke_service.parsed_balance(address)
   end
+
+  private
+    def clarke_service
+      ClarkeService.new
+    end
 end
