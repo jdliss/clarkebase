@@ -33,6 +33,24 @@ class ClarkeService
     }.to_json
   end
 
+
+  def get_sign_payment(unsigned)
+
+  end
+
+  def parsed_signed_payment(unsigned)
+    inputs = unsigned.dig("payload", "inputs")
+    outputs = unsigned.dig("payload", "outputs")
+    inputs_string = inputs.map { |i| i["source_hash"] + i["source_index"].to_s + i["signature"] }.join
+    outputs_string = outputs.map { |i| i["amount"].to_s + i["address"] }.join
+
+    hashable_transaction_string = inputs_string + outputs_string + timestamp.to_s
+
+
+    parse_result(get_sign_payment(unsigned)
+  end
+
+
   def parsed_balance(address)
     result = parse_result(get_balance(address))
     result.dig("payload", "balance")

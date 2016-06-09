@@ -17,8 +17,7 @@ class Wallet < ActiveRecord::Base
     self.public_key
   end
 
-  def db_public_key
-    binding.pry
+def db_public_key
     new_lined = public_key.chars.each_slice(64).map(&:join).join("\n")
     "-----BEGIN RSA PUBLIC KEY-----\n" + new_lined + "\n-----END RSA PUBLIC KEY-----\n"
   end
