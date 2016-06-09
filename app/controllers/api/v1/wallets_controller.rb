@@ -1,9 +1,8 @@
 class Api::V1::WalletsController < ApiController
 
   def create
-    # do custom_private_key as new route?
     if params.dig("private_key")
-      @private_key = Wallet.clean_input_key(params.dig("private_key"))
+      @private_key = KeyCleanerService.clean_user_input(params.dig("private_key"))
     end
 
     @wallet = Wallet.new(

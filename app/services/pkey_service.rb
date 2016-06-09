@@ -6,7 +6,7 @@ class PKeyService
     @keypair = OpenSSL::PKey::RSA.generate(2048)
   end
 
-  def generate_private_key
+  def private_key
     @keypair.to_pem
   end
 
