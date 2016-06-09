@@ -1,5 +1,9 @@
 class WalletsController < ApplicationController
   def new
-    redirect_to dashboard_path if !current_user.wallet.nil?
+    if current_user && !current_user.wallet.nil?
+      redirect_to dashboard_path
+    elsif !current_user
+      redirect_to new_user_session_path
+    end
   end
 end
