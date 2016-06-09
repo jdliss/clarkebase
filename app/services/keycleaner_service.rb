@@ -1,22 +1,19 @@
 class KeyCleanerService
 
-  def self.strict_format_private(key)
-    formatted = key.chars.each_slice(64).map(&:join).join("\n")
-    "-----BEGIN RSA PRIVATE KEY-----\n" + formatted + "\n-----END RSA PRIVATE KEY-----\n"
+  def self.private_strict_format(key)
+    "-----BEGIN RSA PRIVATE KEY-----\n" +
+    key.chars.each_slice(60).map(&:join).join("\n") +
+    "\n-----END RSA PRIVATE KEY-----"
   end
 
-  def self.strict_format_public(key)
-    formatted = key.chars.each_slice(64).map(&:join).join("\n")
-    "-----BEGIN PUBLIC KEY-----\n" + formatted + "\n-----END PUBLIC KEY-----\n"
+  def self.public_strict_format(key)
+    "-----BEGIN PUBLIC KEY-----\n" +
+    key.chars.each_slice(60).map(&:join).join("\n") +
+    "\n-----END PUBLIC KEY-----"
   end
 
   def self.non_strict(key)
-    cleaned = key.dup
-    cleaned.slice!("-----BEGIN RSA PRIVATE KEY-----")
-    cleaned.slice!("-----END RSA PRIVATE KEY-----")
-    cleaned.slice!("-----BEGIN PUBLIC KEY-----")
-    cleaned.slice!("-----END PUBLIC KEY-----")
-    cleaned.gsub!("\\n", "")
-    cleaned.gsub!("\n", "")
+    private_key = OpenSSL::PKey::RSA.new(key)
+    public_der = Base64.strict_encode64(private_key.public_key.to_der)
   end
 end
