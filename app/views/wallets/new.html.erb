@@ -12,6 +12,16 @@
 
         <p class="card-text xs-center">Let's Create One</p>
         <button id="create-wallet" class="btn btn-success">Create Wallet</button>
+        <div>
+          <br/>
+          <h4>or</h4>
+          <br/>
+        </div>
+        <form id="submit-key">
+          Private Key: <input type="text" name="private_key">
+          <input type="submit" value="Import Private Key" class="btn btn-success">
+        </form>
+
         <%= link_to "skip", dashboard_path, class: "skip" %>
       </div>
     </div>

@@ -13,5 +13,4 @@ class PKeyService
   def public_key
     @keypair.public_key.to_pem
   end
-
 end
