@@ -2,15 +2,16 @@ require 'openssl'
 
 class PKeyService
 
-  def self.generate_private_key
-    keypair = OpenSSL::PKey::RSA.generate(2048)
-    keypair.to_der
+  def initialize
+    @keypair = OpenSSL::PKey::RSA.generate(2048)
   end
 
-  def self.public_key(pkey)
-    pkey = Base64.encode64(pkey)
-    pkey_with_headers = "-----BEGIN RSA PRIVATE KEY-----\n" + pkey + "-----END RSA PRIVATE KEY-----\n"
-    key = OpenSSL::PKey::RSA.new(pkey_with_headers)
-    key.public_key
+  def generate_private_key
+    @keypair.to_pem
   end
+
+  def public_key
+    @keypair.public_key.to_pem
+  end
+
 end
