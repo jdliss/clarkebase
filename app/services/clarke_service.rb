@@ -1,6 +1,7 @@
 class ClarkeService
 
-  def initialize
+  def initialize(user=nil)
+    @user = user
     @connection = Faraday.new(url: 'http://159.203.206.61:3000')
   end
 
@@ -21,7 +22,7 @@ class ClarkeService
   end
 
   def parsed_unsigned_payment(from, to, amount, fee)
-    result = parse_result(get_unsigned_payment(unsigned_args(from, to, amount, fee)))
+    parse_result(get_unsigned_payment(unsigned_args(from, to, amount, fee)))
   end
 
   def unsigned_args(from, to, amount, fee)
@@ -33,29 +34,19 @@ class ClarkeService
     }.to_json
   end
 
-
-  def get_sign_payment(unsigned)
-
-  end
-
-  def parsed_signed_payment(unsigned)
-    inputs = unsigned.dig("payload", "inputs")
-    outputs = unsigned.dig("payload", "outputs")
-    inputs_string = inputs.map { |i| i["source_hash"] + i["source_index"].to_s + i["signature"] }.join
-    outputs_string = outputs.map { |i| i["amount"].to_s + i["address"] }.join
-
-    hashable_transaction_string = inputs_string + outputs_string + timestamp.to_s
-
-
-    parse_result(get_sign_payment(unsigned)
-  end
-
-
   def parsed_balance(address)
     result = parse_result(get_balance(address))
     result.dig("payload", "balance")
   end
 
+  def parsed_signed_payment(unsigned)
+    hashable_transactions_string = flatten_values(unsigned).join
+    binding.pry
+  end
+
+  def flatten_values(nest)
+    nest.values.flatten(-1).map{|e| e.is_a?(Hash) ? flatten_values(e) : e.to_s}.flatten
+  end
 
   private
 
