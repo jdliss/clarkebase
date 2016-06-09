@@ -12,10 +12,10 @@ class KeyCleanerService
 
   def self.non_strict(key)
     cleaned = key.dup
-    cleaned.gsub!("-----BEGIN RSA PRIVATE KEY-----", "")
-    cleaned.gsub!("-----END RSA PRIVATE KEY-----", "")
-    cleaned.gsub!("-----BEGIN PUBLIC KEY-----", "")
-    cleaned.gsub!("-----END PUBLIC KEY-----", "")
+    cleaned.slice!("-----BEGIN RSA PRIVATE KEY-----")
+    cleaned.slice!("-----END RSA PRIVATE KEY-----")
+    cleaned.slice!("-----BEGIN PUBLIC KEY-----")
+    cleaned.slice!("-----END PUBLIC KEY-----")
     cleaned.gsub!("\\n", "")
     cleaned.gsub!("\n", "")
   end
