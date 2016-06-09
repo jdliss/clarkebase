@@ -28,9 +28,9 @@ class ClarkeService
   def unsigned_args(from, to, amount, fee)
     {
       from_address: from,
-      to_address: to,
-      amount: amount,
-      fee: fee,
+      to_address:   to,
+      amount:       amount,
+      fee:          fee,
     }.to_json
   end
 
@@ -48,19 +48,22 @@ class ClarkeService
   end
 
   def parsed_signed_payment(unsigned)
-    hashable_transactions_string = flatten_values(unsigned).join
-
-    digest = OpenSSL::Digest::SHA256.new
-    pkey = OpenSSL::PKey::RSA.new(@user.wallet.private_key)
-    signature = pkey.sign digest, hashable_transactions_string
-    unsigned["payload"]["inputs"].first["signature"] = Base64.encode64(signature)
+    digest    = OpenSSL::Digest::SHA256.new
+    pkey      = OpenSSL::PKey::RSA.new(@user.wallet.private_key)
+    signature = pkey.sign digest, signable_string(unsigned)
+    unsigned["payload"]["inputs"].first["signature"] = Base64.encode64(signature).gsub("\n", "")
     signed = unsigned["payload"]
-    binding.pry
     submit_transaction(signed)
   end
 
-  def flatten_values(nest)
-    nest.values.flatten(-1).map{|e| e.is_a?(Hash) ? flatten_values(e) : e.to_s}.flatten
+  def signable_string(unsigned)
+    transaction = unsigned["payload"]
+    inputs      = transaction["inputs"].map { |i| i["source-hash"] + i["source-index"].to_s}.join
+    outputs     = transaction["outputs"].map { |i| i["amount"].to_s + i["address"] }.join
+    timestamp   = transaction["timestamp"].to_s
+    min_height  = transaction["min-height"].to_s
+
+    inputs + outputs + min_height + timestamp
   end
 
   private
