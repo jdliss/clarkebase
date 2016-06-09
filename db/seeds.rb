@@ -5,8 +5,8 @@ horace = User.create(
   password_confirmation: 'password'
 )
 
-private_key = ENV['PRIVATE_KEY']
+private_key = ENV['PEM_PRIVATE_KEY']
+Wallet.create(user_id: horace.id, private_key: private_key)
 
-decoded_private_key = Base64.decode64(private_key)
-
-Wallet.create(user_id: horace.id, private_key: decoded_private_key)
+# decoded_private_key = Base64.decode64(private_key)
+# Wallet.create(user_id: horace.id, private_key: decoded_private_key)

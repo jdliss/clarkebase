@@ -1,4 +1,5 @@
 require 'pkey_service'
+require 'keycleaner_service'
 
 class Wallet < ActiveRecord::Base
   belongs_to  :user
@@ -6,12 +7,12 @@ class Wallet < ActiveRecord::Base
 
   def generate_keys
     key_service = PKeyService.new
-    self.private_key ||= key_service.generate_private_key
+    self.private_key ||= key_service.private_key
     self.public_key  ||= key_service.public_key
   end
 
   def address
-    clean_key(self.public_key)
+    KeyCleanerService.non_strict(self.public_key)
   end
 
   def balance
@@ -22,12 +23,5 @@ private
 
   def clarke_service
     ClarkeService.new
-  end
-
-  def clean_key(key)
-    key.slice!("-----BEGIN PUBLIC KEY-----")
-    key.slice!("-----END PUBLIC KEY-----")
-    key.gsub!("\\n", "")
-    key.gsub!("\n", "")
   end
 end
