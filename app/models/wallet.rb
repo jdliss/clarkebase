@@ -12,7 +12,8 @@ class Wallet < ActiveRecord::Base
   end
 
   def address
-    KeyCleanerService.non_strict(self.public_key)
+    # KeyCleanerService.non_strict(self.public_key)
+    self.public_key
   end
 
   def balance
