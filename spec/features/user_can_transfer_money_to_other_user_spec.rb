@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "user can transfer coins to other use" do
-  xdescribe "user can pay other user in coins if he has a + balance" do
+  xscenario "user can pay other user in coins if he has a + balance" do
     wallet_a, wallet_b = create_list(:wallet, 2)
 
     user_a = wallet_a.user
@@ -27,7 +27,7 @@ feature "user can transfer coins to other use" do
   end
 
 
-  xdescribe "user can't pay other user in coins if he has a 0 balance" do
+  xscenario "user can't pay other user in coins if he has a 0 balance" do
     wallet_a, wallet_b = create_list(:wallet, 2)
 
     user_a = wallet_a.user
