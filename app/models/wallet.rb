@@ -11,24 +11,23 @@ class Wallet < ActiveRecord::Base
   end
 
   def address
-    clean_public_key
+    clean_key(self.public_key)
   end
 
   def balance
     clarke_service.parsed_balance(address)
   end
 
-  def clean_public_key
-    key = self.public_key
-    key.slice!("-----BEGIN RSA PRIVATE KEY-----")
-    key.slice!("-----END RSA PRIVATE KEY-----")
-    key.gsub!("\\n", "")
-    key.gsub!("\n", "")
-  end
-
 private
 
   def clarke_service
     ClarkeService.new
+  end
+
+  def clean_key(key)
+    key.slice!("-----BEGIN PUBLIC KEY-----")
+    key.slice!("-----END PUBLIC KEY-----")
+    key.gsub!("\\n", "")
+    key.gsub!("\n", "")
   end
 end
