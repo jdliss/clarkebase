@@ -17,6 +17,12 @@ class Wallet < ActiveRecord::Base
     self.public_key
   end
 
+  def db_public_key
+    binding.pry
+    new_lined = public_key.chars.each_slice(64).map(&:join).join("\n")
+    "-----BEGIN RSA PUBLIC KEY-----\n" + new_lined + "\n-----END RSA PUBLIC KEY-----\n"
+  end
+
   def balance
     clarke_service.parsed_balance(address)
   end
