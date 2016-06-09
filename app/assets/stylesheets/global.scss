@@ -20,3 +20,27 @@ body {
   background-color: rgba(#000, .7);
   min-height: 100vh;
 }
+
+.landing-image-sign-up {
+  @include background-image-spec;
+  background-image: linear-gradient(to bottom, #fff, #A9A9A9);
+  min-height: 100vh;
+}
+
+.opacity-sign-up {
+  @include background-image-spec;
+  background-color: rgba(#000, .7);
+  min-height: 100vh;
+}
+
+.landing-image-sign-in {
+  @include background-image-spec;
+  background-image: linear-gradient(to bottom, #fff, #A9A9A9);
+  min-height: 100vh;
+}
+
+.opacity-sign-in {
+  @include background-image-spec;
+  background-color: rgba(#000, .7);
+  min-height: 100vh;
+}
