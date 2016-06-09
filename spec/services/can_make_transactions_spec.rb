@@ -3,17 +3,18 @@ include ControllerHelpers
 
 describe "can get unsigned payment transactions" do
   it "can get unsigned" do
-    VCR.use_cassette('transactions/unsigned') do
+    # VCR.use_cassette('transactions/unsigned') do
 
-      key         = ENV["PRIVATE_KEY"].dup
-      cleaned_key = Wallet.clean_input_key(key)
-      wallet_a    = create(:wallet, private_key: cleaned_key)
+      key = ENV["PRIVATE_KEY"].dup
+      db_key = Wallet.db_private_key(key)
+      wallet_a = create(:wallet, private_key: db_key)
       wallet_b    = create(:wallet)
 
-      from_addy = wallet_a.public_key
-      to_addy   = wallet_b.public_key
+      from_addy = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB"
+      to_addy   = wallet_b.address
       amount    = 2
       fee       = 0
+
 
       post = ClarkeService.new.parsed_unsigned_payment(from_addy, to_addy, amount, fee)
 
@@ -31,20 +32,21 @@ describe "can get unsigned payment transactions" do
               "index"=>1}}]
             },
       })
-    end
+    # end
   end
 
   it "unsigned can be signed" do
-    VCR.use_cassette ('transactions/signed') do
+    # VCR.use_cassette ('transactions/signed') do
       key = ENV["PRIVATE_KEY"].dup
-      cleaned_key = Wallet.clean_input_key(key)
-      wallet_a = create(:wallet, private_key: cleaned_key)
+      db_key = Wallet.db_private_key(key)
+      wallet_a = create(:wallet, private_key: db_key)
+
       wallet_b = create(:wallet)
       user_a   = wallet_a.user
 
 
-      from_addy = wallet_a.public_key
-      to_addy   = wallet_b.public_key
+      from_addy = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB"
+      to_addy   = wallet_b.address
       amount    = 2
       fee       = 0
 
@@ -65,6 +67,6 @@ describe "can get unsigned payment transactions" do
                 "index"=>1}}]
               },
         })
-    end
+    # end
   end
 end

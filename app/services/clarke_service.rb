@@ -14,7 +14,7 @@ class ClarkeService
   end
 
   def get_unsigned_payment(data)
-    thing = @connection.post do |req|
+    @connection.post do |req|
       req.url '/unsigned_payment_transactions'
       req.headers['Content-Type'] = 'application/json'
       req.body = data
@@ -39,9 +39,24 @@ class ClarkeService
     result.dig("payload", "balance")
   end
 
+  def submit_transaction(signed_transaction)
+    @connection.post do |req|
+      req.url '/pending_transactions'
+      req.headers['Content-Type'] = 'application/json'
+      req.body = signed_transaction.to_json
+    end
+  end
+
   def parsed_signed_payment(unsigned)
     hashable_transactions_string = flatten_values(unsigned).join
+
+    digest = OpenSSL::Digest::SHA256.new
+    pkey = OpenSSL::PKey::RSA.new(@user.wallet.private_key)
+    signature = pkey.sign digest, hashable_transactions_string
+    unsigned["payload"]["inputs"].first["signature"] = Base64.encode64(signature)
+    signed = unsigned["payload"]
     binding.pry
+    submit_transaction(signed)
   end
 
   def flatten_values(nest)

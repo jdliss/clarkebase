@@ -1,12 +1,13 @@
 <div class="container dashboard">
   <div class="row">
     <h1>Dashboard</h1>
+
     <% if current_user.wallet %>
       <div class="user-keys">
         <p>Address: <%= current_user.wallet.address %></p>
         <p>Balance: <%= current_user.wallet.balance %></p>
       </div>
     <% end %>
-
+    
   </div>
 </div>

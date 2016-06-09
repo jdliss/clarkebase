@@ -7,6 +7,6 @@ horace = User.create(
 
 private_key = ENV['PRIVATE_KEY']
 
-decoded_private_key = Base64.decode64(private_key)
+decoded_private_key = private_key.dup
 
 Wallet.create(user_id: horace.id, private_key: decoded_private_key)
