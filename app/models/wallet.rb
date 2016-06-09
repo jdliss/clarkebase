@@ -27,8 +27,17 @@ class Wallet < ActiveRecord::Base
     clarke_service.parsed_balance(address)
   end
 
-  private
-    def clarke_service
-      ClarkeService.new
-    end
+  def self.clean_input_key(key)
+    key.slice!("-----BEGIN RSA PRIVATE KEY-----")
+    key.slice!("-----END RSA PRIVATE KEY-----")
+    key.gsub!("\\n", "")
+    key.gsub!("\n", "")
+    Base64.decode64(key)
+  end
+
+private
+
+  def clarke_service
+    ClarkeService.new
+  end
 end
