@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://159.203.206.61:3000/balance
+    body:
+      encoding: UTF-8
+      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs+OswTMmMcblut2YS2vtatfoaboklWlTPbwwJUzUbOPcSfouuimR1s74k2t1pid1mVMeuONYjbSIFniPwOycL1nHHk/j4szWyXG9awCXe1NcqjY/PCHGVb8oM+QpBq6fTT8lXIu4f11/kdJZzG74rn6l4OeqLdBpYzVRqxT0VAOqxw0awdyDZBu8OzL1OgY5wFKni50AATqh5FSySidqBSuYXI8G9A4pxzrVAZ188PHInGWiUqa1M4CTUW01EVqrKUFvDYZVGZCTsGksk9QQc85u/W3Y1FqWfrAMW3nsujk4NoFmFfIdSVWVxVgCinECilUhRV3fm7g2STQpOZWpRwIDAQAB"
+        }'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '450'
+      Server:
+      - http-kit
+      Date:
+      - Fri, 10 Jun 2016 02:36:53 GMT
+    body:
+      encoding: UTF-8
+      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs+OswTMmMcblut2YS2vtatfoaboklWlTPbwwJUzUbOPcSfouuimR1s74k2t1pid1mVMeuONYjbSIFniPwOycL1nHHk/j4szWyXG9awCXe1NcqjY/PCHGVb8oM+QpBq6fTT8lXIu4f11/kdJZzG74rn6l4OeqLdBpYzVRqxT0VAOqxw0awdyDZBu8OzL1OgY5wFKni50AATqh5FSySidqBSuYXI8G9A4pxzrVAZ188PHInGWiUqa1M4CTUW01EVqrKUFvDYZVGZCTsGksk9QQc85u/W3Y1FqWfrAMW3nsujk4NoFmFfIdSVWVxVgCinECilUhRV3fm7g2STQpOZWpRwIDAQAB","balance":0}}'
+    http_version: 
+  recorded_at: Fri, 10 Jun 2016 02:36:53 GMT
+recorded_with: VCR 3.0.3
