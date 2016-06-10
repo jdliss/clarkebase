@@ -1,7 +1,15 @@
 class Api::V1::WalletsController < ApiController
 
   def create
-    @wallet = Wallet.new(user_id: current_user.id)
+    if params.dig("private_key")
+      @private_key = KeyCleanerService.clean_user_input(params.dig("private_key"))
+    end
+
+    @wallet = Wallet.new(
+      user_id: current_user.id,
+      private_key: @private_key
+    )
+
     if @wallet.save
       render json: { message: 'success' }, status: 200
     else
