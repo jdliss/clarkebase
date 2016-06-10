@@ -5,7 +5,7 @@ http_interactions:
     uri: http://159.203.206.61:3000/balance
     body:
       encoding: UTF-8
-      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs+OswTMmMcblut2YS2vtatfoaboklWlTPbwwJUzUbOPcSfouuimR1s74k2t1pid1mVMeuONYjbSIFniPwOycL1nHHk/j4szWyXG9awCXe1NcqjY/PCHGVb8oM+QpBq6fTT8lXIu4f11/kdJZzG74rn6l4OeqLdBpYzVRqxT0VAOqxw0awdyDZBu8OzL1OgY5wFKni50AATqh5FSySidqBSuYXI8G9A4pxzrVAZ188PHInGWiUqa1M4CTUW01EVqrKUFvDYZVGZCTsGksk9QQc85u/W3Y1FqWfrAMW3nsujk4NoFmFfIdSVWVxVgCinECilUhRV3fm7g2STQpOZWpRwIDAQAB"
+      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwBKG7/Ub1SJupaFWn4nN2xMczmRJJ2UdcORWLGtMA9xvVS8ei2ycgb/DVjp+0DDvrYp0MT6Z6QpL5qbJhDhuriY/wRQWZuty6GAhmxbrQa5+rrfNZRGYTAchbs8Gbm9g57vVyijy1Q+vb0kKCyd0r7D3yO14Ixn+eCPockkoWLchFaiWc84VE32mJ+X8WtzdSmVzsVcpJmoA0rFfSPXfMwqDELub4sM0//R7hydoYvLu6VznsVtpGHfQ4zklwP5j4VG+9J5Yhns8vCOtkHznNda/DSw1Ne0Rbx6YljUYjBapuFnelz6J/CQ4Op+qVNmuCPBd2NnrX5djlB7MFwY8EQIDAQAB"
         }'
     headers:
       User-Agent:
@@ -28,10 +28,10 @@ http_interactions:
       Server:
       - http-kit
       Date:
-      - Fri, 10 Jun 2016 02:36:53 GMT
+      - Fri, 10 Jun 2016 02:45:41 GMT
     body:
       encoding: UTF-8
-      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs+OswTMmMcblut2YS2vtatfoaboklWlTPbwwJUzUbOPcSfouuimR1s74k2t1pid1mVMeuONYjbSIFniPwOycL1nHHk/j4szWyXG9awCXe1NcqjY/PCHGVb8oM+QpBq6fTT8lXIu4f11/kdJZzG74rn6l4OeqLdBpYzVRqxT0VAOqxw0awdyDZBu8OzL1OgY5wFKni50AATqh5FSySidqBSuYXI8G9A4pxzrVAZ188PHInGWiUqa1M4CTUW01EVqrKUFvDYZVGZCTsGksk9QQc85u/W3Y1FqWfrAMW3nsujk4NoFmFfIdSVWVxVgCinECilUhRV3fm7g2STQpOZWpRwIDAQAB","balance":0}}'
+      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwBKG7/Ub1SJupaFWn4nN2xMczmRJJ2UdcORWLGtMA9xvVS8ei2ycgb/DVjp+0DDvrYp0MT6Z6QpL5qbJhDhuriY/wRQWZuty6GAhmxbrQa5+rrfNZRGYTAchbs8Gbm9g57vVyijy1Q+vb0kKCyd0r7D3yO14Ixn+eCPockkoWLchFaiWc84VE32mJ+X8WtzdSmVzsVcpJmoA0rFfSPXfMwqDELub4sM0//R7hydoYvLu6VznsVtpGHfQ4zklwP5j4VG+9J5Yhns8vCOtkHznNda/DSw1Ne0Rbx6YljUYjBapuFnelz6J/CQ4Op+qVNmuCPBd2NnrX5djlB7MFwY8EQIDAQAB","balance":0}}'
     http_version: 
-  recorded_at: Fri, 10 Jun 2016 02:36:53 GMT
+  recorded_at: Fri, 10 Jun 2016 02:45:41 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "User can create a wallet with their own key" do
   scenario "a registered user with no wallet is offered to create a wallet", js: true do
-    VCR.use_cassette("wallet/import") do
+    VCR.use_cassette("wallet/import", record: :new_episodes) do
       user = create(:user)
       login_as user, scope: :user
 
