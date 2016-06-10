@@ -11,6 +11,11 @@ require 'openssl'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
+Capybara::Webkit.configure do |config|
+  config.allow_url("use.fontawesome.com")
+  config.allow_url("fonts.googleapis.com")
+end
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
