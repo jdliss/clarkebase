@@ -17,7 +17,7 @@ body {
 
 .opacity-welcome {
   @include background-image-spec;
-  background-color: rgba(#000, .7);
+  background-color: rgba(#000, .8);
   min-height: 100vh;
 }
 
@@ -29,7 +29,7 @@ body {
 
 .opacity-sign-up {
   @include background-image-spec;
-  background-color: rgba(#000, .7);
+  background-color: rgba(#000, .8);
   min-height: 100vh;
 }
 
@@ -41,6 +41,6 @@ body {
 
 .opacity-sign-in {
   @include background-image-spec;
-  background-color: rgba(#000, .7);
+  background-color: rgba(#000, .8);
   min-height: 100vh;
 }

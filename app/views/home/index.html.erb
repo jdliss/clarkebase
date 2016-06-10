@@ -1,3 +1,4 @@
+
 <div class="landing-image-welcome">
   <%= render partial: 'layouts/nav' %>
   <div class="opacity-welcome">
@@ -8,7 +9,7 @@
           <h1 class="cover-heading">Get Started with ClarkeCoin</h1>
           <p class="lead"> The fastest growing crypocurrency on Blake Street </p>
           <% if !current_user %>
-            <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-lg btn-success-outline" %>
+            <%= link_to "Get Started", new_user_registration_path, class: "btn btn-lg btn-success" %>
           <% else  %>
             <%= link_to "See Your Account", dashboard_path, class: "btn btn-lg btn-success-outline" %>
           <% end %>
