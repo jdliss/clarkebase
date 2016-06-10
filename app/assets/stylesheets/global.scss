@@ -44,3 +44,16 @@ body {
   background-color: rgba(#000, .8);
   min-height: 100vh;
 }
+
+
+.landing-image-new-wallet {
+  @include background-image-spec;
+  background-image: url("https://images.unsplash.com/reserve/mW95rWmYSRe4nTMVaRaW_French-Mountain.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=8c2d363e9975f2d2c921837f14db3f12");
+  min-height: 100vh;
+}
+
+.opacity-new-wallet {
+  @include background-image-spec;
+  background-color: rgba(#000, .7);
+  min-height: 100vh;
+}

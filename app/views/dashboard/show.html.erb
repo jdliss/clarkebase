@@ -1,12 +1,45 @@
-<%= render partial: 'layouts/flash' %>
-<div class="container dashboard">
+<%= render partial: 'layouts/nav' %>
+<%= render partial: 'layouts/side_menu' %>
+<div class="col-sm-10 col-xs-12 main-content-area">
+  <br>
   <div class="row">
-    <h1>Dashboard</h1>
+    <h4 class="page-header">Welcome <%= current_user.email %></h4>
+    <br>
+    <hr>
+  </div>
+  <div class="row">
     <% if current_user && current_user.wallet %>
-      <div class="user-keys">
-        <p>Address: <%= current_user.wallet.address %></p>
-        <p>Balance: <%= current_user.wallet.balance %></p>
-      </div>
+      <p>Balance: <%= number_to_currency current_user.wallet.balance %></p>
+      <hr>
+  </div>
+  <div class="row">
+    <a href="#" data-toggle="modal" data-target="#address">Your Address</a>
+
+    <hr>
+  </div>
     <% end %>
+</div>
+
+
+
+<div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Your ClarkeCoin Address</h4>
+      </div>
+      <div class="modal-body">
+        <div class="inputs">
+        Address: <input id="addy" type="url" value="<%=current_user.wallet.address%>">
+        <button id="copy_btn" class="addy"><i class="fa fa-clipboard"></i></button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
