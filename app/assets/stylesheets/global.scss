@@ -23,7 +23,7 @@ body {
 
 .landing-image-sign-up {
   @include background-image-spec;
-  background-image: linear-gradient(to bottom, #fff, #A9A9A9);
+  background-image: url("https://images.unsplash.com/photo-1464400694175-33544b41703d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=19791c353b47122b572fb56aa358d7db");
   min-height: 100vh;
 }
 
@@ -35,7 +35,7 @@ body {
 
 .landing-image-sign-in {
   @include background-image-spec;
-  background-image: linear-gradient(to bottom, #fff, #A9A9A9);
+  background-image: url("https://images.unsplash.com/photo-1464400694175-33544b41703d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=19791c353b47122b572fb56aa358d7db");
   min-height: 100vh;
 }
 
