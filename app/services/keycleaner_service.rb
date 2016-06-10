@@ -20,9 +20,9 @@ class KeyCleanerService
   def self.clean_user_input(key)
     key = key.gsub("\\n", "")
     key = key.gsub("\n", "")
+    key = key.gsub("\"", "")
     key = key.gsub("-----BEGIN RSA PRIVATE KEY-----", "")
     key = key.gsub("-----END RSA PRIVATE KEY-----", "")
-    private_strict_format(key)
   end
 
 end

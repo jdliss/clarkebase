@@ -7,7 +7,7 @@ RSpec.describe Wallet, type: :model do
     private_key = Base64.encode64(OpenSSL::PKey::RSA.generate(2048).to_der)
     wallet      = create(:wallet, private_key: private_key)
 
-    expect(wallet.private_key).to eq(private_key)
+    expect(wallet.private_key).to eq(private_key.delete("\n"))
   end
 
   it "can decrypt with the private key after storing it" do

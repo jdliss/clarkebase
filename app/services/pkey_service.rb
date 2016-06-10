@@ -1,7 +1,6 @@
 require 'openssl'
 
 class PKeyService
-  attr_accessor :private_key, :public_key
 
   def initialize
     @keypair = OpenSSL::PKey::RSA.generate(2048)
@@ -11,7 +10,8 @@ class PKeyService
     Base64.encode64(@keypair.to_der).delete("\n")
   end
 
-  def public_key
-    Base64.encode64(@keypair.public_key.to_der).delete("\n")
+  def public_key(key)
+    key = KeyCleanerService.private_strict_format(key)
+    Base64.encode64(OpenSSL::PKey::RSA.new(key).public_key.to_der)
   end
 end
