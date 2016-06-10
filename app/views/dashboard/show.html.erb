@@ -2,10 +2,10 @@
 <div class="container dashboard">
   <div class="row">
     <h1>Dashboard</h1>
-    <% if current_user && current_user.wallet %>
+    <% if current_user && current_user.primary_wallet %>
       <div class="user-keys">
-        <p>Address: <%= current_user.wallet.address %></p>
-        <p>Balance: <%= current_user.wallet.balance %></p>
+        <p>Address: <%= current_user.primary_wallet.address %></p>
+        <p>Balance: <%= current_user.primary_wallet.balance %></p>
       </div>
     <% end %>
   </div>

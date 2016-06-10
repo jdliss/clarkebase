@@ -8,7 +8,7 @@ RSpec.feature "User can create a wallet with their own key" do
 
       visit wallets_new_path
 
-      expect(user.wallet).to eq(nil)
+      expect(user.primary_wallet).to eq(nil)
 
       within(".new-wallet-message") do
         expect(page).to have_content "You Need a Wallet"
