@@ -16,6 +16,7 @@ class Wallet < ActiveRecord::Base
     self.public_key
   end
 
+
   def balance
     clarke_service.parsed_balance(address)
   end
@@ -25,4 +26,5 @@ private
   def clarke_service
     ClarkeService.new
   end
+
 end

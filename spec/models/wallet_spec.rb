@@ -21,6 +21,7 @@ RSpec.describe Wallet, type: :model do
     encrypted     = original_keypair.private_encrypt(test_string)
     decrypted     = db_keypair.public_decrypt(encrypted)
 
+
     expect(decrypted).to eq(test_string)
   end
 end
