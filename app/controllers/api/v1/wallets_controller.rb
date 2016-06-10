@@ -7,10 +7,11 @@ class Api::V1::WalletsController < ApiController
 
     @wallet = Wallet.new(
       user_id: current_user.id,
-      private_key: @private_key
+      private_key: @private_key,
     )
 
     if @wallet.save
+      @wallet.primary!
       render json: { message: 'success' }, status: 200
     else
       render json: { message: 'error' }, status: 500

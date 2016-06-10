@@ -11,5 +11,6 @@ FactoryGirl.define do
 
   factory :wallet, :class => 'Wallet' do
     user
+    status 1
   end
 end

@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
   has_many :wallets
 
   def primary_wallet
-    # wallet where enum = primary
-    self.wallets.first
+    self.wallets.where(status: 1).first
   end
 end

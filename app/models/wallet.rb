@@ -5,6 +5,8 @@ class Wallet < ActiveRecord::Base
   belongs_to  :user
   before_save :generate_keys
 
+  enum status: %w(basic primary)
+
   def generate_keys
     key_service = PKeyService.new
     self.private_key ||= key_service.private_key
