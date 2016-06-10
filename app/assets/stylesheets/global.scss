@@ -1,0 +1,46 @@
+body {
+  font-family: "Lato"
+}
+
+
+@mixin background-image-spec {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.landing-image-welcome {
+  @include background-image-spec;
+  background-image: url("https://images.unsplash.com/photo-1422157245273-e08b638b4b00?crop=entropy&dpr=2&fit=crop&fm=jpg&h=725&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1300");
+  min-height: 100vh;
+}
+
+.opacity-welcome {
+  @include background-image-spec;
+  background-color: rgba(#000, .7);
+  min-height: 100vh;
+}
+
+.landing-image-sign-up {
+  @include background-image-spec;
+  background-image: url("https://images.unsplash.com/photo-1460500063983-994d4c27756c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=b285526f025c8fb189340cbd1bf7da8f");
+  min-height: 100vh;
+}
+
+.opacity-sign-up {
+  @include background-image-spec;
+  background-color: rgba(#000, .7);
+  min-height: 100vh;
+}
+
+.landing-image-sign-in {
+  @include background-image-spec;
+  background-image: url("https://images.unsplash.com/photo-1464400694175-33544b41703d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=19791c353b47122b572fb56aa358d7db");
+  min-height: 100vh;
+}
+
+.opacity-sign-in {
+  @include background-image-spec;
+  background-color: rgba(#000, .7);
+  min-height: 100vh;
+}

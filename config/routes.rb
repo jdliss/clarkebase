@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api, default: { format: :json } do
     namespace :v1 do
-      resource :wallets, only: [:show, :create]
+      resource :wallets, only: [:create]
     end
   end
 end

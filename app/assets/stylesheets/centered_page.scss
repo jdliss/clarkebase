@@ -3,23 +3,21 @@
 
 html, body, .container-table {
    height: 100%;
-   background-color: #34495e;
 }
 
-.container-table {
-  color: #ecf0f1;
-  display: table;
-  height: 80%;
-}
 
 .vertical-center-row {
-  display: table-cell;
+  color: #fff;
   vertical-align: middle;
   text-align: center;
 
+  .content {
+    margin-top: 12%;
+  }
+
   h1 {
     font-size: 48px;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
   }
 
   a {
@@ -28,10 +26,10 @@ html, body, .container-table {
 
   h2 {
     font-size: 36px;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
   }
 
   p {
-    padding-bottom: 5%;
+    padding-bottom: 3%;
   }
 }
