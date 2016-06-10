@@ -8,11 +8,12 @@ class Wallet < ActiveRecord::Base
   def generate_keys
     key_service = PKeyService.new
     self.private_key ||= key_service.private_key
-    self.public_key  ||= key_service.public_key
+    self.private_key = self.private_key.delete("\n")
+    self.public_key ||= key_service.public_key(self.private_key).delete("\n")
   end
 
   def address
-    KeyCleanerService.non_strict(self.public_key)
+    self.public_key
   end
 
 

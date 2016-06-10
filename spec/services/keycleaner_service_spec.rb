@@ -1,22 +1,58 @@
 require 'rails_helper'
+require 'keycleaner_service'
 
 RSpec.describe KeyCleanerService do
-  xit "can  " do
-    private_key = OpenSSL::PKey::RSA.generate(2048).to_pem
-    wallet      = create(:wallet, private_key: private_key)
+  it "it normalizes with normal pem format" do
+    private_key = ENV["PEM_KEY"]
 
-    expect(wallet.private_key).to eq(private_key)
+    private_key = KeyCleanerService.clean_user_input(private_key)
+
+    pem_key = ENV["PEM_KEY"].dup.delete("\n")
+    pem_key = pem_key.gsub("-----BEGIN RSA PRIVATE KEY-----", "")
+    pem_key = pem_key.gsub("-----END RSA PRIVATE KEY-----", "")
+
+    expect(private_key.delete("\n")).to eq pem_key
   end
 
-  xit "can decrypt with the private key after storing it" do
-    original_keypair = OpenSSL::PKey::RSA.generate(2048)
-    wallet           = create(:wallet, private_key: original_keypair.to_pem)
-    test_string      = "this is a test"
+  it "it normalizes with missing header and footer" do
+    der_key = ENV["DER_KEY_WITH_HEADERS"].dup
+    private_key = der_key.gsub("-----BEGIN RSA PRIVATE KEY-----", "")
+    private_key = private_key.gsub("-----END RSA PRIVATE KEY-----", "")
 
-    db_keypair = OpenSSL::PKey::RSA.new(wallet.private_key)
-    encrypted  = original_keypair.private_encrypt(test_string)
-    decrypted  = db_keypair.public_decrypt(encrypted)
+    private_key = KeyCleanerService.clean_user_input(private_key)
 
-    expect(decrypted).to eq(test_string)
+    der_key = ENV["DER_KEY_WITH_HEADERS"].dup.delete("\n")
+    der_key = der_key.gsub("-----BEGIN RSA PRIVATE KEY-----", "")
+    der_key = der_key.gsub("-----END RSA PRIVATE KEY-----", "")
+
+    expect(private_key.delete("\n")).to eq der_key
+  end
+
+  it "it normalizes with missing new line chars" do
+    der_key = ENV["DER_KEY_WITH_HEADERS"].dup
+    private_key = ENV["DER_KEY_WITH_HEADERS"].dup.delete("\n")
+
+    private_key = KeyCleanerService.clean_user_input(private_key)
+
+    der_key = ENV["DER_KEY_WITH_HEADERS"].dup.delete("\n")
+    der_key = der_key.gsub("-----BEGIN RSA PRIVATE KEY-----", "")
+    der_key = der_key.gsub("-----END RSA PRIVATE KEY-----", "")
+
+    expect(private_key.delete("\n")).to eq der_key
+  end
+
+  it "it normalizes with missing new line chars and missing header/footer" do
+    der_key = ENV["DER_KEY_WITH_HEADERS"].dup
+    private_key = der_key.gsub("-----BEGIN RSA PRIVATE KEY-----", "")
+    private_key = private_key.gsub("-----END RSA PRIVATE KEY-----", "")
+    private_key = private_key.gsub("\n", "")
+
+    private_key = KeyCleanerService.clean_user_input(private_key)
+
+    der_key = ENV["DER_KEY_WITH_HEADERS"].dup.delete("\n")
+    der_key = der_key.gsub("-----BEGIN RSA PRIVATE KEY-----", "")
+    der_key = der_key.gsub("-----END RSA PRIVATE KEY-----", "")
+
+    expect(private_key.delete("\n")).to eq der_key
   end
 end

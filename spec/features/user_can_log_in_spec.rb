@@ -11,7 +11,7 @@ RSpec.feature "User can login" do
     expect(current_path).to eq new_user_session_path
 
     within(".sign-in-page") do
-      fill_in "Email",    with: user.email
+      fill_in "Username",    with: user.email
       fill_in "Password", with: user.password
       click_button "Log in"
     end

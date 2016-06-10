@@ -7,10 +7,11 @@ class PKeyService
   end
 
   def private_key
-    @keypair.to_pem
+    Base64.encode64(@keypair.to_der).delete("\n")
   end
 
-  def public_key
-    @keypair.public_key.to_pem
+  def public_key(key)
+    key = KeyCleanerService.private_strict_format(key)
+    Base64.encode64(OpenSSL::PKey::RSA.new(key).public_key.to_der)
   end
 end

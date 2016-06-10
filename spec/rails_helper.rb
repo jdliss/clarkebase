@@ -11,24 +11,17 @@ require 'openssl'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
+Capybara::Webkit.configure do |config|
+  config.allow_url("use.fontawesome.com")
+  config.allow_url("fonts.googleapis.com")
+end
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
   config.include Warden::Test::Helpers
-
-  config.before(:suite) do
-    config.use_transactional_fixtures = false
-    DatabaseCleaner.strategy = :truncation
-    DatabaseCleaner.clean_with(:truncation)
-  end
-
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
-  end
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
