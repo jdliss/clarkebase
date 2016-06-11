@@ -12,7 +12,28 @@
       <span class="primary-wallet-info">
         Balance: <%= number_to_currency current_user.primary_wallet.balance %>
         <a class="pull-right" href="#" data-toggle="modal" data-target="#address"><i class="fa fa-tag" aria-hidden="true"></i>Your Address</a>
-        <% render partial: 'address_modal' %>
+        <!--  modal / -->
+        <div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Your ClarkeCoin Address</h4>
+              </div>
+              <div class="modal-body">
+                <div class="inputs">
+                Address: <input id="addy" type="url" value="<%=current_user.primary_wallet.address%>">
+                <button id="copy_btn" class="addy"><i class="fa fa-clipboard"></i></button>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </span>
       <hr>
     <% else %>
