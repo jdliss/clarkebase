@@ -28,6 +28,7 @@ $(document).ready(function(){
       $('.flash').empty();
       $('.flash').append('<div class="alert text-center alert-success">Your Wallet has been created!</div>');
       $(".new-wallet").html('<a href="/dashboard" class="btn btn-success btn-lg btn-block dash-button">Take Me to My Dashboard</button>');
+      // reload side_nav
     }
 
     function flashError(data){
