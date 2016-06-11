@@ -68,4 +68,38 @@ http_interactions:
       string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsi2mLalomJhNHkoHkYcvnINYkcYBAXI+Ev9yauteTwwnqCFdF+oJKRQC+LC45HcS2eNk19jYfgXrPdYdKG2UXdZQZ0B6f1hQgZrzPUBFmth+XIYsaMWc9HP9kY/6MOZqLB+y/LWE8uNZAOX5g0aH+ynDuYm9my5hRPsc048jM6TURd+VEZx0c8/N5ar4qvz8R1wQedgAiqzrA7RgQxOIAhLRpvGFTKCAiVbNsckqZoSMNVICDw77hHwWZqkwmijIt7ubQhOcMORKRM4R+eRlYhG4gx1st6ePaMjcg4BZV/JlcGHejq+SO2c8GtGwbI6ZR7F/fCWUZFp2fkh8AFvs/QIDAQAB","balance":0}}'
     http_version: 
   recorded_at: Fri, 10 Jun 2016 02:45:40 GMT
+- request:
+    method: post
+    uri: http://159.203.206.61:3000/balance
+    body:
+      encoding: UTF-8
+      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuvb87wiIxVxkHQ8CC3RPwJnam/acJSrR4IHM4FHbC9raksnvroR90Wrk9Q0hRrjGlH0xouG+u0jUfrfY1paDgjY/hS9WfksDO8YlL2LrLiyn4j/nx98O2Dipemduc5ZAyRpmqvOpieUUGkEriLiZOcoVYBGjtta8dJreF9FcTpGZUdYHwxw3pNU9cO9YccXqAWyrnCGiEN05t3ltqONj9MxXMV7nwlyAnofyhEC4N4O96BCTPTltkv5oUioKiow4DMcV5PTCXBIzv7staoWM8VI8gN5YOfcwtb1duxLeyiruUGlPe+HQNPvi4hfESv5jz3qhUyD6sSPY2duhQbhmXQIDAQAB"
+        }'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '450'
+      Server:
+      - http-kit
+      Date:
+      - Sat, 11 Jun 2016 21:35:12 GMT
+    body:
+      encoding: UTF-8
+      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuvb87wiIxVxkHQ8CC3RPwJnam/acJSrR4IHM4FHbC9raksnvroR90Wrk9Q0hRrjGlH0xouG+u0jUfrfY1paDgjY/hS9WfksDO8YlL2LrLiyn4j/nx98O2Dipemduc5ZAyRpmqvOpieUUGkEriLiZOcoVYBGjtta8dJreF9FcTpGZUdYHwxw3pNU9cO9YccXqAWyrnCGiEN05t3ltqONj9MxXMV7nwlyAnofyhEC4N4O96BCTPTltkv5oUioKiow4DMcV5PTCXBIzv7staoWM8VI8gN5YOfcwtb1duxLeyiruUGlPe+HQNPvi4hfESv5jz3qhUyD6sSPY2duhQbhmXQIDAQAB","balance":0}}'
+    http_version: 
+  recorded_at: Sat, 11 Jun 2016 21:35:12 GMT
 recorded_with: VCR 3.0.3
