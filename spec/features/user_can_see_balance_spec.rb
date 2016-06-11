@@ -11,7 +11,7 @@ RSpec.feature "User can see their balance" do
       visit dashboard_path
 
       within(".user-keys") do
-        expect(page).to have_content "Balance: #{wallet.balance}"
+        expect(page).to have_content "Balance: $#{wallet.balance}.00"
       end
     end
   end

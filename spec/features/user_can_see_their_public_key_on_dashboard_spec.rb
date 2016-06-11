@@ -11,7 +11,11 @@ RSpec.feature "User can see their public key on dashboard" do
       visit dashboard_path
 
       within(".user-keys") do
-        expect(page).to have_content "Address: #{wallet.address}"
+        click_on "Your Address"
+      end
+
+      within(".inputs") do
+        expect(find('#addy').value).to eq "#{wallet.address}"
       end
     end
   end
