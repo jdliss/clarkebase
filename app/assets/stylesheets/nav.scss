@@ -1,7 +1,23 @@
 .navbar {
-  background-color: rgba(#000, .7);
+  background-color: rgba(#000, .8);
 
   .navbar-brand {
+    font-family: "Raleway";
     color: white;
+    font-size: 24px;
+      &:hover {
+        color: #fff;
+        text-decoration: underline;;
+      }
+  }
+
+  .nav-item {
+    padding-top: 0.7%;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    border-radius: none;
+    font-size: 12px;
   }
 }

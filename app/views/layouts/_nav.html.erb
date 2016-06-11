@@ -7,15 +7,15 @@
     <ul class="nav navbar-nav">
       <% if !current_user %>
         <li class="nav-item container pull-xs-right">
-          <a class="btn btn-info" href="<%= new_user_registration_path%>">Sign Up</a>
+          <a class="btn btn-success" href="<%= new_user_registration_path%>">Sign Up</a>
         </li>
         <li class="nav-item container pull-xs-right">
-          <a class="btn btn-info-outline" href="<%= new_user_session_path  %>">Sign In</a>
+          <a class="btn btn-secondary-outline" href="<%= new_user_session_path  %>">Sign In</a>
         </li>
       <% end  %>
       <% if current_user %>
         <li class="nav-item container pull-xs-right">
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-info-outline" %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-secondary-outline" %>
         </li>
       <% end  %>
     </ul>
