@@ -11,7 +11,42 @@
     <div class="page-header">
       <strong>Welcome <%= current_user.email %></strong>
       <span class="pull-right">
-        <button id="create-wallet" class="btn btn-success">Create New Wallet</button>
+        <button class="btn btn-success" data-toggle="modal" data-target="#dash-create-wallet">Create New Wallet</button>
+
+        <!--  modal / -->
+        <div class="modal fade" id="dash-create-wallet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Create a New Wallet</h4>
+              </div>
+
+              <div class="modal-body"><center>
+                <button id="create-wallet" class="btn btn-lg btn-success">Generate a New Wallet</button>
+                <div>
+                  <br/>
+                  <h4>or</h4>
+                  <br/>
+                </div>
+                <h5>Load an Existing Wallet by importing it's Private Key</h5><br>
+                <form id="submit-key">
+                  Private Key: <input type="text" name="private_key">
+                  <input type="submit" value="Import Private Key" class="btn btn-primary">
+                </form>
+              </center></div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </span>
     </div>
     <br>

@@ -14,17 +14,17 @@
             </button>
 
             <p class="card-text xs-center"></p>
-            <button id="create-wallet" class="btn btn-success">Create Wallet</button>
+            <button id="create-wallet" class="btn btn-lg btn-success">Generate a New Wallet</button>
             <div>
               <br/>
               <h4>or</h4>
               <br/>
             </div>
+            <h5>Load an Existing Wallet by importing it's Private Key</h5><br>
             <form id="submit-key">
               Private Key: <input type="text" name="private_key">
               <input type="submit" value="Import Private Key" class="btn btn-primary">
             </form>
-
             <%= link_to "skip", dashboard_path, class: "skip" %>
           </div>
         </div>
