@@ -14,6 +14,7 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 Capybara::Webkit.configure do |config|
   config.allow_url("use.fontawesome.com")
   config.allow_url("fonts.googleapis.com")
+  config.allow_url("images.unsplash.com")
 end
 
 ActiveRecord::Migration.maintain_test_schema!
