@@ -25,6 +25,7 @@ html,body {
         opacity: .5;
       }
 
+
       a {
         font-size: 14px;
         color: #000;
@@ -41,4 +42,20 @@ html,body {
 		  background: #fff;
 		  height:100%;
 		  min-height:100%;
+
+
+
+      a {
+        font-size: 14px;
+        color: #000;
+
+        &:hover {
+          text-decoration: underline;
+          color: #000;
+        }
+      }
+
+      .fa {
+        padding-right: 1%;
+      }
 		}

@@ -1,6 +1,6 @@
 <%= render partial: 'layouts/nav' %>
 <%= render partial: 'layouts/side_menu' %>
-<div class="col-sm-10 col-xs-12 main-content-area">
+<div class="col-sm-10 col-xs-12 main-content-area user-keys">
   <br>
   <div class="row">
     <h4 class="page-header">Welcome <%= current_user.email %></h4>
@@ -9,19 +9,22 @@
   </div>
   <div class="row">
     <% if current_user && current_user.wallet %>
-      <p>Balance: <%= number_to_currency current_user.wallet.balance %></p>
+      <p class="balance">Balance: <%= number_to_currency current_user.wallet.balance %></p>
       <hr>
   </div>
-  <div class="row">
-    <a href="#" data-toggle="modal" data-target="#address">Your Address</a>
-
+  <span class="row">
+    <a href="#" data-toggle="modal" data-target="#address"><i class="fa fa-tag" aria-hidden="true"></i>Your Address</a>
     <hr>
-  </div>
+  </span>
+    <% else %>
+    <div class="row">
+      <%= link_to "You need a wallet to get started", wallets_new_path, class: "btn btn-alert" %>
+    </div>
     <% end %>
 </div>
 
 
-
+<!--  modal / -->
 <div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
