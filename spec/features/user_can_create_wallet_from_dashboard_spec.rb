@@ -47,7 +47,8 @@ RSpec.feature "User can create a wallet from the dasbhoard" do
         click_button "Create New Wallet"
 
         wait_for_ajax
-
+        
+        fill_in "WALLET NAME", with: "Soo Dreamy"
         click_button "Generate a New Wallet"
       end
 

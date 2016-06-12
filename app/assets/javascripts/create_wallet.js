@@ -41,7 +41,7 @@ $(document).ready(function(){
       var nameData  = data.split("=");
       var nameArray = nameData[nameData.length - 1];
       var name      = nameArray.split("+").join(" ");
-      var href      = '<a href="/dashboard/wallets/' + name + '">' + name + '</a>'
+      var href      = '<a href="/dashboard/wallets/' + parameterize(name) + '">' + name + '</a>'
       $('.wallets').append('<span class="card card-block sidebar-wallet"><a>' + href + '</a><span class="pull-right">0 CLC</span></span>');
       flashSuccess;
     }
@@ -55,4 +55,8 @@ $(document).ready(function(){
       $('.flash').empty();
       $('.flash').append('<div class="alert text-center alert-danger">Wallet not created, try again later.</div>');
     }
+
+    parameterize = function (str1) {
+      return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
+    };
 })
