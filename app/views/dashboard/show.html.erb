@@ -9,45 +9,7 @@
   <br>
   <div class="row">
     <div class="page-header">
-      <strong>Welcome <%= current_user.email %></strong>
-      <span class="pull-right">
-        <button class="btn btn-success" data-toggle="modal" data-target="#dash-create-wallet">Create New Wallet</button>
-
-        <!--  modal / -->
-        <div class="modal fade" id="dash-create-wallet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="dashboardWallet">Create a New Wallet</h4>
-              </div>
-              <div class="modal-body"><center>
-
-                <form id="name-wallet">
-                  Name: <input type="text" name="wallet_name">
-                  <input type="submit" value="Generate a New Wallet" class="btn btn-success">
-                </form>
-
-                <div>
-                  <br/>
-                  <h4>or</h4>
-                  <br/>
-                </div>
-
-                <h5>Load an Existing Wallet by importing it's Private Key</h5><br>
-                <form id="submit-key">
-                  Private Key: <input type="text" name="private_key">
-                  <input type="submit" value="Import Private Key" class="btn btn-primary">
-                </form>
-
-              </center></div>
-            </div>
-          </div>
-        </div>
-      </span>
-    </div>
+      <%= render partial: 'layouts/dash_header' %>
     <br>
     <hr>
   </div>
