@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
+  before_action :wallets
 
   def show
-    @wallets = current_user.wallets
   end
 end

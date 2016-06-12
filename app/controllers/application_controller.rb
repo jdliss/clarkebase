@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
     new_wallet_path
   end
 
+  def wallets
+    @wallets = current_user.wallets
+  end
+
 end
