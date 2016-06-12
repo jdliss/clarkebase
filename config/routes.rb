@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   get '/dashboard', to: 'dashboard#show'
-  get '/wallets/new', to: 'wallets#new'
+
+  resources :wallets, only: [:show, :new, :create]
   get '/transactions/new', to: 'transactions#new'
 
   namespace :api, default: { format: :json } do
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
       resource :wallets, only: [:create]
     end
   end
+
 end

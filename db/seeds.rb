@@ -16,8 +16,7 @@ horace = User.create(
 # private_key = KeyCleanerService.private_strict_format(ENV['PRIVATE_KEY'].dup)
 
 private_key = ENV["PRIVATE_KEY"].dup
-Wallet.create(user_id: horace.id, private_key: private_key)
-
+Wallet.create(user_id: horace.id, private_key: private_key, status: 1)
 
 # decoded_private_key = Base64.decode64(private_key)
 # Wallet.create(user_id: horace.id, private_key: decoded_private_key)
