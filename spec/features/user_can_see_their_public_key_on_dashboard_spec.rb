@@ -10,9 +10,9 @@ RSpec.feature "User can see their public key on dashboard" do
 
       visit dashboard_path
 
-      within(".user-keys") do
-        click_on "Your Address"
-      end
+
+      click_on "Your Address"
+
 
       within(".inputs") do
         expect(find('#addy').value).to eq "#{wallet.address}"

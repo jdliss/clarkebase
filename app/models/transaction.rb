@@ -1,7 +1,6 @@
 class Transaction < ActiveRecord::Base
-  validates_presence_of :from, :to, :amount, :wallet_id
+  validates_presence_of :from, :to, :amount
   before_save :send_transaction
-  belongs_to :wallet
 
   enum status: %w(pending completed failed)
 
@@ -16,8 +15,15 @@ class Transaction < ActiveRecord::Base
     signed   = service.parsed_signed_payment(unsigned)
   end
 
-  def to_email
-    Wallet.find_by_public_key(self.to).user.email
+  def email(whom)
+    if !Wallet.find_by_public_key(self.send(whom)).nil?
+      Wallet.find_by_public_key(self.send(whom)).user.email
+    else
+      self.send(whom)
+    end
   end
 
+  def time
+    self.created_at.strftime("%a %b %d, %Y -%l:%M %p")
+  end
 end

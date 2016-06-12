@@ -5,7 +5,7 @@
   <%= render partial: 'layouts/flash' %>
 </div>
 
-<div class="col-sm-10 col-xs-12 main-content-area user-keys">
+<div class="col-sm-12 col-xs-12 main-content-area user-keys">
   <br>
   <div class="row">
     <div class="page-header">
@@ -76,7 +76,9 @@
       <hr>
       <%= render partial: "/layouts/transactions" %>
     <% else %>
-      <center><h3>Create a Wallet in order to get started!</h3></center>
+      <div class="primary-keys">
+        <center><h3>Create a Wallet in order to get started!</h3></center>
+      </div>
     <% end %>
   </div>
 </div>

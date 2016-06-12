@@ -11,7 +11,6 @@ class Api::V1::TransactionsController < ApiController
       from: from_wallet,
       to: to,
       amount: amount,
-      wallet_id: params[:wallet][:id]
     )
 
     if transaction.save

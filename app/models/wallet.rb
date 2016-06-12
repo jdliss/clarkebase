@@ -4,7 +4,6 @@ require 'keycleaner_service'
 class Wallet < ActiveRecord::Base
   belongs_to  :user
   before_save :generate_keys
-  has_many :transactions
 
   enum status: %w(basic primary)
 
@@ -26,6 +25,14 @@ class Wallet < ActiveRecord::Base
 
   def balance_with_id
     "Wallet: #{id} - CLC: #{balance}"
+  end
+
+  def sent_transactions
+    Transaction.where(from: self.public_key)
+  end
+
+  def received_transactions
+    Transaction.where(to: self.public_key)
   end
 
 private
