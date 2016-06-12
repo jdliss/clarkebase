@@ -2,6 +2,11 @@ body {
   font-family: "Lato"
 }
 
+::-webkit-input-placeholder { font-size:12px; }
+::-moz-placeholder { font-size:12px; } /* firefox 19+ */
+:-ms-input-placeholder { font-size:12px; } /* ie */
+input:-moz-placeholder { font-size:12px; }
+
 
 @mixin background-image-spec {
   background-position: center center;

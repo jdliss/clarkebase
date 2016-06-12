@@ -1,3 +1,8 @@
+.flash {
+  z-index: 1000
+}
+
+
 .alert-alert {
   @extend .alert-warning;
 }
