@@ -1,54 +1,37 @@
 require 'rails_helper'
 
 feature "user can transfer coins to other use" do
-  xscenario "user can pay other user in coins if he has a + balance" do
-    wallet_a, wallet_b = create_list(:wallet, 2)
-
-    user_a = wallet_a.user
-    user_b = wallet_b.user
-
-    login_as user_a
-
-    visit dashboard_path
-
-    click_on "Make a Transfer"
-
-    expect(current_path).to eq new_transfer_path
-
-    VCR.use_cassette("features/make_payment") do
-      expect(page).to have_content "Make a Payment"
-
-      fill_in "Receipient Email", with: user_b.email
-      fill_in "Amount", with: 2
-
-      click_on "Make Transfer"
-    end
-    expect(page).to have_content "Successfully Made Payment"
-  end
+  scenario "user can pay other user in coins if he has a + balance", js: true do
+    VCR.use_cassette("features/make_payment", record: :new_episodes) do
+      wallet_a, wallet_b = create_list(:wallet, 2)
 
 
-  xscenario "user can't pay other user in coins if he has a 0 balance" do
-    wallet_a, wallet_b = create_list(:wallet, 2)
+      key           = ENV["PRIVATE_KEY"].dup
+      pub           = ENV["PUBLIC_KEY"].dup
+      wallet_a      = create(:wallet, private_key: key, public_key: pub)
+      wallet_b      = create(:wallet)
+      user_a        = wallet_a.user
+      user_b        = wallet_b.user
 
-    user_a = wallet_a.user
-    user_b = wallet_b.user
 
-    login_as user_b
+      login_as user_a
 
-    visit dashboard_path
+      visit transactions_new_path
 
-    click_on "Make a Transfer"
-
-    expect(current_path).to eq new_transfer_path
-
-    VCR.use_cassette("features/make_payment") do
-      expect(page).to have_content "Make a Payment"
+      expect(page).to have_content "Send Coins"
 
       fill_in "Receipient Email", with: user_b.email
-      fill_in "Amount", with: 2
+      fill_in "Amount", with: 5
 
-      click_on "Make Transfer"
+      click_on "Send"
+
+      sleep(3)
+
+      to = get_pending_transactions.first["address"]
+      from =  get_pending_transactions.last["address"]
+
+      expect(to).to eq wallet_b.address
+      expect(from).to eq wallet_a.address
     end
-    expect(page).to have_content "You don't have enough coins!"
   end
 end

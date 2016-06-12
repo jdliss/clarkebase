@@ -21,7 +21,7 @@ class ClarkeService
     end
   end
 
-  def parsed_unsigned_payment(from, to, amount, fee)
+  def parsed_unsigned_payment(from, to, amount, fee=0)
     parse_result(get_unsigned_payment(unsigned_args(from, to, amount, fee)))
   end
 
