@@ -3,13 +3,13 @@ $(document).ready(function(){
   $('#name-wallet').submit(function(e){
     event.preventDefault();
     var self = this;
-    var value = $("#name-wallet")
+    var value = $("#name-wallet").serialize();
     $.ajax({
       method:   'POST',
       url:      '/api/v1/wallets',
       data:     value,
       dataType: 'JSON',
-      success:  flashSuccess,
+      success:  appendWallet(value),
       error:    flashError
     })
   });
@@ -28,10 +28,16 @@ $(document).ready(function(){
     })
   });
 
+    function appendWallet(data){
+      var nameArray = data.split("=")
+      var name      = nameArray[data.split("=").length - 1]  
+      $('.wallets').append('<span class="card card-block sidebar-wallet"><a>' + name + '</a><span class="pull-right">0 CLC</span></span>');
+      flashSuccess;
+    }
+
     function flashSuccess(data){
       $('.flash').empty();
       $('.flash').append('<div class="alert text-center alert-success">Your Wallet has been created!</div>');
-      location.reload();
     }
 
     function flashError(data){

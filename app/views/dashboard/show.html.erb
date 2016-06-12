@@ -17,7 +17,9 @@
     <% if current_user && current_user.primary_wallet %>
       <span class="primary-wallet-info">
         Balance: <%= number_to_currency current_user.primary_wallet.balance %>
-        <a class="pull-right" href="#" data-toggle="modal" data-target="#address"><i class="fa fa-tag" aria-hidden="true"></i>Your Address</a>
+        <a class="pull-right" href="#" data-toggle="modal" data-target="#address">
+          <i class="fa fa-tag" aria-hidden="true"></i>Your Address
+        </a>
 
         <!--  modal / -->
         <div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -41,8 +43,9 @@
             </div>
           </div>
         </div>
+
       </span>
-      <br>
+
       <hr>
     <% else %>
       <center><h3>Create a Wallet in order to get started!</h3></center>
