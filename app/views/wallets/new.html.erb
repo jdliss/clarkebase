@@ -14,17 +14,20 @@
             </button>
 
             <p class="card-text xs-center"></p>
-            <button id="create-wallet" class="btn btn-success">Create Wallet</button>
+            <%= button_to "Generate a New Wallet", wallets_path, class: "btn btn-lg btn-success" %>
             <div>
               <br/>
               <h4>or</h4>
               <br/>
             </div>
-            <form id="submit-key">
+            <h5>Load an Existing Wallet by importing it's Private Key</h5><br>
+
+            <%= form_for @wallet, url: "/wallets", :html => {:class => "form-horizontal center"} do |f| %>
               Private Key: <input type="text" name="private_key">
               <input type="submit" value="Import Private Key" class="btn btn-primary">
-            </form>
+            <% end %>
             <%= link_to "skip", dashboard_path, class: "skip" %>
+            
           </div>
         </div>
       </div>

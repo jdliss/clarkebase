@@ -2,7 +2,15 @@
   <ul class="nav nav-pills nav-stacked left-side">
     <li class="nav-item">
       <br>
-      <span><a class="nav-link <%= 'active' if params[:controller] == 'dashboard' %>" href="/dashboard">Main</a></span>
+      <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-folder-open" aria-hidden="true"></i> Wallets</a>
+      <div class="collapse wallets" id="collapseExample">
+        <% @wallets.each do |wallet| %>
+          <a class="card card-block sidebar-wallet" href="#">
+            Wallet <%= wallet.id %>
+            <span class="pull-right"><%= wallet.balance %> CLC</span>
+          </a>
+        <% end %>
+      </div>
     </li>
     <hr>
     <br>

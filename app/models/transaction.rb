@@ -7,10 +7,10 @@ class Transaction < ActiveRecord::Base
   end
 
   def send_transaction
-    user = find_user(self.from)
-    service = ClarkeService.new(user)
-    unsigned = service.parsed_unsigned_payment(user.wallet.address, self.to, self.amount)
-    signed = service.parsed_signed_payment(unsigned)
+    user     = find_user(self.from)
+    service  = ClarkeService.new(user)
+    unsigned = service.parsed_unsigned_payment(user.primary_wallet.address, self.to, self.amount)
+    signed   = service.parsed_signed_payment(unsigned)
   end
 
 end

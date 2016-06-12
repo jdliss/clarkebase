@@ -1,48 +1,82 @@
 <%= render partial: 'layouts/nav' %>
 <%= render partial: 'layouts/side_menu' %>
+
+<div class="row flash-zone">
+  <%= render partial: 'layouts/flash' %>
+</div>
+
 <div class="col-sm-10 col-xs-12 main-content-area user-keys">
   <br>
   <div class="row">
-    <h4 class="page-header">Welcome <%= current_user.email %></h4>
+    <div class="page-header">
+      <strong>Welcome <%= current_user.email %></strong>
+      <span class="pull-right">
+        <button class="btn btn-success" data-toggle="modal" data-target="#dash-create-wallet">Create New Wallet</button>
+
+        <!--  modal / -->
+        <div class="modal fade" id="dash-create-wallet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="dashboardWallet">Create a New Wallet</h4>
+              </div>
+              <div class="modal-body"><center>
+                <button id="create-wallet" class="btn btn-lg btn-success" data-dismiss="modal">Generate a New Wallet</button>
+                <div>
+                  <br/>
+                  <h4>or</h4>
+                  <br/>
+                </div>
+                <h5>Load an Existing Wallet by importing it's Private Key</h5><br>
+                <form id="submit-key">
+                  Private Key: <input type="text" name="private_key">
+                  <input type="submit" value="Import Private Key" class="btn btn-primary">
+                </form>
+              </center></div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </div>
     <br>
     <hr>
   </div>
-  <div class="row">
-    <% if current_user && current_user.wallet %>
-      <p class="balance">Balance: <%= number_to_currency current_user.wallet.balance %></p>
-      <hr>
-  </div>
-  <span class="row">
-    <a href="#" data-toggle="modal" data-target="#address"><i class="fa fa-tag" aria-hidden="true"></i>Your Address</a>
-    <hr>
-  </span>
-    <% else %>
-    <div class="row">
-      <%= link_to "You need a wallet to get started", wallets_new_path, class: "btn btn-alert" %>
-    </div>
-    <% end %>
-</div>
+  <div class="row primary-wallet">
+    <% if current_user && current_user.primary_wallet %>
+      <span class="primary-wallet-info">
+        Balance: <%= number_to_currency current_user.primary_wallet.balance %>
+        <a class="pull-right" href="#" data-toggle="modal" data-target="#address"><i class="fa fa-tag" aria-hidden="true"></i>Your Address</a>
 
-
-<!--  modal / -->
-<div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">Your ClarkeCoin Address</h4>
-      </div>
-      <div class="modal-body">
-        <div class="inputs">
-        Address: <input id="addy" type="url" value="<%=current_user.wallet.address%>">
-        <button id="copy_btn" class="addy"><i class="fa fa-clipboard"></i></button>
+        <!--  modal / -->
+        <div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Your ClarkeCoin Address</h4>
+              </div>
+              <div class="modal-body">
+                <div class="inputs">
+                Address: <input id="addy" type="url" value="<%=current_user.primary_wallet.address%>">
+                <button id="copy_btn" class="addy"><i class="fa fa-clipboard"></i></button>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-      </div>
-    </div>
+      </span>
+      <br>
+      <hr>
+    <% else %>
+      <center><h3>Create a Wallet in order to get started!</h3></center>
+    <% end %>
   </div>
 </div>

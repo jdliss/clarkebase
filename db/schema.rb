@@ -54,8 +54,9 @@ ActiveRecord::Schema.define(version: 20160611183642) do
   create_table "wallets", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "private_key"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "status",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.text     "public_key"
   end
 

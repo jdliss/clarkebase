@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   get '/dashboard', to: 'dashboard#show'
-  get '/wallets/new', to: 'wallets#new'
+
+  resources :wallets, only: [:show, :new, :create]
   get '/transactions/new', to: 'transactions#new'
 
   get "/friends", to: "address_books#show", as: :friends
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
       resource :address_books, only: [:update]
     end
   end
+
 end
