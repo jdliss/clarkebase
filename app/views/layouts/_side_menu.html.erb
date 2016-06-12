@@ -4,7 +4,7 @@
       <br>
       <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-folder-open" aria-hidden="true"></i> Wallets</a>
       <div class="collapse" id="collapseExample">
-        <% current_user.wallets.each do |wallet| %>
+        <% @wallets.each do |wallet| %>
           <a class="card card-block sidebar-wallet" href="#">
             Wallet <%= wallet.id %>
             <span class="pull-right"><%= wallet.balance %> CLC</span>
