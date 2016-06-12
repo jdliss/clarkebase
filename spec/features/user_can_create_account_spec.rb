@@ -10,9 +10,9 @@ RSpec.feature "User can create account" do
     expect(current_path).to eq new_user_registration_path
 
     within(".sign-up-page") do
-      fill_in "Username",                 with: "pindell@example.com"
-      fill_in "Password",              with: "password"
-      fill_in "Password Confirmation", with: "password"
+      fill_in "EMAIL",                 with: "pindell@example.com"
+      fill_in "PASSWORD",              with: "password"
+      fill_in "CONFIRM", with: "password"
       click_button "Sign up"
     end
 

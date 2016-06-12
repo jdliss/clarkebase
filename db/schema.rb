@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20160611183642) do
   add_index "friendships", ["friend_user_id", "user_id"], name: "index_friendships_on_friend_user_id_and_user_id", unique: true, using: :btree
   add_index "friendships", ["user_id", "friend_user_id"], name: "index_friendships_on_user_id_and_friend_user_id", unique: true, using: :btree
 
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "status",     default: 0
+    t.integer  "amount"
+    t.text     "from"
+    t.text     "to"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     wallets_new_path
   end
+
 end
