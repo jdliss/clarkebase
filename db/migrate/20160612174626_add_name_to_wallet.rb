@@ -1,5 +1,5 @@
 class AddNameToWallet < ActiveRecord::Migration
   def change
-    add_column :wallets, :name, :string, :default => "Default"
+    add_column :wallets, :name, :string
   end
 end

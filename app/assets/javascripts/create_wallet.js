@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+  $('#submitName').prop('disabled', true);
+
+  $('#wallet_name').keyup(function() {
+    var input = $("#wallet_name").val();
+    if(input != "") {
+      $('#submitName').prop('disabled', false);
+    }
+  });
+
   $('#name-wallet').submit(function(e){
     event.preventDefault();
     var self = this;
@@ -29,8 +38,9 @@ $(document).ready(function(){
   });
 
     function appendWallet(data){
-      var nameArray = data.split("=")
-      var name      = nameArray[data.split("=").length - 1]  
+      var nameData  = data.split("=");
+      var nameArray = nameData[nameData.length - 1];
+      var name      = nameArray.split("+").join(" ");
       $('.wallets').append('<span class="card card-block sidebar-wallet"><a>' + name + '</a><span class="pull-right">0 CLC</span></span>');
       flashSuccess;
     }
