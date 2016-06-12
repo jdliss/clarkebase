@@ -20,8 +20,8 @@ feature "user can transfer coins to other use" do
 
       expect(page).to have_content "Send Coins"
 
-      fill_in "Receipient Email", with: user_b.email
-      fill_in "Amount", with: 5
+      fill_in "RECEIPIENT EMAIL", with: user_b.email
+      fill_in "AMOUNT", with: 5
 
       click_on "Send"
 
