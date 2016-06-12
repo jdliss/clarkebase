@@ -1,5 +1,4 @@
 class Api::V1::WalletsController < ApiController
-
   def create
     if params.dig("private_key")
       @private_key = KeyCleanerService.clean_user_input(params.dig("private_key"))
@@ -16,5 +15,4 @@ class Api::V1::WalletsController < ApiController
       render json: { message: 'error' }, status: 500
     end
   end
-
 end

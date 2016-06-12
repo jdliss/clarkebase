@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#show'
   get '/wallets/new', to: 'wallets#new'
 
+  get "/friends", to: "address_books#show", as: :friends
+
   namespace :api, default: { format: :json } do
     namespace :v1 do
       resource :wallets, only: [:create]
+      resource :address_books, only: [:update]
     end
   end
 end

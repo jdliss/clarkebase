@@ -32,6 +32,6 @@ $(document).ready(function(){
 
     function flashError(data){
       $('.flash').empty();
-      $('.flash').append('<div class="alert text-center alert-danger">Wallet not created, try again.</div>');
+      $('.flash').append('<div class="alert text-center alert-danger">Wallet not created, try again later.</div>');
     }
 })
