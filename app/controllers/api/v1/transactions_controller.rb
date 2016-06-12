@@ -1,8 +1,11 @@
 class Api::V1::TransactionsController < ApiController
 
   def create
-    to = params.dig("address") if params.dig("address")
-    to = User.find_by(email: params.dig("to")).primary_wallet.address if params.dig("to") != ""
+    if params.dig("address") != "" && params.dig("address") != nil
+      to = params.dig("address")
+    else
+      to = params.dig("to")
+    end
     amount = params.dig("amount")
 
     transaction = Transaction.new(
