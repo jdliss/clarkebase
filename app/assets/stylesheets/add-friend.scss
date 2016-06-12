@@ -1,0 +1,39 @@
+#add-a-friend{
+  text-align:center;
+  padding-top:5%;
+  font-family: 'Lato', Arial, sans-serif;
+  color: #000;
+
+  .card-block {
+    background-color: #fff;
+  }
+
+  .card-header {
+    font-size: 24px;
+    background-color: #2c3e50;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: #fff;
+
+  }
+
+  .log {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .check {
+    padding-left: 5%;
+    font-size: 14px
+  }
+
+}
+
+.forgot-password {
+    font-size: 14px;
+}
+
+.scrollable {
+  overflow:scroll;
+  height: 65vh;
+}

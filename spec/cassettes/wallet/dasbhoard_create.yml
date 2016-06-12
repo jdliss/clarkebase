@@ -5,7 +5,7 @@ http_interactions:
     uri: http://159.203.206.61:3000/balance
     body:
       encoding: UTF-8
-      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAslVM/Qi8Z7jjjjNkOetAIBIT0xvhbwePvHzVLiXxuHtKjz8JdLfOPQwdDjeeDwuyHgh3RMPJ9vpENL06AnIs3CD6MNRf3kU7392+rzftegkfkiN8mc+gg8iKeZDgRyChgLIy7Zjq5xokp+WrTvRufJ2+pWzyB7LFnOTlgHRZJhUejlz06CRyjymwM+0OI3Cw5zxkXf7iipnUD9SRqBEsNPjZjx8I3CREbpJjhm8ic0Eeau2z8qOgkoBqc6tnZ5EeOgcRiZdXg18G8H4PGrlJCozZN3e8QsOQ5GgNAhXGYdF3ceckoN0ibmYuzA26bgFnbfZjKA3tZ/Njm6nHD1b5CwIDAQAB"
+      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwoeNPlGZLWHP+C4sjEykQV4R0d53Mye3GPYvB9ZPP5zFz+gqp0BZaAcRWi0ehCV1yztWvcwghbFXf04lNnBq8bsVCnl8HKOZ4yzSxLBAPU7Vj3rgj293mHSJtuwMyXZHjWSDiQYAZFnxaXlHbM2PbXIx4hOBXjsvCgE3nHxIt7+MpnLj0F43XJdF0u2zZtNPrwMId6uojeC5aM2obSXnr7+ZKPJJjBLPJaVW3xagbTWR2gXBMDA6smPYp0yI+DLXBvPb5X8eyPTn6VaxcNuhat9x7AJctO6V7nM0tzR3/fk3hH4Wq3g6qgfdHK8nL2OuSwiv8uwM0VahOe8qw30liwIDAQAB"
         }'
     headers:
       User-Agent:
@@ -28,18 +28,18 @@ http_interactions:
       Server:
       - http-kit
       Date:
-      - Sun, 12 Jun 2016 01:30:47 GMT
+      - Sun, 12 Jun 2016 02:16:14 GMT
     body:
       encoding: UTF-8
-      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAslVM/Qi8Z7jjjjNkOetAIBIT0xvhbwePvHzVLiXxuHtKjz8JdLfOPQwdDjeeDwuyHgh3RMPJ9vpENL06AnIs3CD6MNRf3kU7392+rzftegkfkiN8mc+gg8iKeZDgRyChgLIy7Zjq5xokp+WrTvRufJ2+pWzyB7LFnOTlgHRZJhUejlz06CRyjymwM+0OI3Cw5zxkXf7iipnUD9SRqBEsNPjZjx8I3CREbpJjhm8ic0Eeau2z8qOgkoBqc6tnZ5EeOgcRiZdXg18G8H4PGrlJCozZN3e8QsOQ5GgNAhXGYdF3ceckoN0ibmYuzA26bgFnbfZjKA3tZ/Njm6nHD1b5CwIDAQAB","balance":0}}'
+      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwoeNPlGZLWHP+C4sjEykQV4R0d53Mye3GPYvB9ZPP5zFz+gqp0BZaAcRWi0ehCV1yztWvcwghbFXf04lNnBq8bsVCnl8HKOZ4yzSxLBAPU7Vj3rgj293mHSJtuwMyXZHjWSDiQYAZFnxaXlHbM2PbXIx4hOBXjsvCgE3nHxIt7+MpnLj0F43XJdF0u2zZtNPrwMId6uojeC5aM2obSXnr7+ZKPJJjBLPJaVW3xagbTWR2gXBMDA6smPYp0yI+DLXBvPb5X8eyPTn6VaxcNuhat9x7AJctO6V7nM0tzR3/fk3hH4Wq3g6qgfdHK8nL2OuSwiv8uwM0VahOe8qw30liwIDAQAB","balance":0}}'
     http_version: 
-  recorded_at: Sun, 12 Jun 2016 01:30:47 GMT
+  recorded_at: Sun, 12 Jun 2016 02:16:15 GMT
 - request:
     method: post
     uri: http://159.203.206.61:3000/balance
     body:
       encoding: UTF-8
-      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAslVM/Qi8Z7jjjjNkOetAIBIT0xvhbwePvHzVLiXxuHtKjz8JdLfOPQwdDjeeDwuyHgh3RMPJ9vpENL06AnIs3CD6MNRf3kU7392+rzftegkfkiN8mc+gg8iKeZDgRyChgLIy7Zjq5xokp+WrTvRufJ2+pWzyB7LFnOTlgHRZJhUejlz06CRyjymwM+0OI3Cw5zxkXf7iipnUD9SRqBEsNPjZjx8I3CREbpJjhm8ic0Eeau2z8qOgkoBqc6tnZ5EeOgcRiZdXg18G8H4PGrlJCozZN3e8QsOQ5GgNAhXGYdF3ceckoN0ibmYuzA26bgFnbfZjKA3tZ/Njm6nHD1b5CwIDAQAB"
+      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwoeNPlGZLWHP+C4sjEykQV4R0d53Mye3GPYvB9ZPP5zFz+gqp0BZaAcRWi0ehCV1yztWvcwghbFXf04lNnBq8bsVCnl8HKOZ4yzSxLBAPU7Vj3rgj293mHSJtuwMyXZHjWSDiQYAZFnxaXlHbM2PbXIx4hOBXjsvCgE3nHxIt7+MpnLj0F43XJdF0u2zZtNPrwMId6uojeC5aM2obSXnr7+ZKPJJjBLPJaVW3xagbTWR2gXBMDA6smPYp0yI+DLXBvPb5X8eyPTn6VaxcNuhat9x7AJctO6V7nM0tzR3/fk3hH4Wq3g6qgfdHK8nL2OuSwiv8uwM0VahOe8qw30liwIDAQAB"
         }'
     headers:
       User-Agent:
@@ -62,10 +62,10 @@ http_interactions:
       Server:
       - http-kit
       Date:
-      - Sun, 12 Jun 2016 01:30:48 GMT
+      - Sun, 12 Jun 2016 02:16:14 GMT
     body:
       encoding: UTF-8
-      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAslVM/Qi8Z7jjjjNkOetAIBIT0xvhbwePvHzVLiXxuHtKjz8JdLfOPQwdDjeeDwuyHgh3RMPJ9vpENL06AnIs3CD6MNRf3kU7392+rzftegkfkiN8mc+gg8iKeZDgRyChgLIy7Zjq5xokp+WrTvRufJ2+pWzyB7LFnOTlgHRZJhUejlz06CRyjymwM+0OI3Cw5zxkXf7iipnUD9SRqBEsNPjZjx8I3CREbpJjhm8ic0Eeau2z8qOgkoBqc6tnZ5EeOgcRiZdXg18G8H4PGrlJCozZN3e8QsOQ5GgNAhXGYdF3ceckoN0ibmYuzA26bgFnbfZjKA3tZ/Njm6nHD1b5CwIDAQAB","balance":0}}'
+      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwoeNPlGZLWHP+C4sjEykQV4R0d53Mye3GPYvB9ZPP5zFz+gqp0BZaAcRWi0ehCV1yztWvcwghbFXf04lNnBq8bsVCnl8HKOZ4yzSxLBAPU7Vj3rgj293mHSJtuwMyXZHjWSDiQYAZFnxaXlHbM2PbXIx4hOBXjsvCgE3nHxIt7+MpnLj0F43XJdF0u2zZtNPrwMId6uojeC5aM2obSXnr7+ZKPJJjBLPJaVW3xagbTWR2gXBMDA6smPYp0yI+DLXBvPb5X8eyPTn6VaxcNuhat9x7AJctO6V7nM0tzR3/fk3hH4Wq3g6qgfdHK8nL2OuSwiv8uwM0VahOe8qw30liwIDAQAB","balance":0}}'
     http_version: 
-  recorded_at: Sun, 12 Jun 2016 01:30:48 GMT
+  recorded_at: Sun, 12 Jun 2016 02:16:15 GMT
 recorded_with: VCR 3.0.3
