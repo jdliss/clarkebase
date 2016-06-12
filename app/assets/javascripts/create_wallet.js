@@ -41,7 +41,8 @@ $(document).ready(function(){
       var nameData  = data.split("=");
       var nameArray = nameData[nameData.length - 1];
       var name      = nameArray.split("+").join(" ");
-      $('.wallets').append('<span class="card card-block sidebar-wallet"><a>' + name + '</a><span class="pull-right">0 CLC</span></span>');
+      var href      = '<a href="/dashboard/wallets/' + name + '">' + name + '</a>'
+      $('.wallets').append('<span class="card card-block sidebar-wallet"><a>' + href + '</a><span class="pull-right">0 CLC</span></span>');
       flashSuccess;
     }
 
