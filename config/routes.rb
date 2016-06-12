@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#show'
 
   resources :wallets, only: [:show, :new, :create]
+
+  resource :dashboard do
+    collection do
+      get '/wallets/:slug', to: 'wallets#show', as: "whallet"
+    end
+  end
+
   get '/transactions/new', to: 'transactions#new'
 
   get "/friends", to: "address_books#show", as: :friends

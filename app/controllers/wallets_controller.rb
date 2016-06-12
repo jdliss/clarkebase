@@ -2,7 +2,7 @@ class WalletsController < ApplicationController
   before_action :wallets
 
   def show
-    @wallet = Wallet.find(params["id"])
+    @wallet = Wallet.find_by(slug: params['slug'])
   end
 
   def new

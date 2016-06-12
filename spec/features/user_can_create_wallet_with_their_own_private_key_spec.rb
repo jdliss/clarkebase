@@ -6,7 +6,7 @@ RSpec.feature "User can create a wallet with their own key" do
       user = create(:user)
       login_as user, scope: :user
 
-      visit '/wallets/new'
+      visit new_wallet_path
 
       expect(user.primary_wallet).to eq(nil)
 
