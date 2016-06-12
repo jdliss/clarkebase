@@ -44,7 +44,7 @@
     <br>
     <hr>
   </div>
-  <div class="row">
+  <div class="row primary-wallet">
     <% if current_user && current_user.primary_wallet %>
       <span class="primary-wallet-info">
         Balance: <%= number_to_currency current_user.primary_wallet.balance %>
@@ -72,7 +72,8 @@
             </div>
           </div>
         </div>
-      </span><br>
+      </span>
+      <br>
       <hr>
     <% else %>
       <center><h3>Create a Wallet in order to get started!</h3></center>
