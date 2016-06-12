@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   end
 
   def wallets
-    @wallets = current_user.wallets
+    @wallets = current_user.wallets if current_user
   end
-
 end

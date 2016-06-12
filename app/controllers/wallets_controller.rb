@@ -1,4 +1,10 @@
 class WalletsController < ApplicationController
+  before_action :wallets
+
+  def show
+    @wallet = Wallet.find(params["id"])
+  end
+
   def new
     @wallet = Wallet.new
   end
