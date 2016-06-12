@@ -14,6 +14,11 @@ RSpec.feature "User can see all their wallets from dasbhoard" do
         expect(page).to have_content "Create a Wallet in order to get started!"
       end
 
+      within(".sidebar") do
+        expect(page).to_not have_content("Wallet 1")
+        expect(page).to_not have_content("0 CLC")
+      end
+
       within(".page-header") do
         click_button "Create New Wallet"
         fill_in "private_key", with: ENV["PRIVATE_KEY"]
@@ -30,6 +35,26 @@ RSpec.feature "User can see all their wallets from dasbhoard" do
 
       within(".wallets") do
         expect(page).to have_content("Wallet 1")
+        expect(page).to_not have_content("Wallet 2")
+        expect(page).to have_content("0 CLC")
+      end
+
+      within(".page-header") do
+        click_button "Create New Wallet"
+        click_button "Generate a New Wallet"
+      end
+
+      wait_for_ajax
+
+      expect(current_path).to eq dashboard_path
+
+      within(".sidebar") do
+        click_link "Wallets"
+      end
+
+      within(".wallets") do
+        expect(page).to have_content("Wallet 1")
+        expect(page).to have_content("Wallet 2")
         expect(page).to have_content("0 CLC")
       end
     end
