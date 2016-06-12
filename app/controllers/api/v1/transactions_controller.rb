@@ -10,7 +10,8 @@ class Api::V1::TransactionsController < ApiController
     transaction = Transaction.new(
       from: from_wallet,
       to: to,
-      amount: amount
+      amount: amount,
+      wallet_id: params[:wallet][:id]
     )
 
     if transaction.save

@@ -1,5 +1,29 @@
 body {
   font-family: "Lato"
+
+}
+
+table {
+  th {
+    text-decoration: underline;
+  }
+
+  tbody {
+
+  tr {
+    border-bottom: 1px solid black;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  td {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+}
+
 }
 
 ::-webkit-input-placeholder { font-size:12px; }

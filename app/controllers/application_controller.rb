@@ -8,5 +8,5 @@ class ApplicationController < ActionController::Base
   def wallets
     @wallets = current_user.wallets
   end
-
+  
 end

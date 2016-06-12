@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10">
+      <div class="card-header">
+        Sent Transactions
+      </div>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th width="400">To</th>
+              <th width="400">Amount</th>
+              <th width="400">Status</th>
+            </tr>
+          </thead>
+          <% @transactions.each do |transaction| %>
+            <tbody class="sent-transactions">
+              <tr>
+                <td><%= transaction.to_email %></td>
+                <td>CLC:<%= transaction.amount %></td>
+                <td><%= transaction.status %></td>
+              </tr>
+            </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

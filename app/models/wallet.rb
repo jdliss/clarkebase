@@ -4,6 +4,7 @@ require 'keycleaner_service'
 class Wallet < ActiveRecord::Base
   belongs_to  :user
   before_save :generate_keys
+  has_many :transactions
 
   enum status: %w(basic primary)
 
