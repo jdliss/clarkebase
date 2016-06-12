@@ -5,8 +5,9 @@ class Api::V1::WalletsController < ApiController
     end
 
     @wallet = Wallet.new(
-      user_id: current_user.id,
+      user_id:     current_user.id,
       private_key: @private_key,
+      name:        params["wallet_name"]
     )
 
     if @wallet.save

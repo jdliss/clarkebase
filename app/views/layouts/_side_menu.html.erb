@@ -6,7 +6,7 @@
       <div class="collapse wallets" id="collapseExample">
         <% @wallets.each do |wallet| %>
           <span class="card card-block sidebar-wallet">
-            <%= link_to wallet.name, wallet_path(wallet) %>
+            <%= link_to wallet.name, wallet_path(wallet), class: "text-overflow" %>
             <span class="pull-right"><%= wallet.balance %> CLC</span>
           </span>
         <% end %>

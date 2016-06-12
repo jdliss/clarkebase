@@ -1,9 +1,13 @@
 $(document).ready(function(){
-  $('#create-wallet').on('click', function(){
+
+  $('#name-wallet').submit(function(e){
+    event.preventDefault();
     var self = this;
+    var value = $("#name-wallet")
     $.ajax({
       method:   'POST',
       url:      '/api/v1/wallets',
+      data:     value,
       dataType: 'JSON',
       success:  flashSuccess,
       error:    flashError
