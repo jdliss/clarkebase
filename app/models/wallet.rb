@@ -23,6 +23,10 @@ class Wallet < ActiveRecord::Base
     clarke_service.parsed_balance(address)
   end
 
+  def balance_with_id
+    "Wallet: #{id} - CLC: #{balance}"
+  end
+
 private
 
   def clarke_service

@@ -17,7 +17,9 @@
                     <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
                     <input class="form-control" placeholder="RECEIPIENT EMAIL" type="email" aria-describedby="sizing-addon1" name="to">
                   </div>
-                  <br><h6>Or:</h6><br>
+                  <div class="send-help">
+                    <a href="#" data-toggle="modal" data-target="#send-help"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Or:</a>
+                  </div>
                   <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
                     <input class="form-control" id="from" placeholder="RECEIPIENT CLC ADDRESS" aria-describedby="sizing-addon1" name="address">
@@ -29,7 +31,8 @@
                     <input autocomplete="off" id="amount" class="form-control" type="amount" placeholder="AMOUNT" name="amount"/>
                   </div>
                   <hr>
-                  <br>
+                    <p class="wallet-select">Send From: <%= collection_select(:wallet, :id, current_user.wallets, :id, :balance_with_id ) %></p>
+                  <hr>
                   <input type="submit" id="sendCoin" class="btn btn-success btn-lg btn-block log" value="Send"></input>
                 </div>
               </form>
@@ -41,5 +44,28 @@
       <%= link_to "You need a wallet to get started", wallets_new_path, class: "btn btn-alert" %>
     </div>
     <% end %>
+  </div>
+</div>
+
+
+<!-- modal -->
+
+<div class="modal fade" id="send-help" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel"> What is this?</h4>
+      </div>
+      <div class="modal-body">
+        You can either send money to an email address, where it will be deposited into the recepients primary wallet, or
+        send directly to a wallet address.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Done</button>
+      </div>
+    </div>
   </div>
 </div>
