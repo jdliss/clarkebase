@@ -17,6 +17,9 @@
         <li class="nav-item container pull-xs-right">
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-secondary-outline" %>
         </li>
+        <li class="nav-item container pull-xs-right">
+          <%= link_to "Welcome #{current_user.email}", dashboard_path, class: "btn btn-secondary-outline" %>
+        </li>
       <% end  %>
     </ul>
   </div>

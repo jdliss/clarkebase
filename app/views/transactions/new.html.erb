@@ -1,0 +1,45 @@
+<%= render partial: 'layouts/nav' %>
+<%= render partial: 'layouts/side_menu' %>
+<div class="col-sm-10 col-xs-12 main-content-area new-transaction">
+  <br>
+  <div class="row">
+    <% if current_user && current_user.wallet %>
+    <div class="container">
+      <div class="col-sm-10 col-sm-offset-4 col-md-6 10 col-md-offset-3">
+          <div class="new-transaction card">
+            <div class="card-header">
+                Send Coins
+            </div>
+            <div class="card-block">
+              <form id="submit-transaction">
+                <div class="form-group">
+                  <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <input class="form-control" placeholder="RECEIPIENT EMAIL" type="email" aria-describedby="sizing-addon1" name="to">
+                  </div>
+                  <br><h6>Or:</h6><br>
+                  <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
+                    <input class="form-control" id="from" placeholder="RECEIPIENT CLC ADDRESS" aria-describedby="sizing-addon1" name="address">
+                  </div>
+                  <br>
+                  <hr>
+                  <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="sizing-addon1">CLC</i></span>
+                    <input autocomplete="off" id="amount" class="form-control" type="amount" placeholder="AMOUNT" name="amount"/>
+                  </div>
+                  <hr>
+                  <br>
+                  <input type="submit" id="sendCoin" class="btn btn-success btn-lg btn-block log" value="Send"></input>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    <% else %>
+    <div class="row">
+      <%= link_to "You need a wallet to get started", wallets_new_path, class: "btn btn-alert" %>
+    </div>
+    <% end %>
+  </div>
+</div>
