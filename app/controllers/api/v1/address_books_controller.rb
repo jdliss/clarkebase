@@ -1,8 +1,8 @@
 class Api::V1::AddressBooksController < ApiController
   def update
-    if params["email"] != ""
+    if params["email"] != "" || params["email"] != nil
       @friend = User.find_by_email(params["email"])
-    elsif params["key"] != ""
+    elsif params["key"] != "" || params["key"] != nil
       @friend = Wallet.find_by(public_key: params["key"]).user
     end
 
