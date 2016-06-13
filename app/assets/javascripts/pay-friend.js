@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.toggle-pay-modal').on('click', function() {
+  $('body').on('click', '.toggle-pay-modal', function() {
     event.preventDefault();
     var email = $(".toggle-address-modal").attr("data-email");
     var address = $(".toggle-address-modal").attr("data-address");

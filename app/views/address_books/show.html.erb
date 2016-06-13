@@ -9,10 +9,10 @@
       </div>
       <br>
       <div class="scrollable">
-        <% current_user.friends.reverse.each do |friend| %>
+        <% current_user.friends.order('users.email').each do |friend| %>
           <div class="friend-item">
             <p><%= "#{friend.email}" %></p>
-            <span>
+            <span id="toggle-parent">
               <a href="" class="toggle-address-modal" data-email="<%= friend.email %>" data-address="<%= friend.primary_wallet.address if friend.primary_wallet %>" ><i class="fa fa-tag" aria-hidden="true"></i>Address</a>
               <a href="" class="toggle-pay-modal"><i class="fa fa-money" aria-hidden="true"></i>Pay</a>
               <hr>
