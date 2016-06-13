@@ -16,8 +16,9 @@ RSpec.feature "User can create a wallet from the dasbhoard" do
 
       within(".page-header") do
         click_button "Create New Wallet"
-        fill_in "private_key", with: ENV["PRIVATE_KEY"]
-        click_button "Import Private Key"
+        fill_in :wallet_name, with: "Test Wallet"
+        fill_in :private_key, with: ENV["PRIVATE_KEY"]
+        click_button "Create"
       end
 
       wait_for_ajax
@@ -45,11 +46,8 @@ RSpec.feature "User can create a wallet from the dasbhoard" do
 
       within(".page-header") do
         click_button "Create New Wallet"
-
-        wait_for_ajax
-        
-        fill_in "WALLET NAME", with: "Soo Dreamy"
-        click_button "Generate a New Wallet"
+        fill_in :wallet_name, with: "No Private Key"
+        click_button "Create"
       end
 
       expect(current_path).to eq dashboard_path
