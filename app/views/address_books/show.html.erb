@@ -10,12 +10,14 @@
       <br>
       <div class="scrollable">
         <% current_user.friends.reverse.each do |friend| %>
-          <p><%= "#{friend.email}" %></p>
-          <span>
-            <a href="" class="toggle-address-modal" data-email="<%= friend.email %>" data-address="<%= friend.primary_wallet.address if friend.primary_wallet %>" ><i class="fa fa-tag" aria-hidden="true"></i>Address</a>
-            <a href="" class="toggle-pay-modal" data-email="<%= friend.email %>" data-address="<%= friend.primary_wallet.address if friend.primary_wallet %>" ><i class="fa fa-money" aria-hidden="true"></i>Pay</a>
-            <hr>
-          </span>
+          <div class="friend-item">
+            <p><%= "#{friend.email}" %></p>
+            <span>
+              <a href="" class="toggle-address-modal" data-email="<%= friend.email %>" data-address="<%= friend.primary_wallet.address if friend.primary_wallet %>" ><i class="fa fa-tag" aria-hidden="true"></i>Address</a>
+              <a href="" class="toggle-pay-modal"><i class="fa fa-money" aria-hidden="true"></i>Pay</a>
+              <hr>
+            </span>
+          </div>
         <% end %>
       </div>
 
@@ -55,11 +57,11 @@
                   <hr>
                   <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="sizing-addon1">CLC</i></span>
-                    <input autocomplete="off" id="amount" class="form-control" type="amount" placeholder="AMOUNT" name="amount"/>
-                  </div>
-                  <hr>
-                    <p class="wallet-select">Send From: <%= collection_select(:wallet, :id, current_user.wallets, :id, :balance_with_id ) %></p>
-                  <hr>
+                  <input autocomplete="off" id="amount" class="form-control" type="amount" placeholder="AMOUNT" name="amount"/>
+                </div>
+                <hr>
+                <p class="wallet-select">Send From: <%= collection_select(:wallet, :id, current_user.wallets, :id, :balance_with_id ) %></p>
+                <hr>
                 <br>
                 <input type="submit" id="sendCoin" class="btn btn-success btn-lg btn-block log" value="Send"></input>
               </div>
