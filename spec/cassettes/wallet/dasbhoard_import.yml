@@ -967,4 +967,841 @@ http_interactions:
       string: '70308019196720'
     http_version: 
   recorded_at: Sun, 12 Jun 2016 23:50:58 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:54759/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 00:03:24 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70295918996180'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 00:03:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:54985/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:11:37 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70333435898800'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:11:37 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55011/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:13:11 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70331109086200'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:13:11 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55145/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:23:45 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70265748206440'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:23:45 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55160/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:25:14 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70135100043220'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:25:14 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55182/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:26:23 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70131997823940'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:26:23 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55251/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:28:28 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70097210658800'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:28:28 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55266/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:29:49 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70178173367840'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:29:49 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55284/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:33:20 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70314994381440'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:33:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55299/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:34:02 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70159965882160'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:34:02 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55315/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:35:55 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70262996598220'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:35:55 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55346/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:38:05 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70272860026360'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:38:05 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55361/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:38:59 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70222164702500'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:38:59 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55374/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:39:35 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70267466812680'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:39:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55388/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:43:22 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70236607271060'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:43:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55415/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:45:36 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70324175083440'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:45:36 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55445/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:50:32 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70238095921020'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:50:32 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55460/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:51:08 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70297793733300'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:51:08 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55475/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:52:12 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70148429613180'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:52:12 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55487/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:52:52 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70186141729600'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:52:52 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55508/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:54:22 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70278811411740'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:54:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55523/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:55:14 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70104075209620'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:55:14 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55560/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:58:10 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70348067414980'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:58:10 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55579/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 02:59:48 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70099047580740'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 02:59:48 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:55604/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 03:03:10 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70197215601660'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 03:03:10 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:56683/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 16:15:05 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70250230513280'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 16:15:05 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:56736/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Mon, 13 Jun 2016 16:27:37 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70148981325600'
+    http_version: 
+  recorded_at: Mon, 13 Jun 2016 16:27:37 GMT
 recorded_with: VCR 3.0.3

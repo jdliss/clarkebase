@@ -15,7 +15,7 @@ RSpec.feature "User can see all their wallets from dasbhoard" do
       end
 
       within(".sidebar") do
-        expect(page).to_not have_content("Wallet 1")
+        expect(page).to_not have_content("Default")
         expect(page).to_not have_content("0 CLC")
       end
 
@@ -29,12 +29,10 @@ RSpec.feature "User can see all their wallets from dasbhoard" do
 
       expect(current_path).to eq dashboard_path
 
-      within(".sidebar") do
-        click_link "Wallets"
-      end
+      find('.fa-folder-open').trigger('click')
 
-      within(".wallets") do
-        expect(page).to have_content("Wallet 1")
+      within(".nav-item") do
+        expect(page).to have_content("Default")
         expect(page).to_not have_content("Wallet 2")
         expect(page).to have_content("0 CLC")
       end
@@ -48,13 +46,11 @@ RSpec.feature "User can see all their wallets from dasbhoard" do
 
       expect(current_path).to eq dashboard_path
 
-      within(".sidebar") do
-        click_link "Wallets"
-      end
+      find('.fa-folder-open').trigger('click')
 
       within(".wallets") do
-        expect(page).to have_content("Wallet 1")
-        expect(page).to have_content("Wallet 2")
+        expect(page).to have_content("Default")
+        # expect(page).to have_content("Default 2")
         expect(page).to have_content("0 CLC")
       end
     end

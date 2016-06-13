@@ -10,8 +10,8 @@ class WalletsController < ApplicationController
   end
 
   def create
-    if key_params["wallet"]
-      @private_key = KeyCleanerService.clean_user_input(key_params.dig("wallet", "private_key"))
+    if params.dig("private_key")
+      @private_key = KeyCleanerService.clean_user_input(params.dig("private_key"))
     end
 
     @wallet = Wallet.new(
@@ -24,12 +24,8 @@ class WalletsController < ApplicationController
       flash[:notice] = "Wallet Created!"
       redirect_to dashboard_path
     else
+      # need some validation
       flash.now[:notice] = "Error with Submitted Private Key!"
     end
   end
-
-  private
-    def key_params
-      params.permit("wallet")
-    end
 end

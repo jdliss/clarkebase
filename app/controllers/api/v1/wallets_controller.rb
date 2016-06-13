@@ -11,8 +11,6 @@ class Api::V1::WalletsController < ApiController
     )
 
     if @wallet.save
-      # when you make a wallet 'primary' - it removes all other 'primary' wallets
-      # before_update?
       @wallet.primary! if current_user.primary_wallet.nil?
       render json: { message: 'success' }, status: 200
     else
