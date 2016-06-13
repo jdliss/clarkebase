@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
-  get '/users/:id/dashboard/wallets/:slug', to: 'wallets#show', as: "whallet"
 
   root to: 'home#index'
 
   get '/dashboard', to: 'dashboard#show'
 
   resources :wallets, only: [:show, :new, :create]
+
+  resource :dashboard do
+    collection do
+      get '/wallets/:slug', to: 'wallets#show', as: "whallet"
+    end
+  end
 
   get '/transactions/new', to: 'transactions#new'
 

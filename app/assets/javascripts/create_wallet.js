@@ -47,11 +47,13 @@ $(document).ready(function(){
     }
 
     function flashSuccess(data){
+      $('#dash-create-wallet').modal('hide');
       $('.flash').empty();
       $('.flash').append('<div class="alert text-center alert-success">Your Wallet has been created!</div>');
     }
 
     function flashError(data){
+      $('#dash-create-wallet').modal('hide');
       $('.flash').empty();
       $('.flash').append('<div class="alert text-center alert-danger">Wallet not created, try again later.</div>');
     }
