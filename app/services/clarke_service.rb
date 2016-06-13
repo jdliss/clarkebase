@@ -5,7 +5,7 @@ class ClarkeService
     @connection = Faraday.new(url: 'http://159.203.206.61:3000')
   end
 
-  def get_balance(address, , , )
+  def get_balance(address)
     @connection.post do |req|
       req.url '/balance'
       req.headers['Content-Type'] = 'application/json'
