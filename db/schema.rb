@@ -57,9 +57,11 @@ ActiveRecord::Schema.define(version: 20160613221604) do
     t.integer  "user_id"
     t.text     "private_key"
     t.integer  "status",      default: 0
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.text     "public_key"
+    t.string   "name",        default: "Default"
+    t.string   "slug"
   end
 
   add_index "wallets", ["user_id"], name: "index_wallets_on_user_id", using: :btree

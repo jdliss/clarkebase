@@ -1,4 +1,7 @@
 <%= render partial: 'layouts/nav' %>
 <%= render partial: 'layouts/side_menu' %>
 
-<h1>Wallet <%= @wallet.id %> Show Page</h1>
+<h1><%= @wallet.name %></h1>
+<h3>Balance: <%= @wallet.balance %> CLC</h3>
+<p> toggle primary role </p>
+<p> show all transactions </p>
