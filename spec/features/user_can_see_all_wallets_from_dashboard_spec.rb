@@ -36,7 +36,7 @@ RSpec.feature "User can see all their wallets from dasbhoard" do
       within(".wallets") do
         expect(page).to have_content("Wallet 1")
         expect(page).to_not have_content("Wallet 2")
-        expect(page).to have_content("0 CLC")
+        expect(page).to have_content("2503 CLC")
       end
 
       within(".page-header") do

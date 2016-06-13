@@ -55,9 +55,11 @@
                   <hr>
                   <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="sizing-addon1">CLC</i></span>
-                  <input autocomplete="off" id="amount" class="form-control" type="amount" placeholder="AMOUNT" name="amount"/>
-                </div>
-                <hr>
+                    <input autocomplete="off" id="amount" class="form-control" type="amount" placeholder="AMOUNT" name="amount"/>
+                  </div>
+                  <hr>
+                    <p class="wallet-select">Send From: <%= collection_select(:wallet, :id, current_user.wallets, :id, :balance_with_id ) %></p>
+                  <hr>
                 <br>
                 <input type="submit" id="sendCoin" class="btn btn-success btn-lg btn-block log" value="Send"></input>
               </div>

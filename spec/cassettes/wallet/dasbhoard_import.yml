@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://127.0.0.1:64057/__identify__
+    uri: http://127.0.0.1:60429/__identify__
     body:
       encoding: US-ASCII
       string: ''
@@ -21,53 +21,22 @@ http_interactions:
       Server:
       - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
       Date:
-      - Sun, 12 Jun 2016 02:15:43 GMT
+      - Mon, 13 Jun 2016 00:09:17 GMT
       Content-Length:
       - '14'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '70111358407680'
+      string: '70108394772540'
     http_version: 
-  recorded_at: Sun, 12 Jun 2016 02:15:43 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:64081/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
-      Date:
-      - Sun, 12 Jun 2016 02:16:10 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '70164187247400'
-    http_version: 
-  recorded_at: Sun, 12 Jun 2016 02:16:10 GMT
+  recorded_at: Mon, 13 Jun 2016 00:09:17 GMT
 - request:
     method: post
     uri: http://159.203.206.61:3000/balance
     body:
       encoding: UTF-8
-      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0kLSxA5CZjocH+Q6jqWR91Cd1z4k59aIgElIgozNlkTlXfBU0hgBN1xAhua7xM/Qe6hDDq1Ez/DaEoLDGn/XGjtS9FhdT+KlAvD7G6aW8HTf5MBKwwjpLk3gAOSgyHUk1BQPPeUkmHqkOgE9Joxgh6wULKAz/2B6uB2u08X2kBPCaB6zdGfIoab92+aVEYuVue4+pb0L9buIHAS+QU8k6jfAySCP+LuofJtcpgDN8tP3r4f2rFj9of6RMcaIuPUIBgdtc0ek1fjl3EUSBivBqqynFf2vv5npmiX+O1riT3TxKA+wnF497oZhBkITByGb876XkZK02IDvv4AnHxINswIDAQAB"
+      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB"
         }'
     headers:
       User-Agent:
@@ -86,22 +55,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '450'
+      - '453'
       Server:
       - http-kit
       Date:
-      - Sun, 12 Jun 2016 02:16:13 GMT
+      - Mon, 13 Jun 2016 00:09:21 GMT
     body:
       encoding: UTF-8
-      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0kLSxA5CZjocH+Q6jqWR91Cd1z4k59aIgElIgozNlkTlXfBU0hgBN1xAhua7xM/Qe6hDDq1Ez/DaEoLDGn/XGjtS9FhdT+KlAvD7G6aW8HTf5MBKwwjpLk3gAOSgyHUk1BQPPeUkmHqkOgE9Joxgh6wULKAz/2B6uB2u08X2kBPCaB6zdGfIoab92+aVEYuVue4+pb0L9buIHAS+QU8k6jfAySCP+LuofJtcpgDN8tP3r4f2rFj9of6RMcaIuPUIBgdtc0ek1fjl3EUSBivBqqynFf2vv5npmiX+O1riT3TxKA+wnF497oZhBkITByGb876XkZK02IDvv4AnHxINswIDAQAB","balance":0}}'
+      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","balance":2503}}'
     http_version: 
-  recorded_at: Sun, 12 Jun 2016 02:16:13 GMT
+  recorded_at: Mon, 13 Jun 2016 00:09:21 GMT
 - request:
     method: post
     uri: http://159.203.206.61:3000/balance
     body:
       encoding: UTF-8
-      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0kLSxA5CZjocH+Q6jqWR91Cd1z4k59aIgElIgozNlkTlXfBU0hgBN1xAhua7xM/Qe6hDDq1Ez/DaEoLDGn/XGjtS9FhdT+KlAvD7G6aW8HTf5MBKwwjpLk3gAOSgyHUk1BQPPeUkmHqkOgE9Joxgh6wULKAz/2B6uB2u08X2kBPCaB6zdGfIoab92+aVEYuVue4+pb0L9buIHAS+QU8k6jfAySCP+LuofJtcpgDN8tP3r4f2rFj9of6RMcaIuPUIBgdtc0ek1fjl3EUSBivBqqynFf2vv5npmiX+O1riT3TxKA+wnF497oZhBkITByGb876XkZK02IDvv4AnHxINswIDAQAB"
+      string: '{ "address": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB"
         }'
     headers:
       User-Agent:
@@ -120,45 +89,14 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '450'
+      - '453'
       Server:
       - http-kit
       Date:
-      - Sun, 12 Jun 2016 02:16:13 GMT
+      - Mon, 13 Jun 2016 00:09:22 GMT
     body:
       encoding: UTF-8
-      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0kLSxA5CZjocH+Q6jqWR91Cd1z4k59aIgElIgozNlkTlXfBU0hgBN1xAhua7xM/Qe6hDDq1Ez/DaEoLDGn/XGjtS9FhdT+KlAvD7G6aW8HTf5MBKwwjpLk3gAOSgyHUk1BQPPeUkmHqkOgE9Joxgh6wULKAz/2B6uB2u08X2kBPCaB6zdGfIoab92+aVEYuVue4+pb0L9buIHAS+QU8k6jfAySCP+LuofJtcpgDN8tP3r4f2rFj9of6RMcaIuPUIBgdtc0ek1fjl3EUSBivBqqynFf2vv5npmiX+O1riT3TxKA+wnF497oZhBkITByGb876XkZK02IDvv4AnHxINswIDAQAB","balance":0}}'
+      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","balance":2503}}'
     http_version: 
-  recorded_at: Sun, 12 Jun 2016 02:16:14 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:51729/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
-      Date:
-      - Sun, 12 Jun 2016 22:32:53 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '70128739430560'
-    http_version: 
-  recorded_at: Sun, 12 Jun 2016 22:32:53 GMT
+  recorded_at: Mon, 13 Jun 2016 00:09:21 GMT
 recorded_with: VCR 3.0.3

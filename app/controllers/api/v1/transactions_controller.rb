@@ -1,17 +1,19 @@
 class Api::V1::TransactionsController < ApiController
 
   def create
+    from_wallet = Wallet.find(params[:wallet][:id]).address
     if params.dig("address") != "" && params.dig("address") != nil
       to = params.dig("address")
     else
       to = params.dig("to")
     end
+    
     amount = params.dig("amount")
 
     transaction = Transaction.new(
-      from: current_user.primary_wallet.address,
+      from: from_wallet,
       to: to,
-      amount: amount
+      amount: amount,
     )
 
     if transaction.save

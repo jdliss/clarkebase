@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card-header">
+        Sent Transactions
+      </div>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th width="200">To</th>
+              <th width="200">Amount</th>
+              <th width="200">Status</th>
+              <th width="500">Made At</th>
+            </tr>
+          </thead>
+          <% @sent_transactions.each do |transaction| %>
+            <tbody class="sent-transactions">
+              <tr>
+                <td><%= truncate transaction.email("to"), length: 20 %></td>
+                <td>CLC:<%= transaction.amount %></td>
+                <td><%= transaction.status %></td>
+                <td><%= transaction.time %></td>
+              </tr>
+            </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card-header">
+        Received Transactions
+      </div>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th width="400">From</th>
+              <th width="400">Amount</th>
+              <th width="400">Status</th>
+              <th width="500">Made At</th>
+            </tr>
+          </thead>
+          <% @received_transactions.each do |transaction| %>
+          <tbody class="received-transactions">
+            <tr>
+              <td><%= truncate transaction.email("from"), length: 20 %></td>
+              <td>CLC:<%= transaction.amount %></td>
+              <td><%= transaction.status %></td>
+              <td><%= transaction.time %></td>
+            </tr>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
