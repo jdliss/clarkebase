@@ -26,6 +26,12 @@ table {
 
 }
 
+.scrollable {
+  overflow:scroll;
+  height: 65vh;
+}
+
+
 ::-webkit-input-placeholder { font-size:12px; }
 ::-moz-placeholder { font-size:12px; } /* firefox 19+ */
 :-ms-input-placeholder { font-size:12px; } /* ie */
