@@ -43,17 +43,16 @@ $(document).ready(function(){
       var name      = nameArray.split("+").join(" ");
       var href      = '<a href="/dashboard/wallets/' + parameterize(name) + '">' + name + '</a>'
       $('.wallets').append('<span class="card card-block sidebar-wallet"><a>' + href + '</a><span class="pull-right">0 CLC</span></span>');
+      $('#dash-create-wallet').modal('hide');
       flashSuccess;
     }
 
     function flashSuccess(data){
-      $('#dash-create-wallet').modal('hide');
       $('.flash').empty();
       $('.flash').append('<div class="alert text-center alert-success">Your Wallet has been created!</div>');
     }
 
     function flashError(data){
-      $('#dash-create-wallet').modal('hide');
       $('.flash').empty();
       $('.flash').append('<div class="alert text-center alert-danger">Wallet not created, try again later.</div>');
     }
