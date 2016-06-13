@@ -5,7 +5,7 @@ class ClarkeService
     @connection = Faraday.new(url: 'http://159.203.206.61:3000')
   end
 
-  def get_balance(address)
+  def get_balance(address, , , )
     @connection.post do |req|
       req.url '/balance'
       req.headers['Content-Type'] = 'application/json'
@@ -45,6 +45,8 @@ class ClarkeService
       req.headers['Content-Type'] = 'application/json'
       req.body = signed_transaction.to_json
     end
+
+
   end
 
   def parsed_signed_payment(unsigned)
@@ -53,6 +55,7 @@ class ClarkeService
     signature = pkey.sign digest, signable_string(unsigned)
     unsigned["payload"]["inputs"].first["signature"] = Base64.encode64(signature).gsub("\n", "")
     signed = unsigned["payload"]
+
     submit_transaction(signed)
   end
 

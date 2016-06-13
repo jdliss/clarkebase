@@ -13,6 +13,7 @@ class Transaction < ActiveRecord::Base
     service  = ClarkeService.new(user)
     unsigned = service.parsed_unsigned_payment(user.primary_wallet.address, self.to, self.amount)
     signed   = service.parsed_signed_payment(unsigned)
+
   end
 
   def email(whom)

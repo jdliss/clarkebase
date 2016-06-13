@@ -9,13 +9,13 @@ class Api::V1::TransactionsController < ApiController
     end
 
     amount = params.dig("amount")
+    
 
     transaction = Transaction.new(
       from: from_wallet,
       to: to,
       amount: amount,
     )
-
 
 
     if transaction.save
