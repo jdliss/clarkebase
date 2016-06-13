@@ -5,9 +5,9 @@ class Api::V1::TransactionsController < ApiController
     if params.dig("address") != "" && params.dig("address") != nil
       to = params.dig("address")
     else
-      to = params.dig("to")
+      to = User.find_by_email(params.dig("to")).primary_wallet.address
     end
-    
+
     amount = params.dig("amount")
 
     transaction = Transaction.new(
@@ -15,6 +15,8 @@ class Api::V1::TransactionsController < ApiController
       to: to,
       amount: amount,
     )
+
+
 
     if transaction.save
       render json: { message: 'success' }, status: 200
