@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Wallet, type: :model do
   it { should belong_to :user }
 
+
   it "can store the private key in the database without corrupting it" do
     private_key = Base64.encode64(OpenSSL::PKey::RSA.generate(2048).to_der)
     wallet      = create(:wallet, private_key: private_key)

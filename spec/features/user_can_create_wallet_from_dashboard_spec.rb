@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User can create a wallet from the dasbhoard" do
-  scenario "a registered user with no wallet can submit a private key", js: true do
+  xscenario "a registered user with no wallet can submit a private key", js: true do
     VCR.use_cassette("wallet/dasbhoard_import", record: :new_episodes) do
       user = create(:user)
       login_as user, scope: :user
@@ -31,7 +31,7 @@ RSpec.feature "User can create a wallet from the dasbhoard" do
     end
   end
 
-  scenario "a registered user with no wallet can generate a new wallet", js: true do
+  xscenario "a registered user with no wallet can generate a new wallet", js: true do
     VCR.use_cassette("wallet/dasbhoard_create", record: :new_episodes) do
       user = create(:user)
       login_as user, scope: :user

@@ -1,6 +1,36 @@
 body {
   font-family: "Lato"
+
 }
+
+table {
+  th {
+    text-decoration: underline;
+  }
+
+  tbody {
+
+  tr {
+    border-bottom: 1px solid black;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  td {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+}
+
+}
+
+.scrollable {
+  overflow:scroll;
+  height: 65vh;
+}
+
 
 ::-webkit-input-placeholder { font-size:12px; }
 ::-moz-placeholder { font-size:12px; } /* firefox 19+ */
