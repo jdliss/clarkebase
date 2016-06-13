@@ -2,7 +2,7 @@ class WalletsController < ApplicationController
   before_action :wallets
 
   def show
-    @wallet = Wallet.find_by(slug: params['slug'])
+    @wallet = current_user.wallets.find_by(slug: params['slug'])
   end
 
   def new
@@ -17,6 +17,8 @@ class WalletsController < ApplicationController
     @wallet = Wallet.new(
       user_id:     current_user.id,
       private_key: @private_key,
+      name:        "Default",
+      slug:        "default"
     )
 
     if @wallet.save
