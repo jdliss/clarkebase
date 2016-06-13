@@ -14,21 +14,16 @@
         </div>
         <div class="modal-body"><center>
 
-          <form id="name-wallet">
-            <input autocomplete="off" type="text" name="wallet_name" id="wallet_name" placeholder="WALLET NAME">
-            <input type="submit" id="submitName" value="Generate a New Wallet" class="btn btn-success">
-          </form>
-
-          <div>
-            <br/>
-            <h4>or</h4>
-            <br/>
-          </div>
-
-          <h5>Load an Existing Wallet by importing it's Private Key</h5><br>
-          <form id="submit-key">
-            <input autocomplete="off" type="text" name="private_key" placeholder="PRIVATE KEY">
-            <input type="submit" value="Import Private Key" class="btn btn-primary">
+          <form id="wallet-form">
+            <div class="form-group">
+              <label for="walletName">Name </label>
+              <input name="wallet_name" id="walletName" autocomplete="off" type="text" class="form-control" placeholder="Enter the name of your new Wallet" required="true">
+            </div>
+            <div class="form-group">
+              <label for="privateKey">Private Key </label>
+              <input name="private_key" id="privateKey" autocomplete="off" type="text" class="form-control" placeholder="Optional">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
           </form>
 
         </center></div>
