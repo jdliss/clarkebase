@@ -5,10 +5,10 @@
       <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-folder-open" aria-hidden="true"></i> Wallets</a>
       <div class="collapse wallets" id="collapseExample">
         <% @wallets.each do |wallet| %>
-          <a class="card card-block sidebar-wallet" href="#">
-            Wallet <%= wallet.id %>
+          <span class="card card-block sidebar-wallet">
+            <%= link_to wallet.name, whallet_dashboard_path(wallet.slug) %>
             <span class="pull-right"><%= wallet.balance %> CLC</span>
-          </a>
+          </span>
         <% end %>
       </div>
     </li>

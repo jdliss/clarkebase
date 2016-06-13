@@ -1,4 +1,10 @@
 class WalletsController < ApplicationController
+  before_action :wallets
+
+  def show
+    @wallet = current_user.wallets.find_by(slug: params['slug'])
+  end
+
   def new
     @wallet = Wallet.new
   end
@@ -11,6 +17,8 @@ class WalletsController < ApplicationController
     @wallet = Wallet.new(
       user_id:     current_user.id,
       private_key: @private_key,
+      name:        "Default",
+      slug:        "default"
     )
 
     if @wallet.save
@@ -18,6 +26,7 @@ class WalletsController < ApplicationController
       flash[:notice] = "Wallet Created!"
       redirect_to dashboard_path
     else
+      # need some validation
       flash.now[:notice] = "Error with Submitted Private Key!"
     end
   end

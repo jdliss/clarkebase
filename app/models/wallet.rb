@@ -3,7 +3,7 @@ require 'keycleaner_service'
 
 class Wallet < ActiveRecord::Base
   belongs_to  :user
-  before_save :generate_keys
+  before_save :generate_keys, :assign_slug
 
   enum status: %w(basic primary)
 
@@ -21,6 +21,14 @@ class Wallet < ActiveRecord::Base
 
   def balance
     clarke_service.parsed_balance(address)
+  end
+
+  def to_param
+    slug
+  end
+
+  def assign_slug
+    self.slug ||= name.parameterize if name
   end
 
   def balance_with_id
