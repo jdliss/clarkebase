@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "User can see past sent transactions" do
   scenario "they can see past transactions on their dash" do
-    VCR.use_cassette("features/past_transactions") do
+    VCR.use_cassette("features/past_transactions", record: :new_episodes) do
       key           = ENV["PRIVATE_KEY"].dup
       pub           = ENV["PUBLIC_KEY"].dup
       wallet_a      = create(:wallet, private_key: key, public_key: pub)

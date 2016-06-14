@@ -4,7 +4,7 @@ require 'keycleaner_service'
 
 describe "can get unsigned payment transactions" do
   it "can get unsigned" do
-    VCR.use_cassette('transactions/unsigned') do
+    VCR.use_cassette('transactions/unsigned', record: :new_episodes) do
 
       key           = ENV["PRIVATE_KEY"].dup
       pub           = ENV["PUBLIC_KEY"].dup
