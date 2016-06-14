@@ -14,7 +14,7 @@
             <p><%= "#{friend.email}" %></p>
             <span id="toggle-parent">
               <a href="" class="toggle-address-modal" data-email="<%= friend.email %>" data-address="<%= friend.primary_wallet.address if friend.primary_wallet %>" ><i class="fa fa-tag" aria-hidden="true"></i>Address</a>
-              <a href="" class="toggle-pay-modal"><i class="fa fa-money" aria-hidden="true"></i>Pay</a>
+              <a href="" class="toggle-pay-modal" data-email="<%= friend.email %>" data-address="<%= friend.primary_wallet.address if friend.primary_wallet %>" ><i class="fa fa-money" aria-hidden="true"></i>Pay</a>
               <hr>
             </span>
           </div>
