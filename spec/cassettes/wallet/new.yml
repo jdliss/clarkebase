@@ -98,4 +98,35 @@ http_interactions:
       string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0dqL/nFF82zZFjRrZk/HRlBP420S1girOIg4dOYoLdxyxsJOg68tP4wE43Ee0W7ULQKQqGL3QGHP6jNNg7MiOK/c60gQ5IzoZkn0g9SP3ymsmS1m6vQcLuZCkftK2OSvlVdlCRrX95nIq6R0RVl7yVRQ68s1BDDSs2oV2ABdxEX4r5zJgUWaWBAgaAdaBao6qhHONPVm35xWvZDh2QT/XcHWNo7dCfxNooYakAQXvVBTFm2KfRdIMhm+aZFOY49L16Edb0xs5eFA6nJEFT98bdNqmCl6pC11gZ/4YYQGw3kM8i7v9omUmfsqi5yF7yvcG7RKUY8a75RcaTp7Mh6JyQIDAQAB","balance":0}}'
     http_version: 
   recorded_at: Tue, 14 Jun 2016 20:02:59 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:50172/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Tue, 14 Jun 2016 20:10:33 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70362150257260'
+    http_version: 
+  recorded_at: Tue, 14 Jun 2016 20:10:33 GMT
 recorded_with: VCR 3.0.3
