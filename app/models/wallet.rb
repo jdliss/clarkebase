@@ -68,7 +68,7 @@ private
     Digest::SHA256.base64digest(
       sent_transactions.where(status: "success").pluck(:status).join +
       received_transactions.where(status: "success").pluck(:status).join +
-      user.email
+      user.email + self.created_at.to_s
     )
   end
 
