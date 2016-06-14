@@ -32,7 +32,19 @@ class Wallet < ActiveRecord::Base
   end
 
   def balance_with_id
-    "Wallet: #{id} - CLC: #{balance}"
+    "#{name} - CLC: #{balance}"
+  end
+
+  def self.all_sent_transactions(wallets)
+    wallets.map do |wallet|
+      wallet.sent_transactions
+    end.flatten
+  end
+
+  def self.all_received_transactions(wallets)
+    wallets.map do |wallet|
+      wallet.received_transactions
+    end.flatten
   end
 
   def sent_transactions

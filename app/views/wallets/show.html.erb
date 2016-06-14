@@ -1,7 +1,43 @@
 <%= render partial: 'layouts/nav' %>
 <%= render partial: 'layouts/side_menu' %>
-
-<h1><%= @wallet.name %></h1>
-<h3>Balance: <%= @wallet.balance %> CLC</h3>
-<p> toggle primary role </p>
-<p> show all transactions </p>
+<div class="row flash-zone">
+  <%= render partial: 'layouts/flash' %>
+</div>
+<div class="col-sm-12 col-xs-12 main-content-area user-keys">
+  <br>
+  <div class="row">
+    <div class="page-header">
+      <h3><%= @wallet.name %></h3>
+    <hr>
+  </div>
+  <div class="row primary-wallet">
+    <span class="primary-wallet-info">
+      Balance: <%= @wallet.balance %> CLC
+      <a class="pull-right" href="#" data-toggle="modal" data-target="#address"><span class="fa fa-tag" aria-hidden="true"></span>Your Address</a>
+      <!--  modal / -->
+      <div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Your ClarkeCoin Address</h4>
+            </div>
+            <div class="modal-body">
+              <div class="inputs">
+              Address: <input id="addy" type="url" value="<%=@wallet.address%>">
+              <button id="copy_btn" class="addy"><i class="fa fa-clipboard"></i></button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </span>
+    <hr>
+  </div>
+  <%= render partial: "/layouts/transactions" %>
+</div>

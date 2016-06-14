@@ -16,7 +16,7 @@ RSpec.feature "User can see past sent transactions" do
 
       login_as user_a
 
-      visit dashboard_path
+      visit whallet_dashboard_path(wallet_a)
 
       expect(page).to have_content "Sent Transactions"
 
@@ -29,7 +29,7 @@ RSpec.feature "User can see past sent transactions" do
 
       login_as user_b
 
-      visit dashboard_path
+      visit whallet_dashboard_path(wallet_b)
 
       expect(page).to have_content "Received Transactions"
 

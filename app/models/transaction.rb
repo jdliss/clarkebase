@@ -4,14 +4,11 @@ class Transaction < ActiveRecord::Base
 
   enum status: %w(pending completed failed)
 
-  def find_user(address)
-    Wallet.find_by(public_key: address).user
-  end
 
   def send_transaction
-    user     = find_user(self.from)
-    service  = ClarkeService.new(user)
-    unsigned = service.parsed_unsigned_payment(user.primary_wallet.address, self.to, self.amount)
+    pkey     = find_pkey(self.from)
+    service  = ClarkeService.new(pkey)
+    unsigned = service.parsed_unsigned_payment(self.from, self.to, self.amount)
     signed   = service.parsed_signed_payment(unsigned)
 
   end
@@ -27,4 +24,9 @@ class Transaction < ActiveRecord::Base
   def time
     self.created_at.strftime("%a %b %d, %Y -%l:%M %p")
   end
+
+  private
+    def find_pkey(address)
+      Wallet.find_by(public_key: address).private_key
+    end
 end
