@@ -2,7 +2,13 @@ class ClarkeService
 
   def initialize(key=nil)
     @sigkey  = key
-    @connection = Faraday.new(url: 'http://159.203.206.61:3000')
+    @connection = Faraday.new(url: get_node)
+  end
+
+  def get_node
+    service = NodeService.new
+    active_nodes = service.parse_node
+    node = service.get_url(active_nodes)
   end
 
   def get_balance(address)

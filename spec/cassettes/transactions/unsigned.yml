@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: http://159.203.206.61:3000/unsigned_payment_transactions
+    method: get
+    uri: http://dns1.clarkecoin.org/api/peers
     body:
-      encoding: UTF-8
-      string: '{"from_address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","to_address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwgj1EQmUziye3TgvaPmwKip9izipDk/1tz/UPnhhW/A7tMblqJ3V3R+Xa7f9eYGRpVQ5tlMQpv6iS45aamzSDm71D58nhgUQtHyXJ/3oWeWQtKgtJn9o0PBtMR1cNHH6xDW1ZgLi7M6a3u9O8kiY3xjXndgfJ99k9SoduNtHu9eXouG4Koz+5MwvMT3Xi+0o5bTST8QF57ab1wE+Q83SPoVSxQadASY7SVkzPP/QOieGv9diK8JVZlZ/ONYG5mLy+4R9B6MGMem8u+yTJf6ZGlLmacSpxHSdFgLfda/YC5pF1QIzon27ojrd4JajN1LyGuiCHq90n5hvAR7XTjryhwIDAQAB","amount":2,"fee":0}'
+      encoding: US-ASCII
+      string: ''
     headers:
       User-Agent:
       - Faraday v0.9.2
@@ -23,14 +23,113 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '1333'
+      - '115'
       Server:
       - http-kit
       Date:
-      - Thu, 09 Jun 2016 20:22:11 GMT
+      - Tue, 14 Jun 2016 14:35:40 GMT
     body:
       encoding: UTF-8
-      string: '{"message":"unsigned_transaction","payload":{"hash":"4f7bffe8a2c269b05072aabba0f56eb50ee275e1713aaff78b1c2697848d40d2","min-height":489,"timestamp":1465503731335,"inputs":[{"source-hash":"43367a42a9f9e0d68906ee00431666fcbc02d32b3e5f30ff5075111c03f34336","source-index":0}],"outputs":[{"amount":2,"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwgj1EQmUziye3TgvaPmwKip9izipDk/1tz/UPnhhW/A7tMblqJ3V3R+Xa7f9eYGRpVQ5tlMQpv6iS45aamzSDm71D58nhgUQtHyXJ/3oWeWQtKgtJn9o0PBtMR1cNHH6xDW1ZgLi7M6a3u9O8kiY3xjXndgfJ99k9SoduNtHu9eXouG4Koz+5MwvMT3Xi+0o5bTST8QF57ab1wE+Q83SPoVSxQadASY7SVkzPP/QOieGv9diK8JVZlZ/ONYG5mLy+4R9B6MGMem8u+yTJf6ZGlLmacSpxHSdFgLfda/YC5pF1QIzon27ojrd4JajN1LyGuiCHq90n5hvAR7XTjryhwIDAQAB","coords":{"transaction-id":"4f7bffe8a2c269b05072aabba0f56eb50ee275e1713aaff78b1c2697848d40d2","index":0}},{"amount":23,"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","coords":{"transaction-id":"4f7bffe8a2c269b05072aabba0f56eb50ee275e1713aaff78b1c2697848d40d2","index":1}}]}}'
+      string: '[{"port":3000,"host":"159.203.206.61"},{"port":3000,"host":"159.203.206.63"},{"port":3000,"host":"159.203.206.49"}]'
     http_version: 
-  recorded_at: Thu, 09 Jun 2016 20:22:11 GMT
+  recorded_at: Tue, 14 Jun 2016 14:35:41 GMT
+- request:
+    method: post
+    uri: http://159.203.206.63:3000/unsigned_payment_transactions
+    body:
+      encoding: UTF-8
+      string: '{"from_address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","to_address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs9Fwo/n22MKL8BwZ7zRdKeorCMi2m0iwYp21ZL9aL8lAO62KH8n6vB7AEWAEYxTJ1frG2vJ5zk67yTeIE80GVH3Fs1Y2zlreUMDa0c/AkIO2DpMHSwGAz2DZHJ6vHptE/gChgjhkyZnlaQ2AQRC3RfDj495ViezusHkeWAdWktC66rWzR48B7224VV5OaFWqL9S+vcOY46kJIgFhQtnSg4v1zQfltecNkBlsHLfrklm1Vv4yYI9fsEyMTVWkpjNZ7Q62bxw/6JdvcYb4v0tjmBJMaaZcEH4EYx2bKZCxlssSqlkvn7tVVXNov5uT6NShkX7TjbKK3fbs4SsNBGAB/QIDAQAB","amount":2,"fee":0}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1334'
+      Server:
+      - http-kit
+      Date:
+      - Tue, 14 Jun 2016 14:35:41 GMT
+    body:
+      encoding: UTF-8
+      string: '{"message":"unsigned_transaction","payload":{"hash":"1732ae8c503cb2c7e22d81c02008df98288b8ed6a885081bdbf2b55efaa4c6fa","min-height":1729,"timestamp":1465914941433,"inputs":[{"source-hash":"9f13c83b39967857d16c6886fbd3d1c905c6e0a815a7821a3fe64b560610ac64","source-index":0}],"outputs":[{"amount":2,"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs9Fwo/n22MKL8BwZ7zRdKeorCMi2m0iwYp21ZL9aL8lAO62KH8n6vB7AEWAEYxTJ1frG2vJ5zk67yTeIE80GVH3Fs1Y2zlreUMDa0c/AkIO2DpMHSwGAz2DZHJ6vHptE/gChgjhkyZnlaQ2AQRC3RfDj495ViezusHkeWAdWktC66rWzR48B7224VV5OaFWqL9S+vcOY46kJIgFhQtnSg4v1zQfltecNkBlsHLfrklm1Vv4yYI9fsEyMTVWkpjNZ7Q62bxw/6JdvcYb4v0tjmBJMaaZcEH4EYx2bKZCxlssSqlkvn7tVVXNov5uT6NShkX7TjbKK3fbs4SsNBGAB/QIDAQAB","coords":{"transaction-id":"1732ae8c503cb2c7e22d81c02008df98288b8ed6a885081bdbf2b55efaa4c6fa","index":0}},{"amount":23,"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","coords":{"transaction-id":"1732ae8c503cb2c7e22d81c02008df98288b8ed6a885081bdbf2b55efaa4c6fa","index":1}}]}}'
+    http_version: 
+  recorded_at: Tue, 14 Jun 2016 14:35:42 GMT
+- request:
+    method: post
+    uri: http://159.203.206.49:3000/unsigned_payment_transactions
+    body:
+      encoding: UTF-8
+      string: '{"from_address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","to_address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs9Fwo/n22MKL8BwZ7zRdKeorCMi2m0iwYp21ZL9aL8lAO62KH8n6vB7AEWAEYxTJ1frG2vJ5zk67yTeIE80GVH3Fs1Y2zlreUMDa0c/AkIO2DpMHSwGAz2DZHJ6vHptE/gChgjhkyZnlaQ2AQRC3RfDj495ViezusHkeWAdWktC66rWzR48B7224VV5OaFWqL9S+vcOY46kJIgFhQtnSg4v1zQfltecNkBlsHLfrklm1Vv4yYI9fsEyMTVWkpjNZ7Q62bxw/6JdvcYb4v0tjmBJMaaZcEH4EYx2bKZCxlssSqlkvn7tVVXNov5uT6NShkX7TjbKK3fbs4SsNBGAB/QIDAQAB","amount":2,"fee":0}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1334'
+      Server:
+      - http-kit
+      Date:
+      - Tue, 14 Jun 2016 14:39:30 GMT
+    body:
+      encoding: UTF-8
+      string: '{"message":"unsigned_transaction","payload":{"hash":"46104077c7b034e00b0c4d6c64627dd5c4e96b270d73335070ba4fecbabc1244","min-height":1729,"timestamp":1465915170468,"inputs":[{"source-hash":"9f13c83b39967857d16c6886fbd3d1c905c6e0a815a7821a3fe64b560610ac64","source-index":0}],"outputs":[{"amount":2,"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs9Fwo/n22MKL8BwZ7zRdKeorCMi2m0iwYp21ZL9aL8lAO62KH8n6vB7AEWAEYxTJ1frG2vJ5zk67yTeIE80GVH3Fs1Y2zlreUMDa0c/AkIO2DpMHSwGAz2DZHJ6vHptE/gChgjhkyZnlaQ2AQRC3RfDj495ViezusHkeWAdWktC66rWzR48B7224VV5OaFWqL9S+vcOY46kJIgFhQtnSg4v1zQfltecNkBlsHLfrklm1Vv4yYI9fsEyMTVWkpjNZ7Q62bxw/6JdvcYb4v0tjmBJMaaZcEH4EYx2bKZCxlssSqlkvn7tVVXNov5uT6NShkX7TjbKK3fbs4SsNBGAB/QIDAQAB","coords":{"transaction-id":"46104077c7b034e00b0c4d6c64627dd5c4e96b270d73335070ba4fecbabc1244","index":0}},{"amount":23,"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","coords":{"transaction-id":"46104077c7b034e00b0c4d6c64627dd5c4e96b270d73335070ba4fecbabc1244","index":1}}]}}'
+    http_version: 
+  recorded_at: Tue, 14 Jun 2016 14:39:31 GMT
+- request:
+    method: post
+    uri: http://159.203.206.61:3000/unsigned_payment_transactions
+    body:
+      encoding: UTF-8
+      string: '{"from_address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","to_address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs9Fwo/n22MKL8BwZ7zRdKeorCMi2m0iwYp21ZL9aL8lAO62KH8n6vB7AEWAEYxTJ1frG2vJ5zk67yTeIE80GVH3Fs1Y2zlreUMDa0c/AkIO2DpMHSwGAz2DZHJ6vHptE/gChgjhkyZnlaQ2AQRC3RfDj495ViezusHkeWAdWktC66rWzR48B7224VV5OaFWqL9S+vcOY46kJIgFhQtnSg4v1zQfltecNkBlsHLfrklm1Vv4yYI9fsEyMTVWkpjNZ7Q62bxw/6JdvcYb4v0tjmBJMaaZcEH4EYx2bKZCxlssSqlkvn7tVVXNov5uT6NShkX7TjbKK3fbs4SsNBGAB/QIDAQAB","amount":2,"fee":0}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1334'
+      Server:
+      - http-kit
+      Date:
+      - Tue, 14 Jun 2016 19:08:27 GMT
+    body:
+      encoding: UTF-8
+      string: '{"message":"unsigned_transaction","payload":{"hash":"c9a21cce774f3e115bfa76ea4955593bf0ad74efed4b4f27b9e39fdadf321a5f","min-height":1771,"timestamp":1465931307237,"inputs":[{"source-hash":"9f13c83b39967857d16c6886fbd3d1c905c6e0a815a7821a3fe64b560610ac64","source-index":0}],"outputs":[{"amount":2,"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs9Fwo/n22MKL8BwZ7zRdKeorCMi2m0iwYp21ZL9aL8lAO62KH8n6vB7AEWAEYxTJ1frG2vJ5zk67yTeIE80GVH3Fs1Y2zlreUMDa0c/AkIO2DpMHSwGAz2DZHJ6vHptE/gChgjhkyZnlaQ2AQRC3RfDj495ViezusHkeWAdWktC66rWzR48B7224VV5OaFWqL9S+vcOY46kJIgFhQtnSg4v1zQfltecNkBlsHLfrklm1Vv4yYI9fsEyMTVWkpjNZ7Q62bxw/6JdvcYb4v0tjmBJMaaZcEH4EYx2bKZCxlssSqlkvn7tVVXNov5uT6NShkX7TjbKK3fbs4SsNBGAB/QIDAQAB","coords":{"transaction-id":"c9a21cce774f3e115bfa76ea4955593bf0ad74efed4b4f27b9e39fdadf321a5f","index":0}},{"amount":23,"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","coords":{"transaction-id":"c9a21cce774f3e115bfa76ea4955593bf0ad74efed4b4f27b9e39fdadf321a5f","index":1}}]}}'
+    http_version: 
+  recorded_at: Tue, 14 Jun 2016 19:08:27 GMT
 recorded_with: VCR 3.0.3
