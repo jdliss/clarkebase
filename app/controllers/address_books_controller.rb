@@ -1,5 +1,6 @@
 class AddressBooksController < ApplicationController
   before_action :wallets
+  before_action :require_login
 
   def show
     respond_to do |format|
