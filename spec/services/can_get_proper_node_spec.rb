@@ -16,7 +16,7 @@ describe "can get node" do
       host = node[7..-6]
       port = node[-4..-1]
 
-      expect(nodes).to include ({"port"=>port.to_i, "host"=>host})
+      expect(nodes).to include({"port"=>port.to_i, "host"=>host})
     end
   end
 end

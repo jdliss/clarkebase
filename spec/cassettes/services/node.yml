@@ -27,10 +27,10 @@ http_interactions:
       Server:
       - http-kit
       Date:
-      - Tue, 14 Jun 2016 02:19:50 GMT
+      - Tue, 14 Jun 2016 02:42:20 GMT
     body:
       encoding: UTF-8
       string: '[{"port":3000,"host":"159.203.206.61"},{"port":3000,"host":"159.203.206.63"},{"port":3000,"host":"159.203.206.49"}]'
     http_version: 
-  recorded_at: Tue, 14 Jun 2016 02:19:50 GMT
+  recorded_at: Tue, 14 Jun 2016 02:42:20 GMT
 recorded_with: VCR 3.0.3
