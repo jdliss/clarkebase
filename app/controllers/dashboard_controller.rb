@@ -2,9 +2,9 @@ class DashboardController < ApplicationController
   before_action :wallets
 
   def show
-    if current_user.primary_wallet
-      @sent_transactions = current_user.primary_wallet.sent_transactions
-      @received_transactions = current_user.primary_wallet.received_transactions
-    end
+    @sent_transactions = Wallet.all_sent_transactions(@wallets)
+    @received_transactions = Wallet.all_received_transactions(@wallets)
+
   end
+
 end

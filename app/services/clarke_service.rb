@@ -1,7 +1,7 @@
 class ClarkeService
 
-  def initialize(user=nil)
-    @user = user
+  def initialize(key=nil)
+    @sigkey  = key
     @connection = Faraday.new(url: 'http://159.203.206.61:3000')
   end
 
@@ -45,13 +45,11 @@ class ClarkeService
       req.headers['Content-Type'] = 'application/json'
       req.body = signed_transaction.to_json
     end
-
-
   end
 
   def parsed_signed_payment(unsigned)
     digest    = OpenSSL::Digest::SHA256.new
-    pkey      = OpenSSL::PKey::RSA.new(KeyCleanerService.private_strict_format(@user.primary_wallet.private_key))
+    pkey      = OpenSSL::PKey::RSA.new(KeyCleanerService.private_strict_format(@sigkey))
     signature = pkey.sign digest, signable_string(unsigned)
     unsigned["payload"]["inputs"].first["signature"] = Base64.encode64(signature).gsub("\n", "")
     signed = unsigned["payload"]

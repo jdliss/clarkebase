@@ -1,10 +1,8 @@
 <%= render partial: 'layouts/nav' %>
 <%= render partial: 'layouts/side_menu' %>
-
 <div class="row flash-zone">
   <%= render partial: 'layouts/flash' %>
 </div>
-
 <div class="col-sm-12 col-xs-12 main-content-area user-keys">
   <br>
   <div class="row">
@@ -12,44 +10,19 @@
       <%= render partial: 'layouts/dash_header' %>
     <br>
     <hr>
+    </div>
   </div>
   <div class="row primary-wallet">
     <% if current_user && current_user.primary_wallet %>
       <span class="primary-wallet-info">
-        Balance: <%= number_to_currency current_user.primary_wallet.balance %>
-        <a class="pull-right" href="#" data-toggle="modal" data-target="#address"><i class="fa fa-tag" aria-hidden="true"></i>Your Address</a>
-
-        <!--  modal / -->
-        <div class="modal fade" id="address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Your ClarkeCoin Address</h4>
-              </div>
-              <div class="modal-body">
-                <div class="inputs">
-                Address: <input id="addy" type="url" value="<%=current_user.primary_wallet.address%>">
-                <button id="copy_btn" class="addy"><i class="fa fa-clipboard"></i></button>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </span>
-
-      <hr>
-      <%= render partial: "/layouts/transactions" %>
+        Total Balance: <%= current_user.total_balance %> CLC
     <% else %>
       <div class="primary-keys">
         <center><h3>Create a Wallet in order to get started!</h3></center>
       </div>
     <% end %>
   </div>
+  <br>
+  <hr>
+  <%= render partial: "/layouts/transactions" %>
 </div>
