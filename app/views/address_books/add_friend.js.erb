@@ -1,11 +1,6 @@
-$(document).ready(function() {
-  $(".scrollable").prepend('<div class="friend-item">' +
-                          '<p><%= "#{current_user.friends.order(:created_at).last.email}" %></p>' +
-                            '<span>' +
-                              '<a href="" class="toggle-address-modal" data-email="<%= current_user.friends.order('created_at DESC').last.email %>" data-address="<%= current_user.friends.order('created_at DESC').last.primary_wallet.address if current_user.friends.order('created_at DESC').last.primary_wallet %>" ><i class="fa fa-tag" aria-hidden="true"></i>Address</a>' +
-                                '<a href="" class="toggle-pay-modal"><i class="fa fa-money" aria-hidden="true"></i>Pay</a>' +
-                                  '<hr></span></div>');
-
-
-
-});
+$(".scrollable").prepend('<div class="friend-item">' +
+                         '<p><%= "#{current_user.friends.order(:created_at).last.email}" %></p>' +
+                           '<span>' +
+                             '<a href="" class="toggle-address-modal" data-email="<%= current_user.friends.order('created_at DESC').last.email %>" data-address="<%= current_user.friends.order('created_at DESC').last.primary_wallet.address if current_user.friends.order('created_at DESC').last.primary_wallet %>" ><i class="fa fa-tag" aria-hidden="true"></i>Address</a>' +
+                               '<a href="" class="toggle-pay-modal" data-email="<%= current_user.friends.order('created_at DESC').last.email %>" data-address="<%= current_user.friends.order('created_at DESC').last.primary_wallet.address if current_user.friends.order('created_at DESC').last.primary_wallet %>" ><i class="fa fa-money" aria-hidden="true"></i>Pay</a>' +
+                                 '<hr></span></div>');
