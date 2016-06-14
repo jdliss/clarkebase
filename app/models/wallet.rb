@@ -58,7 +58,7 @@ class Wallet < ActiveRecord::Base
     Transaction.where(to: self.public_key)
   end
 
-  private
+private
 
   def clarke_service
     ClarkeService.new
