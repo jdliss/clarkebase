@@ -3,7 +3,7 @@ require 'transaction_update_service'
 
 RSpec.describe TransactionUpdateService do
   it "can update the status of transactions that have left the transaction pool" do
-    VCR.use_cassette("services/transactions") do
+    VCR.use_cassette("services/transactions", record: :new_episodes) do
       key           = ENV["PRIVATE_KEY"].dup
       pub           = ENV["PUBLIC_KEY"].dup
       wallet_a      = create(:wallet, private_key: key, public_key: pub)
