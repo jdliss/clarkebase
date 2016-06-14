@@ -13,4 +13,12 @@ class User < ActiveRecord::Base
   def primary_wallet
     self.wallets.where(status: 1).first
   end
+
+  def total_balance
+    wallets.reduce(0) do |sum, wallet|
+      sum += wallet.balance
+    end
+  end
+
+  
 end

@@ -16,7 +16,6 @@ class Api::V1::TransactionsController < ApiController
       amount: amount,
     )
 
-
     if transaction.save
       render json: { message: 'success' }, status: 200
     else
