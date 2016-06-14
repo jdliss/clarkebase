@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
   before_action :wallets
+  before_action :require_login
 
   def show
     @sent_transactions     = Wallet.all_sent_transactions(@wallets)
