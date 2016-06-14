@@ -15,11 +15,13 @@ RSpec.feature "User can See the info on the dashboard page" do
       transaction   = Transaction.create(amount: amount, from: from_addy, to: to_addy)
       transaction2   = Transaction.create(amount: 10, from: from_addy, to: to_addy)
 
+      allow_any_instance_of(ClarkeService).to receive(:get_node).and_return("http://159.203.206.61:3000")
+
       login_as user_a
 
       visit dashboard_path
 
-      expect(page).to have_content "Total Balance: 2473"
+      expect(page).to have_content "Total Balance: 2471"
 
 
       expect(page).to have_content user_b.email
@@ -35,7 +37,7 @@ RSpec.feature "User can See the info on the dashboard page" do
 
       visit dashboard_path
 
-      expect(page).to have_content "Total Balance: 87"
+      expect(page).to have_content "Total Balance: "
 
       expect(page).to have_content "Received Transactions"
 
