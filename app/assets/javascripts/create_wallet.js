@@ -18,7 +18,7 @@ $(document).ready(function(){
       url:      '/api/v1/wallets',
       data:     data,
       dataType: 'JSON',
-      success:  appendWallet(data),
+      success:  flashSuccess,
       error:    flashError
     })
   });
@@ -39,6 +39,11 @@ $(document).ready(function(){
     function flashSuccess(data){
       $('.flash').empty();
       $('.flash').append('<div class="alert text-center alert-success">Your Wallet has been created!</div>');
+
+      $.ajax({
+        method:   'GET',
+        url:      '/dashboard.js'
+      });
     }
 
     function flashError(data){
