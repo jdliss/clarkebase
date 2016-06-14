@@ -20,7 +20,9 @@ class Wallet < ActiveRecord::Base
   end
 
   def balance
-    clarke_service.parsed_balance(address)
+    #Rails.cache.fetch("#{cache_key}") do
+      clarke_service.parsed_balance(address)
+    #end
   end
 
   def to_param
@@ -55,10 +57,13 @@ class Wallet < ActiveRecord::Base
     Transaction.where(to: self.public_key)
   end
 
-private
+  private
 
   def clarke_service
     ClarkeService.new
+  end
+
+  def cache_key
   end
 
 end
