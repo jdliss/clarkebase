@@ -1,5 +1,6 @@
 require 'pkey_service'
 require 'keycleaner_service'
+require 'digest'
 
 class Wallet < ActiveRecord::Base
   belongs_to  :user
@@ -20,7 +21,9 @@ class Wallet < ActiveRecord::Base
   end
 
   def balance
-    clarke_service.parsed_balance(address)
+    Rails.cache.fetch("#{cache_key}") do
+      clarke_service.parsed_balance(address)
+    end
   end
 
   def to_param
@@ -59,6 +62,14 @@ private
 
   def clarke_service
     ClarkeService.new
+  end
+
+  def cache_key
+    Digest::SHA256.base64digest(
+      sent_transactions.where(status: "success").pluck(:status).join +
+      received_transactions.where(status: "success").pluck(:status).join +
+      user.email
+    )
   end
 
 end

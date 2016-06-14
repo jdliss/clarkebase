@@ -2,8 +2,8 @@ class WalletsController < ApplicationController
   before_action :wallets
 
   def show
-    @wallet = current_user.wallets.find_by(slug: params['slug'])
-    @sent_transactions = @wallet.sent_transactions
+    @wallet                = current_user.wallets.find_by(slug: params['slug'])
+    @sent_transactions     = @wallet.sent_transactions
     @received_transactions = @wallet.received_transactions
   end
 

@@ -1,0 +1,5 @@
+$(document).ready(function() {
+  $('.wallets').append('<span class="card card-block sidebar-wallet">' +
+    '<%= link_to truncate(@recently_added_wallet.name, length: 15, separator: ' '), whallet_dashboard_path(@recently_added_wallet.slug) %>' +
+    '<span class="pull-right"><%= @recently_added_wallet.balance %> CLC</span></span>');
+});
