@@ -25,6 +25,13 @@ class Transaction < ActiveRecord::Base
     self.created_at.strftime("%a %b %d, %Y -%l:%M %p")
   end
 
+
+
+  def iterator
+    # from => to
+    pending_transactions.each do |pending_transaction|
+      Transaction.pending.find_by(from: pending_transaction[:from], to: pending_transaction[:to]).update(status: "success")
+
   private
     def find_pkey(address)
       Wallet.find_by(public_key: address).private_key
