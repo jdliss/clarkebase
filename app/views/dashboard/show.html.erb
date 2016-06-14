@@ -16,13 +16,14 @@
     <% if current_user && current_user.primary_wallet %>
       <span class="primary-wallet-info">
         Total Balance: <%= current_user.total_balance %> CLC
-    <% else %>
-      <div class="primary-keys">
-        <center><h3>Create a Wallet in order to get started!</h3></center>
-      </div>
-    <% end %>
+      </span>
   </div>
   <br>
   <hr>
   <%= render partial: "/layouts/transactions" %>
+  <% else %>
+    <div class="primary-keys">
+      <center><h3>Create a Wallet in order to get started!</h3></center>
+    </div>
+  <% end %>
 </div>

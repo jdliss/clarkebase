@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#show'
 
-  resources :wallets, only: [:show, :new, :create]
+  resources :wallets, only: [:new, :create]
 
   resource :dashboard do
     collection do

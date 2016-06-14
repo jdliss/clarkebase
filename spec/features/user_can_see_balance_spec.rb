@@ -8,10 +8,10 @@ RSpec.feature "User can see their balance" do
 
       login_as user, scope: :user
 
-      visit dashboard_path
+      visit whallet_dashboard_path(wallet)
 
 
-      expect(page).to have_content "Balance: $#{wallet.balance}.00"
+      expect(page).to have_content "Balance: #{wallet.balance}"
 
     end
   end

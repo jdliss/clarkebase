@@ -43,7 +43,7 @@ describe "can get unsigned payment transactions" do
 
       post = ClarkeService.new.parsed_unsigned_payment(from_addy, to_addy, amount, fee)
 
-      sig = ClarkeService.new(user_a).parsed_signed_payment(post)
+      sig = ClarkeService.new(wallet_a.private_key).parsed_signed_payment(post)
 
 
         expect(sig.body).to eq(
