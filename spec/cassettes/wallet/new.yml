@@ -445,4 +445,66 @@ http_interactions:
       string: '70222432193720'
     http_version: 
   recorded_at: Tue, 14 Jun 2016 22:59:31 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:62388/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Tue, 14 Jun 2016 23:00:29 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70265432293260'
+    http_version: 
+  recorded_at: Tue, 14 Jun 2016 23:00:29 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:62506/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Tue, 14 Jun 2016 23:18:46 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70284768036820'
+    http_version: 
+  recorded_at: Tue, 14 Jun 2016 23:18:46 GMT
 recorded_with: VCR 3.0.3
