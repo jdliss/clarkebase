@@ -66,8 +66,8 @@ private
 
   def cache_key
     Digest::SHA256.base64digest(
-      sent_transactions.where(status: "success").pluck(:status).join +
-      received_transactions.where(status: "success").pluck(:status).join +
+      sent_transactions.pluck(:updated_at) +
+      received_transactions.pluck(:updated_at) +
       user.email + self.created_at.to_s
     )
   end

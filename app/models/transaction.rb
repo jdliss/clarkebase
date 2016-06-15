@@ -58,7 +58,7 @@ class Transaction < ActiveRecord::Base
     unless to.phone.nil? || to.phone.empty?
       from = Wallet.find_by(public_key: transaction.from).user
       MessengerService.send_message(
-        "#{from.email} sent you #{pluralize(transaction.amount, "ClarkeCoin")}  on ClarkeBase!",
+        "#{from.email} sent you #{transaction.amount} CLC on ClarkeBase!",
         to.phone
       )
     end
@@ -68,10 +68,5 @@ class Transaction < ActiveRecord::Base
 
   def find_pkey(address)
     Wallet.find_by(public_key: address).private_key
-  end
-
-  def pluralize(number, text)
-    return text.pluralize if number != 1
-    text
   end
 end
