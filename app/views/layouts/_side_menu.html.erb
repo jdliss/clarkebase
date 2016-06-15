@@ -1,7 +1,12 @@
 <div class="col-sm-2 sidebar hidden-xs">
   <ul class="nav nav-pills nav-stacked left-side">
+    <br>
     <li class="nav-item">
-      <br>
+      <span class="option-image"><a class="nav-link <%= 'active' if params[:controller] == 'dashboard' %>" href="<%= dashboard_path %>">Dashboard</a></span>
+    </li>
+    <hr>
+    <br>
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-folder-open" aria-hidden="true"></i> Wallets</a>
       <div class="collapse wallets" id="collapseExample">
         <% @wallets.each do |wallet| %>
@@ -15,22 +20,15 @@
     <hr>
     <br>
     <li class="nav-item">
-      <span class="option-image"><a class="nav-link <%= 'active' if params[:controller] == 'transactions' %>" href="<%= transactions_new_path %>">Send ClarkeCoins</a></span>
+      <span class="option-image"><a class="nav-link <%= 'active' if params[:controller] == 'transactions' %>" href="<%= transactions_new_path %>"><i class="fa fa-paper-plane" aria-hidden="true"></i>Send ClarkeCoins</a></span>
     </li>
     <hr>
     <br>
     <li class="nav-item">
-    <!-- <span><a class="nav-link" href="#">Address Book</a></span> -->
-    <span><%= link_to "Friends", friends_path, class: "nav-link #{'active' if params[:controller] == 'address_books' }" %></span>
-    </li>
-    <hr>
-    <br>
-    <li class="nav-item">
-      <span><a class="nav-link" href="#">Settings</a></span>
+    <span class="option-image"><a class="nav-link <%= 'active' if params[:controller] == 'friends' %>" href="<%= friends_path %>"><i class="fa fa-user-secret" aria-hidden="true"></i>Friends</a></span>
     </li>
     <hr>
     <br>
   </ul>
 </div>
 <div class="col-sm-10 col-xs-12 main-content-area">
-  <br>

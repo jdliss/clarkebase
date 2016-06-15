@@ -1,5 +1,6 @@
 class WalletsController < ApplicationController
   before_action :wallets
+  before_action :require_login
 
   def show
     @wallet                = current_user.wallets.find_by(slug: params['slug'])
@@ -8,6 +9,7 @@ class WalletsController < ApplicationController
   end
 
   def new
+    redirect_to dashboard_path and return if current_user.wallets.exists?
     @wallet = Wallet.new
   end
 

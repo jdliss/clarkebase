@@ -55,4 +55,22 @@ RSpec.describe KeyCleanerService do
 
     expect(private_key.delete("\n")).to eq der_key
   end
+
+  it "can reformat to 'public strict format'" do
+
+    public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu6EKjlDGug/Vv9ibCQ0GRGADnZ1lCOczOuU6ZBRt7BZHzn16YSULZvy0fvDOEf4yrJM35nl6iwkzN4TdI5FecxVo/1GHx9v5NFY1cQw2EyvU/YVyEHcwpTn3BtqYkH2ZfZbvN0yp+Esd0HcO7m9AzdyFadwG27AX20Iis9lcvA/qO63lB4ITAhCH1zCz0adWICUS9+POAhLvL8wHHHi/F1969rA3ly8vioC1qpJFSflo/Ap35clL4mQzf7qsMPF6ysxUhTHrdVI+DPY0NjPLiE5mPRiBDDNIIXqcINDL6yuBukT3vXh6SyTIWUOy+OBnDqE9e8VCGMLETqTXkuwajwIDAQAB"
+
+    formatted = KeyCleanerService.public_strict_format(public_key)
+
+    expect(public_key).to_not start_with("-----BEGIN PUBLIC KEY-----")
+    expect(formatted).to start_with("-----BEGIN PUBLIC KEY-----")
+  end
+
+  it "can generate the public key in a non-strict format given a valid private key" do
+    der_private_key = ENV["PEM_KEY"].dup
+    public_key = KeyCleanerService.non_strict(der_private_key)
+
+    expect(der_private_key).to start_with("-----BEGIN RSA PRIVATE KEY-----")
+    expect(public_key).to_not start_with("-----BEGIN PUBLIC KEY-----")
+  end
 end
