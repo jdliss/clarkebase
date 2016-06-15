@@ -21,7 +21,7 @@ class TransactionUpdateService
   def parse_current_pending
     transactions = JSON.parse(current_pending.body)
 
-    unless transactions.empty?
+    if Transaction.pending.any?
       result = transactions['payload'].map do |payload_item|
         data = payload_item['outputs'].flatten
         { from: data.first['address'], to: data.last['address'] }

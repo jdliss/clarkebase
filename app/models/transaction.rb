@@ -1,6 +1,8 @@
+require 'transaction_update_service'
+
 class Transaction < ActiveRecord::Base
   validates_presence_of :from, :to, :amount
-  before_save :send_transaction
+  before_create :send_transaction
 
   enum status: %w(pending completed failed)
 
@@ -23,16 +25,19 @@ class Transaction < ActiveRecord::Base
     self.created_at.strftime("%a %b %d, %Y -%l:%M %p")
   end
 
-  def update_transaction
-    pending_transactions = transaction_service.parse_current_pending
+  def self.update_transactions
+    service = TransactionUpdateService.new
+    pending_transactions = service.parse_current_pending
 
-    still_pending = pending_transactions.map do |pending|
-      Transaction.pending.find_by(from: pending[:from], to: pending[:to])
+    if pending_transactions.empty?
+      completed = Transaction.pending
+    else
+      completed = pending_transactions.map do |pending|
+        Transaction.pending.where.not(from: pending[:from], to: pending[:to])
+      end.flatten
     end
 
-    not_pending = Transaction.pending - still_pending
-
-    not_pending.each do |transaction|
+    completed.each do |transaction|
       transaction.completed!
     end
   end
