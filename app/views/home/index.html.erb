@@ -4,7 +4,7 @@
   <div class="opacity-welcome">
     <%= render partial: 'layouts/flash' %>
     <div class="container">
-      <div class="row vertical-center-row">
+      <div class="row vertical-center-row page-section" id="main">
         <div class="text-center content col-md-12">
           <h1 class="cover-heading">Get Started with ClarkeCoin</h1>
           <p class="lead"> The fastest growing crypocurrency on Blake Street </p>
@@ -13,6 +13,32 @@
           <% else  %>
             <%= link_to "See Your Account", dashboard_path, class: "btn btn-lg btn-success-outline" %>
           <% end %>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="row vertical-center-row" style="margin-top:30px">
+      <a href="#" class="scroll-link" data-id="joan-info" style="color: white;"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="opacity-welcome">
+    <div class="row vertical-center-row page-section" id="joan-info">
+      <div class="text-center content col-md-12">
+        <h1 class="cover-heading">The Clarke in Clarkecoin</h1>
+        <div class="col-md-4">
+          <p>Why Joan is rad</p>
+        </div>
+        <div class="col-md-4">
+          <p>Why Joan is rad</p>
+        </div>
+        <div class="col-md-4">
+          <p>Why Joan is rad</p>
         </div>
       </div>
     </div>

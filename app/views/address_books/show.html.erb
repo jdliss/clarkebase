@@ -13,8 +13,8 @@
           <div class="friend-item">
             <p><%= "#{friend.email}" %></p>
             <span id="toggle-parent">
-              <a href="" class="toggle-address-modal" data-email="<%= friend.email %>" data-address="<%= friend.primary_wallet.address if friend.primary_wallet %>" ><i class="fa fa-tag" aria-hidden="true"></i>Address</a>
-              <a href="" class="toggle-pay-modal" data-email="<%= friend.email %>" data-address="<%= friend.primary_wallet.address if friend.primary_wallet %>" ><i class="fa fa-money" aria-hidden="true"></i>Pay</a>
+              <a href="" class="toggle-address-modal" data-email="<%= friend.email %>" data-address="<%= friend.primary_wallet.address if friend.primary_wallet %>" ><i class="fa fa-tag fa-fw" aria-hidden="true"></i>Address</a>
+              <a href="" class="toggle-pay-modal" data-email="<%= friend.email %>" data-address="<%= friend.primary_wallet.address if friend.primary_wallet %>" ><i class="fa fa-money fa-fw" aria-hidden="true"></i>Pay</a>
               <hr>
             </span>
           </div>
@@ -80,12 +80,12 @@
       <div class="card-block">
         <form id="add-friend" >
           <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i></span>
             <input autocomplete="off" class="form-control" placeholder="Email" type="text" name="email" id="friend-input-key">
           </div>
           <br><h4 class="text-xs-center">Or</h4><br>
           <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
+            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
             <input autocomplete="off" class="form-control" placeholder="Public Key" type="text" name="key" id="friend-input-key">
           </div><br>
           <div class="actions form-group">
