@@ -12,7 +12,7 @@ RSpec.feature "User can create a wallet" do
 
       within(".new-wallet-message") do
         expect(page).to have_content "You Need a Wallet"
-        click_button "Generate a New Wallet"
+        find("#generateWallet").trigger("click")
       end
 
       wait_for_ajax

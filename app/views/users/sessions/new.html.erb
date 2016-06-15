@@ -2,9 +2,9 @@
   <%= render partial: 'layouts/nav' %>
   <div class="opacity-sign-in">
     <%= render partial: 'layouts/flash' %>
-    <div class="container fadeIn log-in" id="log-in">
+    <div class="container log-in" id="log-in">
       <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
-          <div class="sign-in-page card">
+          <div class="sign-in-page card animated pulse">
             <div class="card-header">
                 Welcome Back
             </div>
@@ -28,7 +28,7 @@
                     <%= f.label :remember_me, class: "check" %>
                   </div>
                   <div class="form-group actions">
-                    <%= f.submit "Log in", class: "btn btn-primary btn-lg btn-block log"%>
+                    <%= f.submit "Log in", id: "logIn", class: "btn btn-primary btn-lg btn-block log"%>
                   </div>
                 </div>
                 <% end %>

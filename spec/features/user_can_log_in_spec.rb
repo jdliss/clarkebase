@@ -13,7 +13,7 @@ RSpec.feature "User can login" do
     within(".sign-in-page") do
       fill_in "EMAIL",    with: user.email
       fill_in "PASSWORD", with: user.password
-      click_button "Log in"
+      find("#logIn").click
     end
 
     expect(current_path).to eq "/wallets/new"
