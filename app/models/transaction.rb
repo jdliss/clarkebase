@@ -11,6 +11,12 @@ class Transaction < ActiveRecord::Base
     service  = ClarkeService.new(pkey)
     unsigned = service.parsed_unsigned_payment(self.from, self.to, self.amount)
     signed   = service.parsed_signed_payment(unsigned)
+    status   = signed.status unless 200
+    rescue_if_failed(status)
+  end
+
+  def rescue_if_failed
+    raise ActiveRecord::Rollback
   end
 
   def email(whom)
@@ -28,7 +34,6 @@ class Transaction < ActiveRecord::Base
   def self.update_transactions
     service = TransactionUpdateService.new
     pending_transactions = service.parse_current_pending
-
 
     if pending_transactions.empty?
       completed = Transaction.pending
