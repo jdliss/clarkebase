@@ -17,6 +17,8 @@ gem 'figaro'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'responders'
 gem 'whenever'
+gem "skylight"
+
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
