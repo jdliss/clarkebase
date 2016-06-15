@@ -1,6 +1,5 @@
-<strong>Welcome <%= current_user.email %></strong>
-<span class="pull-right">
-  <button class="btn btn-success" data-toggle="modal" data-target="#dash-create-wallet">Create New Wallet</button>
+<strong><h4 class="animated bounce">Welcome <%= current_user.email %></h4></strong>
+
 
   <!--  modal / -->
   <div class="modal fade" id="dash-create-wallet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -23,7 +22,9 @@
               <label for="privateKey">Private Key </label>
               <input name="private_key" id="privateKey" autocomplete="off" type="text" class="form-control" placeholder="Optional">
             </div>
-            <button type="submit" class="btn btn-success">Create</button>
+            <footer id="modalSubmitButton">
+              <button id="createWalletButton" type="submit" class="btn btn-success">Create</button>
+            </footer>
           </form>
 
         </div>
@@ -33,4 +34,3 @@
       </div>
     </div>
   </div>
-</span>

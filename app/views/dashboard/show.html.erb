@@ -1,8 +1,5 @@
 <%= render partial: 'layouts/nav' %>
 <%= render partial: 'layouts/side_menu' %>
-<div class="row flash-zone">
-  <%= render partial: 'layouts/flash' %>
-</div>
 <div class="col-sm-12 col-xs-12 main-content-area user-keys">
   <br>
   <div class="row">
@@ -16,6 +13,9 @@
     <% if current_user && current_user.primary_wallet %>
       <span class="primary-wallet-info">
         Total Balance: <%= current_user.total_balance %> CLC
+      </span>
+      <span class="pull-right">
+        <button class="btn btn-success" data-toggle="modal" data-target="#dash-create-wallet">Create New Wallet</button>
       </span>
   </div>
   <br>
