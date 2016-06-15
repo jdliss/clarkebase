@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
+  before_save
+
   has_and_belongs_to_many :friends,
     class_name: "User",
     join_table: :friendships,
@@ -20,5 +22,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  
 end
