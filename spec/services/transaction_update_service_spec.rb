@@ -13,8 +13,9 @@ RSpec.describe TransactionUpdateService do
       from_addy     = wallet_a.address
       to_addy       = wallet_b.address
       amount        = 2
-      allow_any_instance_of(Transaction).to receive(:send_transaction).and_return(200)
+
       allow_any_instance_of(ClarkeService).to receive(:get_node).and_return("http://159.203.206.61:3000")
+
       transaction   = Transaction.create(amount: amount, from: from_addy, to: to_addy)
 
       service = TransactionUpdateService.new

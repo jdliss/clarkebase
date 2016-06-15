@@ -12,6 +12,9 @@ RSpec.feature "User can See the info on the dashboard page" do
       from_addy     = wallet_a.address
       to_addy       = wallet_b.address
       amount        = 2
+
+            allow_any_instance_of(Transaction).to receive(:send_transaction).and_return(200)
+
       transaction   = Transaction.create(amount: amount, from: from_addy, to: to_addy)
       transaction2   = Transaction.create(amount: 10, from: from_addy, to: to_addy)
 
