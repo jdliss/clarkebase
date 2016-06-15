@@ -1,4 +1,4 @@
-class Messenger
+class MessengerService
   def self.send_message(message, number)
     new.send_message(message, number)
   end

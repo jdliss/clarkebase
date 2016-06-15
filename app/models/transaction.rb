@@ -44,18 +44,34 @@ class Transaction < ActiveRecord::Base
     end
 
     mark_complete(completed)
-
   end
 
   def self.mark_complete(completed)
     completed.each do |transaction|
       transaction.completed!
+      send_notification(transaction)
+    end
+  end
+
+  def self.send_notification(transaction)
+    to = Wallet.find_by(public_key: transaction.to).user
+    unless to.phone.nil? || to.phone.empty?
+      from = Wallet.find_by(public_key: transaction.from).user
+      MessengerService.send_message(
+        "#{from.email} sent you #{pluralize(transaction.amount, "ClarkeCoin")}  on ClarkeBase!",
+        to.phone
+      )
     end
   end
 
   private
-    def find_pkey(address)
-      Wallet.find_by(public_key: address).private_key
-    end
 
+  def find_pkey(address)
+    Wallet.find_by(public_key: address).private_key
+  end
+
+  def pluralize(number, text)
+    return text.pluralize if number != 1
+    text
+  end
 end
