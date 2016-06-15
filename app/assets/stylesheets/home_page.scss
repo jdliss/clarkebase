@@ -30,3 +30,28 @@ html, body, .container-table {
     padding-bottom: 3%;
   }
 }
+
+.joan-row {
+  color: #fff;
+  vertical-align: middle;
+  text-align: left;
+
+  .content {
+    margin-top: 12%;
+  }
+
+  h1 {
+    font-size: 48px;
+    padding-bottom: 3%;
+    font-family: "Raleway";
+  }
+
+  h2 {
+    font-size: 36px;
+    padding-bottom: 3%;
+  }
+
+  p {
+    padding-bottom: 3%;
+  }
+}
