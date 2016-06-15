@@ -21,10 +21,11 @@ class TransactionUpdateService
   def parse_current_pending
     if Transaction.pending.any?
       transactions = JSON.parse(current_pending.body)
-      result = transactions['payload'].map do |payload_item|
-        data = payload_item['outputs'].flatten
-        { from: data.first['address'], to: data.last['address'] }
+      transactions['payload'].map do |payload_item|
+        { signature: payload_item["inputs"].first["signature"] }
       end
+    else
+      []
     end
   end
 
