@@ -3,7 +3,7 @@ require 'transaction_update_service'
 
 RSpec.describe TransactionUpdateService do
   it "can collect raw data from the transaction pool" do
-    VCR.use_cassette("services/transactions", record: :new_episodes) do
+    VCR.use_cassette("services/transactions") do
       key           = ENV["PRIVATE_KEY"].dup
       pub           = ENV["PUBLIC_KEY"].dup
       wallet_a      = create(:wallet, private_key: key, public_key: pub)
@@ -13,6 +13,7 @@ RSpec.describe TransactionUpdateService do
       from_addy     = wallet_a.address
       to_addy       = wallet_b.address
       amount        = 2
+      allow_any_instance_of(Transaction).to receive(:send_transaction).and_return(200)
       allow_any_instance_of(ClarkeService).to receive(:get_node).and_return("http://159.203.206.61:3000")
       transaction   = Transaction.create(amount: amount, from: from_addy, to: to_addy)
 

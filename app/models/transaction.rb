@@ -11,8 +11,8 @@ class Transaction < ActiveRecord::Base
     service  = ClarkeService.new(pkey)
     unsigned = service.parsed_unsigned_payment(self.from, self.to, self.amount)
     signed   = service.parsed_signed_payment(unsigned)
-    status   = signed.status unless 200
-    rescue_if_failed(status)
+    status   = signed.status
+    rescue_if_failed unless status == 200
   end
 
   def rescue_if_failed
