@@ -29,6 +29,7 @@ class Transaction < ActiveRecord::Base
     service = TransactionUpdateService.new
     pending_transactions = service.parse_current_pending
 
+
     if pending_transactions.empty?
       completed = Transaction.pending
     else
@@ -37,6 +38,11 @@ class Transaction < ActiveRecord::Base
       end.flatten
     end
 
+    mark_complete(completed)
+
+  end
+
+  def self.mark_complete(completed)
     completed.each do |transaction|
       transaction.completed!
     end
@@ -47,7 +53,4 @@ class Transaction < ActiveRecord::Base
       Wallet.find_by(public_key: address).private_key
     end
 
-    def transaction_service
-      TransactionUpdateService.new
-    end
 end
