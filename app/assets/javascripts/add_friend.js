@@ -18,8 +18,8 @@ $(document).ready(function(){
     $('#friend-input-email').val("");
     $('#friend-input-key').val("");
     $.ajax({
-      method:   'GET',
-      url:      '/friends.js'
+      method: 'GET',
+      url:    '/friends.js'
     });
   }
 

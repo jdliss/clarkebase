@@ -972,4 +972,35 @@ http_interactions:
       string: '70300757095320'
     http_version: 
   recorded_at: Thu, 16 Jun 2016 00:18:38 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:58445/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+      Date:
+      - Thu, 16 Jun 2016 00:26:43 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70283246716480'
+    http_version: 
+  recorded_at: Thu, 16 Jun 2016 00:26:43 GMT
 recorded_with: VCR 3.0.3
