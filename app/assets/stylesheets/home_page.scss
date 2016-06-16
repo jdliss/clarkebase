@@ -12,11 +12,12 @@ html, body, .container-table {
   text-align: center;
 
   .content {
-    margin-top: 12%;
+    margin-top: 15%;
   }
 
   h1 {
-    font-size: 48px;
+    font-size: 55px;
+    font-weight: bold;
     padding-bottom: 3%;
     font-family: "Raleway";
   }
@@ -27,6 +28,34 @@ html, body, .container-table {
   }
 
   p {
+    font-size: 24px;
     padding-bottom: 3%;
+  }
+}
+
+.joan-row {
+  color: #fff;
+  vertical-align: middle;
+  text-align: left;
+
+  .content {
+    margin-top: 12%;
+  }
+
+  h1 {
+    font-size: 50px;
+    padding-bottom: 3%;
+    font-family: "Raleway";
+    border-bottom: 1px solid white;
+  }
+
+  h2 {
+    font-size: 36px;
+    padding-bottom: 3%;
+  }
+
+  p {
+    font-size: 18px;
+    padding-bottom: 2%;
   }
 }

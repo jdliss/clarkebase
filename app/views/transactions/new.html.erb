@@ -14,14 +14,14 @@
               <form id="submit-transaction">
                 <div class="form-group">
                   <div class="input-group input-group-lg">
-                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
                     <input class="form-control" placeholder="RECEIPIENT EMAIL" type="email" aria-describedby="sizing-addon1" name="to">
                   </div>
                   <div class="send-help">
-                    <a href="#" data-toggle="modal" data-target="#send-help"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Or:</a>
+                    <a href="#" data-toggle="modal" data-target="#send-help"><i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i>Or:</a>
                   </div>
                   <div class="input-group input-group-lg">
-                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
+                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
                     <input class="form-control" id="from" placeholder="RECEIPIENT CLC ADDRESS" aria-describedby="sizing-addon1" name="address">
                   </div>
                   <br>
@@ -43,7 +43,7 @@
         </div>
     <% else %>
     <div class="row">
-      <%= link_to "You need a wallet to get started", wallets_new_path, class: "btn btn-alert" %>
+      <%= link_to "You need a wallet to get started", new_wallet_path, class: "btn btn-alert" %>
     </div>
     <% end %>
   </div>
