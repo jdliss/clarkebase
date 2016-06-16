@@ -7,7 +7,7 @@ html, body, .container-table {
 
 
 .vertical-center-row {
-  color: #fff;
+  color: rgba(#fff, .8);
   vertical-align: middle;
   text-align: center;
 
@@ -34,12 +34,16 @@ html, body, .container-table {
 }
 
 .joan-row {
-  color: #fff;
+  color: rgba(#fff, .8);
   vertical-align: middle;
   text-align: left;
 
   .content {
-    margin-top: 12%;
+    margin-top: 5%;
+
+    .info {
+      font-size: 14px;
+    }
   }
 
   h1 {
@@ -58,4 +62,8 @@ html, body, .container-table {
     font-size: 18px;
     padding-bottom: 2%;
   }
+}
+
+.scroll-link {
+  font-size: 24px;
 }
