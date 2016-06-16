@@ -23,7 +23,10 @@
   <%= render partial: "/layouts/transactions" %>
   <% else %>
     <div class="primary-keys">
-      <center><h3>Create a Wallet in order to get started!</h3></center>
+      <center>
+        <!-- <h3>Create a Wallet in order to get started!</h3> -->
+        <button class="btn btn-success" data-toggle="modal" data-target="#dash-create-wallet">Create New Wallet to get started!</button>
+      </center>
     </div>
   <% end %>
 </div>

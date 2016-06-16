@@ -3,6 +3,29 @@
 
 <div class="container">
   <div class="row" id="add-a-friend">
+
+    <div class="col-sm-6 col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Add a friend
+        </div>
+        <div class="card-block">
+          <form id="add-friend" >
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i></span>
+              <input autocomplete="off" class="form-control" placeholder="Email" type="text" name="email" id="friend-input-key">
+            </div>
+            <br><h4 class="text-xs-center">Or</h4><br>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+              <input autocomplete="off" class="form-control" placeholder="Public Key" type="text" name="key" id="friend-input-key">
+            </div><br>
+            <div class="actions form-group">
+              <input class="btn btn-primary btn-lg btn-block" type="submit" value="Add Friend"> </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="col-sm-6 col-md-6">
       <div class="card-header">
         Friends List
@@ -48,8 +71,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="new-transaction card">
-            <div id="pay-to-header" class="card-header">
-            </div>
+            <div id="pay-to-header" class="card-header"></div>
             <div class="card-block">
               <form id="submit-transaction">
                 <div class="form-group">
@@ -57,44 +79,21 @@
                   <hr>
                   <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="sizing-addon1">CLC</i></span>
-                  <input autocomplete="off" id="amount" class="form-control" type="amount" placeholder="AMOUNT" name="amount"/>
+                    <input autocomplete="off" id="amount" class="form-control" type="amount" placeholder="AMOUNT" name="amount"/>
+                  </div>
+                  <hr>
+                  <p class="wallet-select">Send From: <%= collection_select(:wallet, :id, current_user.wallets, :id, :balance_with_id ) %></p>
+                  <hr>
+                  <br>
+                  <footer id="submitTransaction">
+                    <input type="submit" id="sendCoin" class="btn btn-success btn-lg btn-block log" value="Send"></input>
+                  </footer>
                 </div>
-                <hr>
-                <p class="wallet-select">Send From: <%= collection_select(:wallet, :id, current_user.wallets, :id, :balance_with_id ) %></p>
-                <hr>
-                <br>
-                <footer id="submitTransaction">
-                  <input type="submit" id="sendCoin" class="btn btn-success btn-lg btn-block log" value="Send"></input>
-                </footer>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="col-sm-6 col-md-6">
-    <div class="card">
-      <div class="card-header">
-        Add a friend
-      </div>
-      <div class="card-block">
-        <form id="add-friend" >
-          <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i></span>
-            <input autocomplete="off" class="form-control" placeholder="Email" type="text" name="email" id="friend-input-key">
-          </div>
-          <br><h4 class="text-xs-center">Or</h4><br>
-          <div class="input-group input-group-lg">
-            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
-            <input autocomplete="off" class="form-control" placeholder="Public Key" type="text" name="key" id="friend-input-key">
-          </div><br>
-          <div class="actions form-group">
-            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Add Friend"> </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
