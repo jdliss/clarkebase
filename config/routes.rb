@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       resource :transactions, only: [:create]
       resource :wallets, only: [:create]
       resource :address_books, only: [:update]
+      resource :phones, only: [:update]
     end
   end
 

@@ -38,16 +38,14 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="dashboardWallet"><%= current_user.phone.empty? ? "Add a phone" : "Change your number"%></h4>
+        <h4 class="modal-title" id="phoneNumber"><%= current_user.phone.empty? ? "Add a phone" : "Change your number"%></h4>
       </div>
       <div class="modal-body">
 
         <form id="phone-form">
-          <div class="form-group">
-            <label for="walletName">Number </label>
-            <input name="wallet_name" id="walletName" autocomplete="off" type="text" class="form-control" placeholder="10 digit cell number" required="true" maxlength="10">
-          </div>
-          <button type="submit" class="btn btn-success">Create</button>
+            <label for="phoneNumber">Number </label>
+            <input name="phone_number" id="phoneNumber" autocomplete="off" type="number" class="form-control" placeholder="10 digit cell number" required="true" maxlength="10">
+          <input type="submit" value="Update" class="btn btn-success"></input>
         </form>
 
       </div>
