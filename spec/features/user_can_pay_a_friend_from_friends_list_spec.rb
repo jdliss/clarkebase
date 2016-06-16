@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "user can pay a friend from friends list" do
-  xscenario "sucessfully", js: true do
+  scenario "sucessfully", js: true do
     VCR.use_cassette("features/pay_friend", record: :new_episodes) do
       wallet_a, wallet_b = create_list(:wallet, 2)
 

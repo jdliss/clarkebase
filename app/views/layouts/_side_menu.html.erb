@@ -2,8 +2,8 @@
   <ul class="nav nav-pills nav-stacked left-side">
     <br>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-folder-open" aria-hidden="true"></i> Wallets</a>
-      <div class="collapse wallets" id="collapseExample">
+      <a class="nav-link" data-toggle="collapse" href="#collapseWallet" aria-expanded="false" aria-controls="collapseWallet"><i class="fa fa-folder-open fa-fw" aria-hidden="true"></i> Wallets</a>
+      <div class="collapse wallets" id="collapseWallet">
         <% @wallets.each do |wallet| %>
           <span class="card card-block sidebar-wallet">
             <%= link_to truncate(wallet.name, length: 15, separator: ' '), whallet_dashboard_path(wallet.slug) %>
@@ -20,12 +20,12 @@
     <hr>
     <br>
     <li class="nav-item">
-      <span class="option-image"><a class="nav-link <%= 'active' if params[:controller] == 'transactions' %>" href="<%= transactions_new_path %>"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send ClarkeCoins</a></span>
+      <span class="option-image"><a class="nav-link <%= 'active' if params[:controller] == 'transactions' %>" href="<%= transactions_new_path %>"><i class="fa fa-paper-plane fa-fw" aria-hidden="true"></i> Send ClarkeCoins</a></span>
     </li>
     <hr>
     <br>
     <li class="nav-item">
-    <span class="option-image"><a class="nav-link <%= 'active' if params[:controller] == 'address_books' %>" href="<%= friends_path %>"><i class="fa fa-user" aria-hidden="true"></i> Friends</a></span>
+      <span class="option-image"><a class="nav-link <%= 'active' if params[:controller] == 'address_books' %>" href="<%= friends_path %>"><i class="fa fa-user-secret fa-fw" aria-hidden="true"></i>  Friends</a></span>
     </li>
     <hr>
     <br>

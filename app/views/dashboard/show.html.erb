@@ -1,8 +1,5 @@
 <%= render partial: 'layouts/nav' %>
 <%= render partial: 'layouts/side_menu' %>
-<div class="row flash-zone">
-  <%= render partial: 'layouts/flash' %>
-</div>
 <div class="col-sm-12 col-xs-12 main-content-area user-keys">
   <br>
   <div class="row">
@@ -18,17 +15,23 @@
         Total Balance: <%= current_user.total_balance %> CLC
       </span>
       <span class="pull-right">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#phone-number"><%= current_user.phone.empty? ? "Add a phone" : "Change your number" %></button>
+        <div class="btn-group" role="group">
+          <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#dash-create-wallet">Create New Wallet</button>
+          <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#phone-number"><%= current_user.phone.empty? ? "Add a phone" : "Change your number" %></button>
+        </div>
       </span>
     </div>
     <br>
     <hr>
     <%= render partial: "/layouts/transactions" %>
-  <% else %>
-    <div class="primary-keys">
-      <center><h3>Create a Wallet in order to get started!</h3></center>
-    </div>
-  <% end %>
+  </div>
+<% else %>
+  <div class="primary-keys">
+    <center>
+      <button class="btn btn-success" data-toggle="modal" data-target="#dash-create-wallet">Create New Wallet to get started!</button>
+    </center>
+  </div>
+<% end %>
 </div>
 
 <div class="modal fade" id="phone-number" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -43,8 +46,9 @@
       <div class="modal-body">
 
         <form id="phone-form">
-            <label for="phoneNumber">Number </label>
-            <input name="phone_number" id="phoneNumber" autocomplete="off" type="number" class="form-control" placeholder="10 digit cell number" required="true" maxlength="10">
+          <label for="phoneNumber">Number </label>
+          <input name="phone_number" id="phoneNumber" autocomplete="off" type="number" class="form-control" placeholder="10 digit cell number" required="true" maxlength="10">
+          <br>
           <input type="submit" value="Update" class="btn btn-success"></input>
         </form>
 

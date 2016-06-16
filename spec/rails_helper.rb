@@ -17,6 +17,8 @@ Capybara::Webkit.configure do |config|
   config.allow_url("use.fontawesome.com")
   config.allow_url("fonts.googleapis.com")
   config.allow_url("images.unsplash.com")
+  config.allow_url("cdn.jsdelivr.net")
+
 end
 
 ActiveRecord::Migration.maintain_test_schema!

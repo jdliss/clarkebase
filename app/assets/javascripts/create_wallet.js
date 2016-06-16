@@ -6,6 +6,7 @@ $(document).ready(function(){
     event.preventDefault();
     var self = this;
     var data = $("#wallet-form").serialize();
+    $("#modalSubmitButton").html("<div class='sk-spinner sk-spinner-pulse'></div>")
     $.ajax({
       method:   'POST',
       url:      '/api/v1/wallets',
@@ -27,13 +28,11 @@ $(document).ready(function(){
 
     function flashSuccess(data){
       $('#dash-create-wallet').modal('hide')
-      $('.flash').empty();
-      $('.flash').append('<div class="alert text-center alert-success">Your Wallet has been created!</div>');
+      swal("Get Spending", "Wallet Created", "success")
     }
 
     function flashError(data){
-      $('#dash-create-wallet').modal('hide')
-      $('.flash').empty();
-      $('.flash').append('<div class="alert text-center alert-danger">Wallet not created, try again later.</div>');
+      swal("Oh No...", "Creation Failed", "error")
+      $("#modalSubmitButton").html("<button id='createWalletButton' type='submit' class='btn btn-success'>Create</button>")
     }
 })
