@@ -29,6 +29,7 @@ $(document).ready(function(){
     function flashSuccess(data){
       $('#dash-create-wallet').modal('hide')
       swal("Get Spending", "Wallet Created", "success")
+      $("#modalSubmitButton").html("<button id='createWalletButton' type='submit' class='btn btn-success'>Create</button>")
     }
 
     function flashError(data){
