@@ -63,7 +63,9 @@
                 <p class="wallet-select">Send From: <%= collection_select(:wallet, :id, current_user.wallets, :id, :balance_with_id ) %></p>
                 <hr>
                 <br>
-                <input type="submit" id="sendCoin" class="btn btn-success btn-lg btn-block log" value="Send"></input>
+                <footer id="submitTransaction">
+                  <input type="submit" id="sendCoin" class="btn btn-success btn-lg btn-block log" value="Send"></input>
+                </footer>
               </div>
             </form>
           </div>

@@ -1,5 +1,10 @@
 .flash {
-  z-index: 1000
+  position: absolute;
+  z-index: 10000;
+  top: 5%;
+  width: 75%;
+  margin: auto;
+  text-align: center;
 }
 
 
