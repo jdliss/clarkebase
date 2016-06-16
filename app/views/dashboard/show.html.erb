@@ -15,10 +15,9 @@
         Total Balance: <%= current_user.total_balance %> CLC
       </span>
       <span class="pull-right">
-        <button class="btn btn-success" data-toggle="modal" data-target="#dash-create-wallet">Create New Wallet</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#dash-create-wallet">Create New Wallet</button>
       </span>
   </div>
-  <br>
   <hr>
   <%= render partial: "/layouts/transactions" %>
   <% else %>

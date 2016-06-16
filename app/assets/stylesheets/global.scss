@@ -1,5 +1,5 @@
 body {
-  font-family: "Lato"
+  font-family: "Libre Franklin"
 
 }
 
@@ -28,7 +28,7 @@ table {
 
 .scrollable {
   overflow:scroll;
-  height: 65vh;
+  height: 50vh;
 }
 
 
@@ -65,15 +65,6 @@ input:-moz-placeholder { font-size:12px; }
 .opacity-welcome-bottom {
   @include background-image-spec;
   background-color: rgba(#000, .8);
-
-  // background: linear-gradient(bottom, rgba(#000, 1.5) 0%, rgba(#000, 1) 100% );
-  //      background: -moz-linear-gradient(bottom, rgba( 255, 255, 255, 0) 0%, rgba(#000, .9) 100% );
-  //      background: -ms-linear-gradient(bottom, rgba( 255, 255, 255, 0 ) 0%, rgba(#000, .9) 100% );
-  //      background: -o-linear-gradient( bottom, rgba( 255, 255, 255, 0 ) 0%, rgba(#000, .9) 100% );
-  //      background: -webkit-linear-gradient( bottom, rgba( 255, 255, 255, 0 ) 0%, rgba(#000, .9) 100% );
-  //
-  //      -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#550000FF, endColorstr=#550000FF);
-  //      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00ffffff, endColorstr=#ffffffff);
   min-height: 100vh;
 }
 
