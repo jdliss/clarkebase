@@ -8,8 +8,8 @@
   <div class="row">
     <div class="page-header">
       <%= render partial: 'layouts/dash_header' %>
-    <br>
-    <hr>
+      <br>
+      <hr>
     </div>
   </div>
   <div class="row primary-wallet">
@@ -17,16 +17,43 @@
       <span class="primary-wallet-info">
         Total Balance: <%= current_user.total_balance %> CLC
       </span>
-  </div>
-  <br>
-  <hr>
-  <%= render partial: "/layouts/transactions" %>
+      <span class="pull-right">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#phone-number"><%= current_user.phone.empty? ? "Add a phone" : "Change your number" %></button>
+      </span>
+    </div>
+    <br>
+    <hr>
+    <%= render partial: "/layouts/transactions" %>
   <% else %>
     <div class="primary-keys">
       <center><h3>Create a Wallet in order to get started!</h3></center>
     </div>
   <% end %>
 </div>
-<div class="main">
 
+<div class="modal fade" id="phone-number" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="dashboardWallet"><%= current_user.phone.empty? ? "Add a phone" : "Change your number"%></h4>
+      </div>
+      <div class="modal-body">
+
+        <form id="phone-form">
+          <div class="form-group">
+            <label for="walletName">Number </label>
+            <input name="wallet_name" id="walletName" autocomplete="off" type="text" class="form-control" placeholder="10 digit cell number" required="true" maxlength="10">
+          </div>
+          <button type="submit" class="btn btn-success">Create</button>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

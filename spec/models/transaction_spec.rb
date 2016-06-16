@@ -27,7 +27,7 @@ RSpec.describe Transaction, type: :model do
       key                  = ENV["PRIVATE_KEY"].dup
       pub                  = ENV["PUBLIC_KEY"].dup
       wallet_a             = create(:wallet, private_key: key, public_key: pub)
-      pending_transactions = [{from: pub, to: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs9Fwo/n22MKL8BwZ7zRdKeorCMi2m0iwYp21ZL9aL8lAO62KH8n6vB7AEWAEYxTJ1frG2vJ5zk67yTeIE80GVH3Fs1Y2zlreUMDa0c/AkIO2DpMHSwGAz2DZHJ6vHptE/gChgjhkyZnlaQ2AQRC3RfDj495ViezusHkeWAdWktC66rWzR48B7224VV5OaFWqL9S+vcOY46kJIgFhQtnSg4v1zQfltecNkBlsHLfrklm1Vv4yYI9fsEyMTVWkpjNZ7Q62bxw/6JdvcYb4v0tjmBJMaaZcEH4EYx2bKZCxlssSqlkvn7tVVXNov5uT6NShkX7TjbKK3fbs4SsNBGAB/QIDAQAB" }]
+      pending_transactions = [{ signature: "LDkvSUcZ2HuaJkqzIHyROg7p4gajDkpIqKpryOGouCBB/1z+/r2NCKcr0G2AjSVKISxkF+q0deWKaEihTupgDAJwtkPyKPUkhHyhsHFy+7UlrZ8Szps2rkeF8InbWy7FRm6hG7V6xxsF4VB6HQLA+0lwDA7OmsdmOQHbDab077VJnQZhDQ3xNaJhFcwowrADMa7UJHgJXHqsjLDG8osdJ7Z3HDHJc/8aCAZfrfEQBTIkRxcJdhpCFgTY5UEiq7gau7znQFVPh9EyOUTtO4voiiBlGMyUVmFpekdft5mE8550PajyZsKoo9p7zhIeOn6XHXh5uZbo/9wu9FPwqwT4SA==" }]
       allow_any_instance_of(Transaction).to receive(:send_transaction).and_return(200)
       allow_any_instance_of(TransactionUpdateService).to receive(:parse_current_pending).and_return(pending_transactions)
 
@@ -39,6 +39,4 @@ RSpec.describe Transaction, type: :model do
       expect(Transaction.first.status).to eq "pending"
     end
   end
-
-
 end
