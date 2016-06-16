@@ -53,11 +53,12 @@ class ClarkeService
     end
   end
 
-  def parsed_signed_payment(unsigned)
+  def parsed_signed_payment(unsigned, transaction)
     digest    = OpenSSL::Digest::SHA256.new
     pkey      = OpenSSL::PKey::RSA.new(KeyCleanerService.private_strict_format(@sigkey))
-    signature = pkey.sign digest, signable_string(unsigned)
-    unsigned["payload"]["inputs"].first["signature"] = Base64.encode64(signature).gsub("\n", "")
+    signature = Base64.encode64(pkey.sign digest, signable_string(unsigned)).delete("\n")
+    transaction.signature = signature
+    unsigned["payload"]["inputs"].first["signature"] = signature
     signed = unsigned["payload"]
 
     submit_transaction(signed)

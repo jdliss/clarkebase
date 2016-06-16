@@ -41,13 +41,13 @@ class Wallet < ActiveRecord::Base
   def self.all_sent_transactions(wallets)
     wallets.map do |wallet|
       wallet.sent_transactions
-    end.flatten
+    end.flatten.sort_by(&:created_at).reverse
   end
 
   def self.all_received_transactions(wallets)
     wallets.map do |wallet|
       wallet.received_transactions
-    end.flatten
+    end.flatten.sort_by(&:created_at).reverse
   end
 
   def sent_transactions
@@ -65,9 +65,9 @@ private
   end
 
   def cache_key
-    Digest::SHA256.base64digest(
-      sent_transactions.where(status: "success").pluck(:status).join +
-      received_transactions.where(status: "success").pluck(:status).join +
+    Digest::SHA256.hexdigest(
+      sent_transactions.completed.pluck(:status).join +
+      received_transactions.completed.pluck(:status).join +
       user.email + self.created_at.to_s
     )
   end

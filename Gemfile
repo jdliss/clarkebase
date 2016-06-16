@@ -18,6 +18,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'responders'
 gem 'whenever'
 gem "skylight"
+gem 'twilio-ruby'
 
 
 source 'https://rails-assets.org' do

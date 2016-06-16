@@ -2,37 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://127.0.0.1:52021/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
-      Date:
-      - Wed, 15 Jun 2016 23:41:51 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '70317245864020'
-    http_version: 
-  recorded_at: Wed, 15 Jun 2016 23:41:51 GMT
-- request:
-    method: get
     uri: http://dns1.clarkecoin.org/api/peers
     body:
       encoding: US-ASCII
@@ -58,12 +27,12 @@ http_interactions:
       Server:
       - http-kit
       Date:
-      - Wed, 15 Jun 2016 23:41:56 GMT
+      - Thu, 16 Jun 2016 02:32:22 GMT
     body:
       encoding: UTF-8
       string: '[{"port":3000,"host":"159.203.206.61"},{"port":3000,"host":"159.203.206.63"},{"port":3000,"host":"159.203.206.49"}]'
     http_version: 
-  recorded_at: Wed, 15 Jun 2016 23:41:56 GMT
+  recorded_at: Thu, 16 Jun 2016 02:32:22 GMT
 - request:
     method: post
     uri: http://159.203.206.49:3000/balance
@@ -92,10 +61,10 @@ http_interactions:
       Server:
       - http-kit
       Date:
-      - Wed, 15 Jun 2016 23:41:56 GMT
+      - Thu, 16 Jun 2016 02:32:23 GMT
     body:
       encoding: UTF-8
-      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","balance":2339}}'
+      string: '{"message":"balance","payload":{"address":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApoZWMmLesLbU/mTuknlfJx5n9zk1nUmLjvdgxw4iBB0qlcA0ShENeV1UFb6Jcke2OTZ60FgVE+ku8LE0MTBE9YV4lAd4qE3X1O9NQHWnelhNrnTNQXsRoXLXj9euz9St7fbg8+4lxekpnPGAPDt676TMnvDIHnn0RjuBk+zH97LcRuR/i1pstgiPnCh8TBivLz1/dzGdBZ8dvJ+pBrUuHcPopmclN5BKqjAOW1llqGRFta/JP8br8hq4YmgC37bx/C6T6Z7rawTy8FROaGoIHo4xQuT6zNqDW8HGLPRy70BVP7VJC3iJtpNwjCBnYzUSmjoMPY8vRctSUEIHWwzodwIDAQAB","balance":2335}}'
     http_version: 
-  recorded_at: Wed, 15 Jun 2016 23:41:56 GMT
+  recorded_at: Thu, 16 Jun 2016 02:32:23 GMT
 recorded_with: VCR 3.0.3

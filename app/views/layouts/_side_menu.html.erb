@@ -2,11 +2,6 @@
   <ul class="nav nav-pills nav-stacked left-side">
     <br>
     <li class="nav-item">
-      <span class="option-image"><a class="nav-link <%= 'active' if params[:controller] == 'dashboard' %>" href="<%= dashboard_path %>"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Dashboard</a></span>
-    </li>
-    <hr>
-    <br>
-    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#collapseWallet" aria-expanded="false" aria-controls="collapseWallet"><i class="fa fa-folder-open fa-fw" aria-hidden="true"></i> Wallets</a>
       <div class="collapse wallets" id="collapseWallet">
         <% @wallets.each do |wallet| %>
@@ -16,6 +11,11 @@
           </span>
         <% end %>
       </div>
+    </li>
+    <hr>
+    <br>
+    <li class="nav-item">
+      <span class="option-image"><a class="nav-link <%= 'active' if params[:controller] == 'dashboard' %>" href="<%= dashboard_path %>"><i class="fa fa-server" aria-hidden="true"></i> Dashboard</a></span>
     </li>
     <hr>
     <br>

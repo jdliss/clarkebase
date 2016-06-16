@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twilio.com/2010-04-01/Accounts/AC7dc1199b19346bf9a5ecc3caaa4ed3d3/Messages.json
+    body:
+      encoding: US-ASCII
+      string: From=%2B17204086557&To=1-844-872-4681&Body=test
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/4.11.1 (ruby/x86_64-darwin14 2.3.0-p0)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Authorization:
+      - Basic QUM3ZGMxMTk5YjE5MzQ2YmY5YTVlY2MzY2FhYTRlZDNkMzphMzA3ZDNlOTQzM2M1ZjIzZTI4OTc0OWRhZmY0YzUyMQ==
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 16 Jun 2016 02:00:05 GMT
+      Twilio-Request-Duration:
+      - '0.191'
+      Twilio-Request-Id:
+      - RQb9c27cd6ea6b4067aa61c0ea1da4cdf7
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '338'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code": 21608, "message": "The number +18448724681 is unverified.
+        Trial accounts cannot send messages to unverified numbers; verify +18448724681
+        at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number
+        to send messages to unverified numbers.", "more_info": "https://www.twilio.com/docs/errors/21608",
+        "status": 400}'
+    http_version: 
+  recorded_at: Thu, 16 Jun 2016 02:00:05 GMT
+recorded_with: VCR 3.0.3
