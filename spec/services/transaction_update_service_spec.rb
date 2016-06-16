@@ -3,7 +3,7 @@ require 'transaction_update_service'
 
 RSpec.describe TransactionUpdateService do
   it "can collect raw data from the transaction pool" do
-    VCR.use_cassette("services/transactions") do
+    VCR.use_cassette("services/transactions", record: :new_episodes) do
       key           = ENV["PRIVATE_KEY"].dup
       pub           = ENV["PUBLIC_KEY"].dup
       wallet_a      = create(:wallet, private_key: key, public_key: pub)
@@ -22,7 +22,8 @@ RSpec.describe TransactionUpdateService do
 
       results  = service.parse_current_pending
       expected = [{
-        :signature=>"LDkvSUcZ2HuaJkqzIHyROg7p4gajDkpIqKpryOGouCBB/1z+/r2NCKcr0G2AjSVKISxkF+q0deWKaEihTupgDAJwtkPyKPUkhHyhsHFy+7UlrZ8Szps2rkeF8InbWy7FRm6hG7V6xxsF4VB6HQLA+0lwDA7OmsdmOQHbDab077VJnQZhDQ3xNaJhFcwowrADMa7UJHgJXHqsjLDG8osdJ7Z3HDHJc/8aCAZfrfEQBTIkRxcJdhpCFgTY5UEiq7gau7znQFVPh9EyOUTtO4voiiBlGMyUVmFpekdft5mE8550PajyZsKoo9p7zhIeOn6XHXh5uZbo/9wu9FPwqwT4SA=="}, {:signature=>"IEssBZFxurlNUDohWaRHqIE7cUPdTiFQO4/cyprrjX+njAx68IMCJveC3WIEbdYcWVwxdaAeWXed+pToWc4omnma9KItvfOv6F6oyq7WGEfLHN4oy4DDJOsL929d9lgMop9k3PBK6QR/JhFb4+NrwRdgxuFuyB2QPHIr6qZ/Tf1fHmfQ11Z0Ue31UPjbE0QPFXr+RvDRB6Vv8+vboeaA0vLw+hcQqE5gwuZilQ4q/hOhCwem3KOajYWkLJyB64g5iji5e30Byu+hP48RslJreDMqxQ9NJTKzb2EaZvmNA1jKbrw3vruZUcgsImKgBW0dm/68Ja904nZR788XzcEjrQ=="
+        :signature=>"h3pQE8o9Btz0JW28U/4Aj1RglQIHOFC0evUKEE3eAnp6/XEEHdVrJY7+/zbwIbCGJG5va3hDc1gIp3SY0iiyPq9Idii3Sdq11tNDFKY00Jf0nUKc3pARnGqG6xSF0YrMGF1ozZV/4T5lJN5o/dIAbQwg3XayT9lUoxTCAEKjpXzDfIv4U9lK/md3e1IiLQXEwvo1XtsG5SmXC4fgT0VD1DoVdT88ILbMCMaskyGz9ntZ8P+N8y8kRK0PKi6gV2HSycEsEaTa7xH/lKWRCClCShoc0olrpnPSY/ZRi279x+nnS8cJYcsROYos40q2p7YOVkOpQ2AcSYVH1bYc1PZOSg=="},
+        {:signature=>"OFi0b2yVZJV4VQivF9QOs4NPIAETbGOq5YajQk7zneidK2kFwuY++HM5yatH5ARKiKVaiHr9ZUvLvsRo4joieQ84L/EXgqCWdIr/VfE/A63k8OczyzHZWd2qq6dmOGNe8xqvWyZUvmoNCKBgPuxnhC9V0PC9aopm0ZsEV443b/RDZM5Kjsz4IAZptdeLYOPbx5V/Ff8/XGJS8jtFQTd953MNLZQ+uiY04I+j/djJ3weM7zbyy5AxM1WimCtvqU/kIX59L3Jn02cv4RIvwUClsFUSYwk9XD8ofbqB8vSQpxKSxmjhzmLLrwNxerHVYHPVUUUOIz8li7Zp7T0wc6F6Dg=="
       }]
 
       expect(results).to eq expected
