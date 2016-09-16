@@ -1,7 +1,10 @@
 class Api::V1::WalletsController < ApiController
   def create
     if params.dig("private_key") && !params.dig("private_key").empty?
-      @private_key = KeyCleanerService.clean_user_input(params.dig("private_key"))
+      private_der = KeyCleanerService.clean_user_input(params.dig("private_key"))
+      der_with_headers = KeyCleanerService.private_strict_format(private_der)
+      keypair = OpenSSL::PKey::RSA.new(der_with_headers)
+      @private_key = PKeyService.new(keypair).private_key
     end
 
     @wallet = Wallet.new(

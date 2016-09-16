@@ -2,8 +2,12 @@ require 'openssl'
 
 class PKeyService
 
-  def initialize
-    @keypair = OpenSSL::PKey::RSA.generate(2048)
+  def initialize(keypair = generate_key)
+    @keypair = keypair
+  end
+
+  def generate_key
+    OpenSSL::PKey::RSA.generate(2048)
   end
 
   def private_key
